@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:http/http.dart' as http;
 import 'package:path/path.dart';
+import 'package:cloud_firestore/cloud_firestore.dart'; // Firebase Firestore
 import 'mcq_results.dart'; // Import the MCQResults screen
+import 'dart:math'; // For generating random code
 
 class MCQGenerator extends StatefulWidget {
   @override
@@ -17,8 +19,19 @@ class _MCQGeneratorState extends State<MCQGenerator> {
   int _numQuestions = 1;
   bool _isLoading = false;
   String _difficultyLevel = 'Easy'; // Default difficulty level
+  String? _username; // Variable for username
 
   final TextEditingController _textController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController(); // Controller for username
+
+  final GlobalKey<ScaffoldMessengerState> _scaffoldKey = GlobalKey<ScaffoldMessengerState>();
+
+  // Function to generate random 6-digit alphanumeric code
+  String _generateRandomCode() {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    final rand = Random();
+    return List.generate(6, (index) => chars[rand.nextInt(chars.length)]).join();
+  }
 
   Future<void> _pickFile() async {
     final result = await FilePicker.platform.pickFiles(
@@ -34,7 +47,7 @@ class _MCQGeneratorState extends State<MCQGenerator> {
     }
   }
 
-  Future<void> _generateMCQs() async {
+  Future<void> _generateMCQs(BuildContext context) async {
     setState(() {
       _isLoading = true;
     });
@@ -45,10 +58,20 @@ class _MCQGeneratorState extends State<MCQGenerator> {
         _isLoading = false; // Stop loading indicator
       });
       // Show error message
-      ScaffoldMessenger.of(this.context).showSnackBar(
+      _scaffoldKey.currentState?.showSnackBar(
         SnackBar(content: Text('Please upload a file or enter text.')),
       );
       return; // Exit the function
+    }
+
+    if (_username == null || _username!.isEmpty) {
+      setState(() {
+        _isLoading = false;
+      });
+      _scaffoldKey.currentState?.showSnackBar(
+        SnackBar(content: Text('Please enter your name.')),
+      );
+      return;
     }
 
     var request = http.MultipartRequest('POST', Uri.parse('http://10.0.2.2:5000/generate'));
@@ -76,16 +99,31 @@ class _MCQGeneratorState extends State<MCQGenerator> {
         final Map<String, dynamic> jsonResponse = jsonDecode(responseBody);
         String mcqs = jsonResponse['mcqs'];
 
-        // Navigate to MCQResults screen with the generated MCQs
-        Navigator.push(
-          this.context,
-          MaterialPageRoute(
-            builder: (context) => MCQResults(
-              mcqs: mcqs,
-              pdfFilePath: 'path/to/pdf', // Provide a value for the pdfFilePath parameter
+        // Generate a random 6-digit alphanumeric code
+        String randomCode = _generateRandomCode();
+
+        // Ensure Firestore collection and document creation
+        var userCollectionRef = FirebaseFirestore.instance.collection('quiz').doc(_username).collection('quizzes');
+        var quizDocRef = userCollectionRef.doc(randomCode);
+
+        // Create the document if it doesn't exist
+        await quizDocRef.set({
+          'mcqs': mcqs,
+          'additionalData': 'Random test data for now', // Replace with actual data
+        }, SetOptions(merge: true)); // Using merge to ensure existing data is not overwritten
+
+        // Use WidgetsBinding to perform navigation after the current build frame
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          Navigator.push(
+            context, // Ensure context here is a valid BuildContext
+            MaterialPageRoute(
+              builder: (context) => MCQResults(
+                mcqs: mcqs,
+                randomCode: randomCode,
+              ),
             ),
-          ),
-        );
+          );
+        });
       } else {
         var responseBody = await response.stream.bytesToString();
         print('Error: ${response.statusCode}, Details: $responseBody');
@@ -110,6 +148,7 @@ class _MCQGeneratorState extends State<MCQGenerator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey, // Assign the scaffold key here
       appBar: AppBar(
         title: Text('MCQ Generator'),
       ),
@@ -118,6 +157,22 @@ class _MCQGeneratorState extends State<MCQGenerator> {
         child: ListView(
           children: [
             Center(child: Text('Generate MCQs from Your Text', style: TextStyle(fontSize: 24))),
+            SizedBox(height: 20),
+
+            // Ask for username
+            TextFormField(
+              controller: _usernameController,
+              decoration: InputDecoration(
+                labelText: 'Enter your name',
+                border: OutlineInputBorder(),
+              ),
+              onChanged: (value) {
+                setState(() {
+                  _username = value;
+                });
+              },
+            ),
+
             SizedBox(height: 20),
 
             // File Picker Button
@@ -205,7 +260,7 @@ class _MCQGeneratorState extends State<MCQGenerator> {
             _isLoading
                 ? Center(child: CircularProgressIndicator())
                 : ElevatedButton(
-                    onPressed: _generateMCQs,
+                    onPressed: () => _generateMCQs(context),
                     child: Text('Generate MCQs'),
                   ),
           ],
