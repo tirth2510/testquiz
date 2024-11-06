@@ -1,39 +1,39 @@
 ## MCQ 1
 Question: What is a planet generally required to orbit?
-A) Another planet
-B) A star, stellar remnant, or brown dwarf
-C) A moon
-D) An asteroid
+A) A moon
+B) A star
+C) An asteroid
+D) A comet
 Correct Answer: B
 
 ## MCQ 2
-Question: How many planets are in our Solar System according to the strictest definition?
-A) Nine
+Question: How many planets are in our Solar System?
+A) Six
 B) Seven
 C) Eight
-D) Ten
+D) Nine
 Correct Answer: C
 
 ## MCQ 3
-Question: What are the terrestrial planets in our Solar System?
-A) Jupiter, Saturn, Uranus, Neptune
-B) Mercury, Venus, Earth, Mars
-C) Earth, Mars, Jupiter, Saturn
-D) Venus, Earth, Uranus, Neptune
-Correct Answer: B
+Question: What are the first four planets in our Solar System called?
+A) Giant planets
+B) Gas giants
+C) Terrestrial planets
+D) Outer planets
+Correct Answer: C
 
 ## MCQ 4
-Question: What is the name of the prevailing theory of planet formation?
-A) Big Bang Theory
-B) Nebular hypothesis
-C) Planetary Collision Theory
-D) Stellar Evolution Theory
+Question: What is the name of the leading theory of planet formation?
+A) The Big Bang Theory
+B) The Nebular Hypothesis
+C) The Planetary Accretion Theory
+D) The Stellar Evolution Theory
 Correct Answer: B
 
 ## MCQ 5
-Question: What process causes planets to grow within a protoplanetary disk?
-A) Accretion
-B) Erosion
-C) Combustion
-D) Fission
-Correct Answer: A
+Question: What process describes the gradual accumulation of material that forms planets?
+A) Erosion
+B) Accretion
+C) Subduction
+D) Convection
+Correct Answer: B
