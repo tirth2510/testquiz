@@ -5,11 +5,17 @@ import docx
 from werkzeug.utils import secure_filename
 import google.generativeai as genai
 from fpdf import FPDF
+from firebase_admin import credentials, firestore, initialize_app
 
 # Set your API key
 os.environ["GOOGLE_API_KEY"] = "AIzaSyCfzCErNSYRZY1aKt4l-gzpQmS_oy4T00U"
 genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 model = genai.GenerativeModel("models/gemini-1.5-pro")
+
+# Firebase initialization
+cred = credentials.Certificate('../aiquizgenerator-b8817-firebase-adminsdk-bml1x-9a92c0b273.json')  # Replace with the path to your Firebase credentials
+initialize_app(cred)
+db = firestore.client()
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads/'
@@ -116,6 +122,16 @@ def generate_mcqs():
 
         # Save the generated MCQs to both .txt and .pdf
         txt_filepath, pdf_filepath = save_mcqs_to_file(mcqs, num_questions)
+
+        # Store the MCQs and file paths in Firestore
+        doc_ref = db.collection('mcq_results').add({
+            'mcqs': mcqs,
+            'num_questions': num_questions,
+            'difficulty': difficulty,
+            'txt_file': txt_filepath,
+            'pdf_file': pdf_filepath,
+            'timestamp': firestore.SERVER_TIMESTAMP
+        })
 
         return jsonify({"mcqs": mcqs, "txt_file": txt_filepath, "pdf_file": pdf_filepath}), 200
     except Exception as e:

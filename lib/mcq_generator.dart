@@ -165,16 +165,15 @@ class _MCQGeneratorState extends State<MCQGenerator> {
     );
 
     if (enteredCode?.isNotEmpty ?? false) {
-  Navigator.push(
-    context,
-    MaterialPageRoute(
-      builder: (context) => MCQStudent(
-        quizCode: enteredCode!,
-      ),
-    ),
-  );
-}
-
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => MCQStudent(
+            quizCode: enteredCode!,
+          ),
+        ),
+      );
+    }
   }
 
   void _deleteFile() {
