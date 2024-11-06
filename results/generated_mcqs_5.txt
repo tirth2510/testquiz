@@ -1,0 +1,39 @@
+## MCQ 1
+Question: What is the best available theory for how planets form?
+A) Big Bang Theory
+B) Nebular Hypothesis
+C) Planetary Collision Theory
+D) Steady State Theory
+Correct Answer: B
+
+## MCQ 2
+Question: How many planets are in our Solar System, according to the most restrictive definition?
+A) 4
+B) 8 
+C) 9 
+D) 12
+Correct Answer: B
+
+## MCQ 3
+Question: What type of celestial body is a planet generally required to orbit?
+A) A black hole
+B) A star
+C) A comet
+D) Another planet
+Correct Answer: B
+
+## MCQ 4
+Question:  What is the name for the process by which planets grow in a protoplanetary disk?
+A) Accretion
+B) Differentiation
+C) Fusion
+D) Sublimation
+Correct Answer: A
+
+## MCQ 5
+Question: Which of the following is NOT a terrestrial planet?
+A) Mars
+B) Jupiter
+C) Venus 
+D) Mercury 
+Correct Answer: B
