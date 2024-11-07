@@ -1,39 +1,39 @@
 ## MCQ 1
 Question: What is a planet generally required to orbit?
 A) A moon
-B) A star
-C) An asteroid
+B) A star, stellar remnant, or brown dwarf
+C) Another planet
 D) A comet
 Correct Answer: B
 
 ## MCQ 2
-Question: How many planets are in our Solar System?
-A) Six
-B) Seven
-C) Eight
-D) Nine
-Correct Answer: C
+Question: How many planets are in our Solar System, according to the most restrictive definition?
+A) Four
+B) Eight
+C) Nine
+D) Twelve
+Correct Answer: B
 
 ## MCQ 3
-Question: What are the inner, rocky planets called?
-A) Giant planets
-B) Gas giants
-C) Terrestrial planets
-D) Outer planets
+Question: Which of these is NOT a terrestrial planet?
+A) Mars
+B) Earth
+C) Jupiter
+D) Mercury
 Correct Answer: C
 
 ## MCQ 4
 Question: What is the name of the leading theory of planet formation?
-A) The Big Bang theory
-B) The nebular hypothesis
-C) The accretion theory
-D) The planetary migration theory
+A) The Big Bang Theory
+B) The Nebular Hypothesis
+C) The Theory of Relativity
+D) The Planetary Accretion Theory
 Correct Answer: B
 
 ## MCQ 5
-Question: What is the process called where planets grow by accumulating material?
-A) Condensation
-B) Evaporation
-C) Accretion
-D) Sublimation
-Correct Answer: C
+Question: What process describes the gradual accumulation of material driven by gravity, leading to planet growth?
+A) Erosion
+B) Accretion
+C) Combustion
+D) Subduction
+Correct Answer: B
