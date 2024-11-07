@@ -11,8 +11,8 @@ class MCQStudent extends StatefulWidget {
 }
 
 class _MCQStudentState extends State<MCQStudent> {
-  String _mcqs = ''; // Now it's a string instead of a list
-  Map<int, dynamic> _selectedAnswers = {};
+  String _mcqs = ''; // Holds the raw MCQs string from Firestore
+  Map<int, dynamic> _selectedAnswers = {}; // Stores the selected answers by question index
 
   @override
   void initState() {
@@ -20,11 +20,12 @@ class _MCQStudentState extends State<MCQStudent> {
     _fetchQuiz();
   }
 
+  // Fetch quiz data from Firestore
   Future<void> _fetchQuiz() async {
     var quizDoc = await FirebaseFirestore.instance.collection('quiz').doc(widget.quizCode).get();
     if (quizDoc.exists) {
       setState(() {
-        _mcqs = quizDoc.data()?['mcqs'] ?? ''; // Assign the mcqs string directly
+        _mcqs = quizDoc.data()?['mcqs'] ?? ''; // Fetch the MCQs string from Firestore
       });
     } else {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Quiz not found.')));
@@ -41,13 +42,13 @@ class _MCQStudentState extends State<MCQStudent> {
           ? Center(child: CircularProgressIndicator())
           : Padding(
               padding: const EdgeInsets.all(16.0),
-              child: SingleChildScrollView( // Make the body scrollable
+              child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Quiz Questions:', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                     SizedBox(height: 20),
-                    _buildQuizView(_mcqs),
+                    _buildQuizView(_mcqs), // Build the quiz view from the string
                   ],
                 ),
               ),
@@ -55,42 +56,59 @@ class _MCQStudentState extends State<MCQStudent> {
     );
   }
 
-  // This method is responsible for displaying the questions and options from the string.
+  // This method builds the quiz view from the fetched string
   Widget _buildQuizView(String quizData) {
-    // Split the quiz data based on your format.
-    // For example, you could split it by 'Question' or some other delimiter.
-    // Here I am assuming each question is separated by a newline and options by ';'
-    List<String> questions = quizData.split('Question'); // Split by the word "Question"
-    
+    // Split the string by '##' to extract each question block
+    List<String> questionBlocks = quizData.split('##');
+
     return ListView.builder(
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(), // Disable internal scroll of ListView
-      itemCount: questions.length,
+      itemCount: questionBlocks.length,
       itemBuilder: (context, index) {
-        String question = questions[index].trim();
-        if (question.isEmpty) return SizedBox.shrink(); // Skip empty segments
+        String questionBlock = questionBlocks[index].trim();
+        if (questionBlock.isEmpty) return SizedBox.shrink(); // Skip empty segments
+
+        // Split by 'Correct Answer:' to separate options and correct answer
+        List<String> parts = questionBlock.split('Correct Answer:');
         
-        // Further splitting the question and options
-        List<String> parts = question.split(';');
-        String questionText = parts[0].trim(); // The question itself
-        List<String> options = parts.sublist(1).map((e) => e.trim()).toList(); // Options
+        // First part is the question with options
+        String questionWithOptions = parts[0].trim();
+        String correctAnswer = parts.length > 1 ? parts[1].trim() : '';
+
+        // Further split the question with options to extract the actual question and options
+        List<String> questionParts = questionWithOptions.split('Question:');
+        String questionText = questionParts[1].trim(); // The question text
+
+        // Regular expression to capture options starting with A), B), C), D)
+        RegExp regExp = RegExp(r'([A-D]\))\s([^\n]*)');
+        Iterable<RegExpMatch> matches = regExp.allMatches(questionText);
+
+        // Extract options from the matches
+        List<String> options = [];
+        for (var match in matches) {
+          options.add(match.group(2)?.trim() ?? '');
+        }
 
         return Padding(
           padding: const EdgeInsets.only(bottom: 20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('${index + 1}. $questionText', style: TextStyle(fontSize: 18)),
+              Text('Question ${index + 1}: $questionText', style: TextStyle(fontSize: 18)),
               ...options.map<Widget>((option) {
-                return RadioListTile(
-                  value: option,
-                  groupValue: _selectedAnswers[index],
-                  title: Text(option),
-                  onChanged: (value) {
-                    setState(() {
-                      _selectedAnswers[index] = value;
-                    });
-                  },
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 8.0), // Add space between options
+                  child: RadioListTile<String>(
+                    value: option,
+                    groupValue: _selectedAnswers[index], // Grouping by question index
+                    title: Text(option), // Display the option beside the radio button
+                    onChanged: (value) {
+                      setState(() {
+                        _selectedAnswers[index] = value;
+                      });
+                    },
+                  ),
                 );
               }).toList(),
             ],
