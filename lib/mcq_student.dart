@@ -80,9 +80,13 @@ class _MCQStudentState extends State<MCQStudent> {
         List<String> questionParts = questionWithOptions.split('Question:');
         String questionText = questionParts[1].trim(); // The question text
 
+        // Now extract options that appear after the '?' mark and exclude everything after the "Correct Answer:"
+        String questionAndOptions = questionText.split('?')[0]; // Question without the options part
+        String optionsPart = questionText.split('?')[1].trim(); // Options part after the question
+        
         // Regular expression to capture options starting with A), B), C), D)
         RegExp regExp = RegExp(r'([A-D]\))\s([^\n]*)');
-        Iterable<RegExpMatch> matches = regExp.allMatches(questionText);
+        Iterable<RegExpMatch> matches = regExp.allMatches(optionsPart);
 
         // Extract options from the matches
         List<String> options = [];
@@ -95,19 +99,30 @@ class _MCQStudentState extends State<MCQStudent> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Question ${index + 1}: $questionText', style: TextStyle(fontSize: 18)),
+              Text('Question ${index + 1}: $questionAndOptions?', style: TextStyle(fontSize: 18)),
               ...options.map<Widget>((option) {
+                String optionLetter = 'A)'; // Default option letter
+                if (options.indexOf(option) == 1) optionLetter = 'B)';
+                if (options.indexOf(option) == 2) optionLetter = 'C)';
+                if (options.indexOf(option) == 3) optionLetter = 'D)';
+
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 8.0), // Add space between options
-                  child: RadioListTile<String>(
-                    value: option,
-                    groupValue: _selectedAnswers[index], // Grouping by question index
-                    title: Text(option), // Display the option beside the radio button
-                    onChanged: (value) {
-                      setState(() {
-                        _selectedAnswers[index] = value;
-                      });
-                    },
+                  child: Row(
+                    children: [
+                      Text(optionLetter, style: TextStyle(fontSize: 16)), // Option letter on left
+                      SizedBox(width: 10), // Space between letter and radio button
+                      Radio<String>(
+                        value: option,
+                        groupValue: _selectedAnswers[index], // Grouping by question index
+                        onChanged: (value) {
+                          setState(() {
+                            _selectedAnswers[index] = value;
+                          });
+                        },
+                      ),
+                      Text(option, style: TextStyle(fontSize: 16)), // Option text on the right
+                    ],
                   ),
                 );
               }).toList(),
