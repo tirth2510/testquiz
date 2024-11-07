@@ -12,7 +12,9 @@ class MCQStudent extends StatefulWidget {
 
 class _MCQStudentState extends State<MCQStudent> {
   String _mcqs = ''; // Holds the raw MCQs string from Firestore
-  Map<int, dynamic> _selectedAnswers = {}; // Stores the selected answers by question index
+  Map<int, String?> _selectedAnswers = {}; // Stores the selected answers by question index
+  List<String> _correctAnswers = []; // Stores the correct answers for comparison
+  int _score = 0; // Track the user's score
 
   @override
   void initState() {
@@ -26,9 +28,31 @@ class _MCQStudentState extends State<MCQStudent> {
     if (quizDoc.exists) {
       setState(() {
         _mcqs = quizDoc.data()?['mcqs'] ?? ''; // Fetch the MCQs string from Firestore
+        _parseCorrectAnswers(); // Parse correct answers after loading the quiz
       });
     } else {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Quiz not found.')));
+    }
+  }
+
+  // This method parses the correct answers from the MCQ string
+  void _parseCorrectAnswers() {
+    List<String> questionBlocks = _mcqs.split('##');
+    
+    // Remove any empty trailing blocks
+    questionBlocks.removeWhere((block) => block.isEmpty);
+
+    for (var questionBlock in questionBlocks) {
+      if (questionBlock.isEmpty) continue;
+
+      List<String> parts = questionBlock.split('Correct Answer:');
+      String correctAnswer = parts.length > 1 ? parts[1].trim().toLowerCase() : '';
+      _correctAnswers.add(correctAnswer);
+    }
+
+    // Debugging check to ensure the number of correct answers matches the number of questions
+    if (_correctAnswers.length != questionBlocks.length) {
+      print('Error: The number of correct answers does not match the number of questions!');
     }
   }
 
@@ -67,17 +91,25 @@ class _MCQStudentState extends State<MCQStudent> {
   Widget _buildQuizView(String quizData) {
     List<String> questionBlocks = quizData.split('##');
 
+    // Remove any empty trailing blocks
+    questionBlocks.removeWhere((block) => block.isEmpty);
+
     return ListView.builder(
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
       itemCount: questionBlocks.length,
       itemBuilder: (context, index) {
+        // Ensure we're not going out of bounds of _correctAnswers
+        if (index >= _correctAnswers.length) {
+          return SizedBox.shrink(); // If the index is out of bounds, return an empty widget
+        }
+
         String questionBlock = questionBlocks[index].trim();
         if (questionBlock.isEmpty) return SizedBox.shrink(); // Skip empty segments
 
         List<String> parts = questionBlock.split('Correct Answer:');
         String questionWithOptions = parts[0].trim();
-        String correctAnswer = parts.length > 1 ? parts[1].trim() : '';
+        String correctAnswer = parts.length > 1 ? parts[1].trim().toLowerCase() : '';
 
         List<String> questionParts = questionWithOptions.split('Question:');
         String questionText = questionParts[1].trim();
@@ -116,6 +148,13 @@ class _MCQStudentState extends State<MCQStudent> {
                         onChanged: (value) {
                           setState(() {
                             _selectedAnswers[index] = value;
+                            // Normalize to lowercase and compare
+                            String selectedAnswer = value?.toLowerCase() ?? '';
+                            if (selectedAnswer == _correctAnswers[index]) {
+                              _score++;
+                            } else if (_selectedAnswers[index] != _correctAnswers[index] && selectedAnswer != _correctAnswers[index]) {
+                              // Do nothing if the answer is incorrect and was previously correct.
+                            }
                           });
                         },
                       ),
@@ -159,11 +198,30 @@ class _MCQStudentState extends State<MCQStudent> {
     );
   }
 
-  // Handle the submission of answers (you can implement further logic here)
+  // Handle the submission of answers and calculate the score
   void _submitAnswers() {
-    // You can perform any action here such as saving answers or navigating to another page
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Your answers have been submitted!')));
-    // Example: Navigate to a result page or back to the previous screen
-    // Navigator.pop(context); // If you want to go back
+    // Show the score in a pop-up
+    _showScorePopup();
+  }
+
+  // Function to show the score in a pop-up after submission
+  void _showScorePopup() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Your Score'),
+          content: Text('You scored $_score out of ${_correctAnswers.length}.'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+              },
+              child: Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
   }
 }
