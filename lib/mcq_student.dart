@@ -168,6 +168,7 @@ class _MCQStudentState extends State<MCQStudent> {
         _score++;
         print('Correct! Score: $_score');
       } else {
+        _score--;
         print('Incorrect. Score: $_score');
       }
     }
