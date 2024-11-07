@@ -8,6 +8,8 @@ import 'package:cloud_firestore/cloud_firestore.dart'; // Firebase Firestore
 import 'package:firebase_auth/firebase_auth.dart'; // Firebase Authentication
 import 'mcq_results.dart'; // Import the MCQResults screen
 import 'mcq_code.dart'; // Import the MCQCode screen
+import 'login.dart'; // Import your login page
+import 'quizzes.dart'; // Import the new quizzes page
 import 'dart:math'; // For generating random code
 
 class MCQGenerator extends StatefulWidget {
@@ -146,6 +148,14 @@ class _MCQGeneratorState extends State<MCQGenerator> {
     });
   }
 
+  Future<void> _logout() async {
+    await FirebaseAuth.instance.signOut();
+    Navigator.pushReplacement(
+      this.context,
+      MaterialPageRoute(builder: (context) => LoginPage()), // Navigate to login page
+    );
+  }
+
   void _deleteFile() {
     setState(() {
       _file = null; // Clear the selected file
@@ -160,6 +170,28 @@ class _MCQGeneratorState extends State<MCQGenerator> {
       key: _scaffoldKey,
       appBar: AppBar(
         title: Text('MCQ Generator'),
+        actions: [
+          PopupMenuButton<String>(
+            onSelected: (value) {
+              if (value == 'My quizzes') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => QuizzesPage()), // Navigate to quizzes page
+                );
+              } else if (value == 'Logout') {
+                _logout(); // Perform logout
+              }
+            },
+            itemBuilder: (BuildContext context) {
+              return {'My quizzes', 'Logout'}.map((String choice) {
+                return PopupMenuItem<String>(
+                  value: choice,
+                  child: Text(choice),
+                );
+              }).toList();
+            },
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -247,21 +279,6 @@ class _MCQGeneratorState extends State<MCQGenerator> {
                     onPressed: () => _generateMCQs(context),
                     child: Text('Generate MCQs'),
                   ),
-
-            SizedBox(height: 30),
-
-            // Removed Enter Code Button from here
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MCQCode(), // Navigate to MCQCode page
-                  ),
-                );
-              },
-              child: Text('Enter a Code'),
-            ),
           ],
         ),
       ),
