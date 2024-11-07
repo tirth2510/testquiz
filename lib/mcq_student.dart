@@ -41,13 +41,15 @@ class _MCQStudentState extends State<MCQStudent> {
           ? Center(child: CircularProgressIndicator())
           : Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Quiz Questions:', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                  SizedBox(height: 20),
-                  _buildQuizView(_mcqs),
-                ],
+              child: SingleChildScrollView( // Make the body scrollable
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Quiz Questions:', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                    SizedBox(height: 20),
+                    _buildQuizView(_mcqs),
+                  ],
+                ),
               ),
             ),
     );
@@ -62,6 +64,7 @@ class _MCQStudentState extends State<MCQStudent> {
     
     return ListView.builder(
       shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(), // Disable internal scroll of ListView
       itemCount: questions.length,
       itemBuilder: (context, index) {
         String question = questions[index].trim();
