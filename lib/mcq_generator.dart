@@ -50,103 +50,106 @@ class _MCQGeneratorState extends State<MCQGenerator> {
   }
 
   Future<void> _generateMCQs(BuildContext context) async {
+  setState(() {
+    _isLoading = true;
+  });
+
+  if (_file == null && (_textInput == null || _textInput!.isEmpty)) {
     setState(() {
-      _isLoading = true;
+      _isLoading = false; // Stop loading indicator
     });
+    _scaffoldKey.currentState?.showSnackBar(
+      SnackBar(content: Text('Please upload a file or enter text.')),
+    );
+    return;
+  }
 
-    if (_file == null && (_textInput == null || _textInput!.isEmpty)) {
-      setState(() {
-        _isLoading = false; // Stop loading indicator
-      });
-      _scaffoldKey.currentState?.showSnackBar(
-        SnackBar(content: Text('Please upload a file or enter text.')),
-      );
-      return;
-    }
-
-    // Get the current user's email from Firebase Authentication
-    User? user = FirebaseAuth.instance.currentUser;
-    if (user == null) {
-      setState(() {
-        _isLoading = false;
-      });
-      _scaffoldKey.currentState?.showSnackBar(
-        SnackBar(content: Text('Please log in to continue.')),
-      );
-      return;
-    }
-    String userEmail = user.email ?? 'Unknown';
-
-    var request = http.MultipartRequest('POST', Uri.parse('http://192.168.1.13:5000/generate'));
-
-    if (_file != null) {
-      request.files.add(await http.MultipartFile.fromPath(
-        'file',
-        _file!.path,
-        filename: basename(_file!.path),
-      ));
-    }
-
-    if (_textInput != null && _textInput!.isNotEmpty) {
-      request.fields['text'] = _textInput!;
-    }
-
-    request.fields['num_questions'] = _numQuestions.toString();
-    request.fields['difficulty'] = _difficultyLevel; // Add difficulty level to the request
-
-    try {
-      var response = await request.send();
-      if (response.statusCode == 200) {
-        var responseBody = await response.stream.bytesToString();
-        final Map<String, dynamic> jsonResponse = jsonDecode(responseBody);
-        String mcqs = jsonResponse['mcqs'];
-
-        String randomCode = _generateRandomCode();
-
-        // Get the current user's document reference in Firestore
-        var userDocRef = FirebaseFirestore.instance.collection('users').doc(userEmail);
-
-        // Create 'timepass' collection if it doesn't exist and store the random code
-        var timepassDocRef = userDocRef.collection('timepass').doc(randomCode);
-
-        await timepassDocRef.set({
-          'status': 'enabled', // Default status
-          'generated_by': userEmail, // Save the email of the logged-in user
-          'mcqs': mcqs, // Store the MCQs in the 'mcqs' field
-        });
-
-        // Create a separate 'quiz' collection and store the random code as document ID
-        var quizDocRef = FirebaseFirestore.instance.collection('quiz').doc(randomCode);
-
-        // Store only the mcqs and generated_by fields (no status field here)
-        await quizDocRef.set({
-          'generated_by': userEmail, // Save the email of the logged-in user
-          'mcqs': mcqs, // Store the MCQs in the 'mcqs' field
-        });
-
-        WidgetsBinding.instance.addPostFrameCallback((_) {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => MCQResults(
-                mcqs: mcqs,
-                randomCode: randomCode,
-              ),
-            ),
-          );
-        });
-      } else {
-        var responseBody = await response.stream.bytesToString();
-        print('Error: ${response.statusCode}, Details: $responseBody');
-      }
-    } catch (e) {
-      print('Failed to generate MCQs: $e');
-    }
-
+  // Get the current user's email from Firebase Authentication
+  User? user = FirebaseAuth.instance.currentUser;
+  if (user == null) {
     setState(() {
       _isLoading = false;
     });
+    _scaffoldKey.currentState?.showSnackBar(
+      SnackBar(content: Text('Please log in to continue.')),
+    );
+    return;
   }
+  String userEmail = user.email ?? 'Unknown';
+
+  var request = http.MultipartRequest('POST', Uri.parse('http://192.168.1.13:5000/generate'));
+
+  if (_file != null) {
+    request.files.add(await http.MultipartFile.fromPath(
+      'file',
+      _file!.path,
+      filename: basename(_file!.path),
+    ));
+  }
+
+  if (_textInput != null && _textInput!.isNotEmpty) {
+    request.fields['text'] = _textInput!;
+  }
+
+  request.fields['num_questions'] = _numQuestions.toString();
+  request.fields['difficulty'] = _difficultyLevel; // Add difficulty level to the request
+
+  try {
+    var response = await request.send();
+    if (response.statusCode == 200) {
+      var responseBody = await response.stream.bytesToString();
+      final Map<String, dynamic> jsonResponse = jsonDecode(responseBody);
+      String mcqs = jsonResponse['mcqs'];
+
+      String randomCode = _generateRandomCode();
+
+      // Get the current user's document reference in Firestore
+      var userDocRef = FirebaseFirestore.instance.collection('users').doc(userEmail);
+
+      // Store the random code in the 'timepass' sub-collection under the user's document
+      var timepassDocRef = userDocRef.collection('timepass').doc(randomCode);
+
+      await timepassDocRef.set({
+        'status': 'enabled', // Add 'status' field as 'enabled' here
+        'generated_by': userEmail, // Save the email of the logged-in user
+        'mcqs': mcqs, // Store the MCQs in the 'mcqs' field
+      });
+
+      // Create a separate 'quiz' collection and store the random code as document ID
+      var quizDocRef = FirebaseFirestore.instance.collection('quiz').doc(randomCode);
+
+      // Store 'status', 'mcqs', and 'generated_by' fields in the 'quiz' collection
+      await quizDocRef.set({
+        'status': 'enabled', // Add 'status' field as 'enabled' here as well
+        'generated_by': userEmail, // Save the email of the logged-in user
+        'mcqs': mcqs, // Store the MCQs in the 'mcqs' field
+      });
+
+      // Navigate to the MCQResults screen after successful submission
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MCQResults(
+              mcqs: mcqs,
+              randomCode: randomCode,
+            ),
+          ),
+        );
+      });
+    } else {
+      var responseBody = await response.stream.bytesToString();
+      print('Error: ${response.statusCode}, Details: $responseBody');
+    }
+  } catch (e) {
+    print('Failed to generate MCQs: $e');
+  }
+
+  setState(() {
+    _isLoading = false;
+  });
+}
+
 
   Future<void> _logout() async {
     await FirebaseAuth.instance.signOut();

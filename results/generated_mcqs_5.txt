@@ -1,39 +1,39 @@
 ## MCQ 1
 Question: What is a planet generally required to orbit?
-A) Another planet
+A) A moon
 B) A star, stellar remnant, or brown dwarf
-C) A moon
+C) Another planet
 D) An asteroid
 Correct Answer: B
 
 ## MCQ 2
-Question: How many planets are in our Solar System, according to the strictest definition?
-A) Six
-B) Seven
-C) Eight
-D) Nine
-Correct Answer: C
+Question: How many planets are in our Solar System according to the strictest definition?
+A) Nine
+B) Eight
+C) Ten
+D) Seven
+Correct Answer: B
 
 ## MCQ 3
-Question: Which of these is NOT a terrestrial planet?
-A) Mercury
-B) Venus
-C) Jupiter
-D) Mars
-Correct Answer: C
-
-## MCQ 4
 Question: What is the name of the leading theory of planet formation?
 A) The Big Bang Theory
 B) The Nebular Hypothesis
-C) The Planetary Accretion Theory
-D) The Stellar Evolution Theory
+C) The Planetary Collision Theory
+D) The Steady State Theory
 Correct Answer: B
 
-## MCQ 5
-Question:  What process describes the gradual accumulation of material driven by gravity, forming planets?
+## MCQ 4
+Question: What process leads to the growth of planets within a protoplanetary disk?
 A) Erosion
 B) Accretion
 C) Combustion
-D) Subduction
+D) Sublimation
 Correct Answer: B
+
+## MCQ 5
+Question: Which of these is NOT a terrestrial planet?
+A) Earth
+B) Mars
+C) Jupiter
+D) Mercury
+Correct Answer: C
