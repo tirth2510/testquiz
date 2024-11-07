@@ -20,14 +20,21 @@ class _QuizzesPageState extends State<QuizzesPage> {
   Future<void> _toggleStatus(String documentId, bool currentStatus) async {
     try {
       String userEmail = _currentUser?.email ?? '';
-      var docRef = FirebaseFirestore.instance
+      
+      // Update the status in the 'timepass' subcollection
+      var timepassDocRef = FirebaseFirestore.instance
           .collection('users')
           .doc(userEmail)
           .collection('timepass')
           .doc(documentId);
 
-      // Update the 'status' field in Firestore
-      await docRef.update({'status': currentStatus ? 'disabled' : 'enabled'});
+      await timepassDocRef.update({'status': currentStatus ? 'disabled' : 'enabled'});
+
+      // Update the status in the main 'quiz' collection
+      var quizDocRef = FirebaseFirestore.instance.collection('quiz').doc(documentId);
+
+      await quizDocRef.update({'status': currentStatus ? 'disabled' : 'enabled'});
+
     } catch (e) {
       print('Error updating status: $e');
     }
