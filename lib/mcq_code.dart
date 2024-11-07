@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart'; // Firestore
+import 'package:firebase_auth/firebase_auth.dart'; // Firebase Auth
 import 'mcq_student.dart'; // Import the MCQStudent screen
+import 'login.dart'; // Import the login screen
 
 class MCQCode extends StatefulWidget {
   @override
@@ -82,11 +84,41 @@ class _MCQCodeState extends State<MCQCode> {
     );
   }
 
+  // Function to handle logout
+  void _logout() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+      // Redirect the user to the login screen
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => LoginPage()), // Navigate to LoginPage (login.dart)
+      );
+    } catch (e) {
+      print('Error logging out: $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Enter Quiz Code'),
+        actions: [
+          // Popup menu with a logout option
+          PopupMenuButton<int>(
+            onSelected: (value) {
+              if (value == 1) {
+                _logout(); // Handle logout when option 1 is selected
+              }
+            },
+            itemBuilder: (context) => [
+              PopupMenuItem<int>(
+                value: 1,
+                child: Text('Logout'),
+              ),
+            ],
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
