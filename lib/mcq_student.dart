@@ -49,6 +49,13 @@ class _MCQStudentState extends State<MCQStudent> {
                     Text('Quiz Questions:', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                     SizedBox(height: 20),
                     _buildQuizView(_mcqs), // Build the quiz view from the string
+                    SizedBox(height: 20),
+                    Center(
+                      child: ElevatedButton(
+                        onPressed: _showSubmitDialog, // Call the function on press
+                        child: Text('Submit'),
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -58,37 +65,28 @@ class _MCQStudentState extends State<MCQStudent> {
 
   // This method builds the quiz view from the fetched string
   Widget _buildQuizView(String quizData) {
-    // Split the string by '##' to extract each question block
     List<String> questionBlocks = quizData.split('##');
 
     return ListView.builder(
       shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(), // Disable internal scroll of ListView
+      physics: NeverScrollableScrollPhysics(),
       itemCount: questionBlocks.length,
       itemBuilder: (context, index) {
         String questionBlock = questionBlocks[index].trim();
         if (questionBlock.isEmpty) return SizedBox.shrink(); // Skip empty segments
 
-        // Split by 'Correct Answer:' to separate options and correct answer
         List<String> parts = questionBlock.split('Correct Answer:');
-        
-        // First part is the question with options
         String questionWithOptions = parts[0].trim();
         String correctAnswer = parts.length > 1 ? parts[1].trim() : '';
 
-        // Further split the question with options to extract the actual question and options
         List<String> questionParts = questionWithOptions.split('Question:');
-        String questionText = questionParts[1].trim(); // The question text
+        String questionText = questionParts[1].trim();
+        String questionAndOptions = questionText.split('?')[0];
+        String optionsPart = questionText.split('?')[1].trim();
 
-        // Now extract options that appear after the '?' mark and exclude everything after the "Correct Answer:"
-        String questionAndOptions = questionText.split('?')[0]; // Question without the options part
-        String optionsPart = questionText.split('?')[1].trim(); // Options part after the question
-        
-        // Regular expression to capture options starting with A), B), C), D)
         RegExp regExp = RegExp(r'([A-D]\))\s([^\n]*)');
         Iterable<RegExpMatch> matches = regExp.allMatches(optionsPart);
 
-        // Extract options from the matches
         List<String> options = [];
         for (var match in matches) {
           options.add(match.group(2)?.trim() ?? '');
@@ -101,27 +99,27 @@ class _MCQStudentState extends State<MCQStudent> {
             children: [
               Text('Question ${index + 1}: $questionAndOptions?', style: TextStyle(fontSize: 18)),
               ...options.map<Widget>((option) {
-                String optionLetter = 'A)'; // Default option letter
+                String optionLetter = 'A)';
                 if (options.indexOf(option) == 1) optionLetter = 'B)';
                 if (options.indexOf(option) == 2) optionLetter = 'C)';
                 if (options.indexOf(option) == 3) optionLetter = 'D)';
 
                 return Padding(
-                  padding: const EdgeInsets.only(bottom: 8.0), // Add space between options
+                  padding: const EdgeInsets.only(bottom: 8.0),
                   child: Row(
                     children: [
-                      Text(optionLetter, style: TextStyle(fontSize: 16)), // Option letter on left
-                      SizedBox(width: 10), // Space between letter and radio button
+                      Text(optionLetter, style: TextStyle(fontSize: 16)),
+                      SizedBox(width: 10),
                       Radio<String>(
                         value: option,
-                        groupValue: _selectedAnswers[index], // Grouping by question index
+                        groupValue: _selectedAnswers[index],
                         onChanged: (value) {
                           setState(() {
                             _selectedAnswers[index] = value;
                           });
                         },
                       ),
-                      Text(option, style: TextStyle(fontSize: 16)), // Option text on the right
+                      Text(option, style: TextStyle(fontSize: 16)),
                     ],
                   ),
                 );
@@ -131,5 +129,41 @@ class _MCQStudentState extends State<MCQStudent> {
         );
       },
     );
+  }
+
+  // Function to show the confirmation dialog when the submit button is pressed
+  void _showSubmitDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Confirm Submission'),
+          content: Text('Are you sure you want to submit your answers?'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+              },
+              child: Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+                _submitAnswers(); // Call the submit function
+              },
+              child: Text('Submit'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  // Handle the submission of answers (you can implement further logic here)
+  void _submitAnswers() {
+    // You can perform any action here such as saving answers or navigating to another page
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Your answers have been submitted!')));
+    // Example: Navigate to a result page or back to the previous screen
+    // Navigator.pop(context); // If you want to go back
   }
 }
