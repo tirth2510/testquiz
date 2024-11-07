@@ -13,7 +13,7 @@ class MCQStudent extends StatefulWidget {
 class _MCQStudentState extends State<MCQStudent> {
   String _mcqs = ''; // Holds the raw MCQs string from Firestore
   Map<int, String?> _selectedAnswers = {}; // Stores the selected answers by question index
-  List<String> _correctAnswers = []; // Stores the correct answers for comparison
+  List<String> _correctAnswers = []; // Stores the correct answers for comparison (A, B, C, D)
   int _score = 0; // Track the user's score
 
   @override
@@ -47,6 +47,8 @@ class _MCQStudentState extends State<MCQStudent> {
 
       List<String> parts = questionBlock.split('Correct Answer:');
       String correctAnswer = parts.length > 1 ? parts[1].trim().toLowerCase() : '';
+      
+      // Store the correct answer as A, B, C, or D
       _correctAnswers.add(correctAnswer);
     }
 
@@ -146,17 +148,32 @@ class _MCQStudentState extends State<MCQStudent> {
                         value: option,
                         groupValue: _selectedAnswers[index],
                         onChanged: (value) {
-                          setState(() {
-                            _selectedAnswers[index] = value;
-                            // Normalize to lowercase and compare
-                            String selectedAnswer = value?.toLowerCase() ?? '';
-                            if (selectedAnswer == _correctAnswers[index]) {
-                              _score++;
-                            } else if (_selectedAnswers[index] != _correctAnswers[index] && selectedAnswer != _correctAnswers[index]) {
-                              // Do nothing if the answer is incorrect and was previously correct.
-                            }
-                          });
-                        },
+  setState(() {
+    if (value != null) {
+      _selectedAnswers[index] = value;
+
+      // Map the selected option to A, B, C, or D
+      String selectedLetter = '';
+      if (options.indexOf(value) == 0) selectedLetter = 'a';
+      if (options.indexOf(value) == 1) selectedLetter = 'b';
+      if (options.indexOf(value) == 2) selectedLetter = 'c';
+      if (options.indexOf(value) == 3) selectedLetter = 'd';
+
+      // Debug: print the selected answer and correct answer
+      print('Selected answer for Question ${index + 1}: $selectedLetter');
+      print('Correct answer for Question ${index + 1}: ${_correctAnswers[index]}');
+
+      // Compare selected letter with correct answer
+      if (selectedLetter == _correctAnswers[index]) {
+        _score++;
+        print('Correct! Score: $_score');
+      } else {
+        print('Incorrect. Score: $_score');
+      }
+    }
+  });
+}
+
                       ),
                       Text(option, style: TextStyle(fontSize: 16)),
                     ],
