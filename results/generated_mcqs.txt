@@ -1,206 +1,207 @@
 ## MCQ 1
-[Easy] Question: The word "planet" originates from which language?
-A) Latin
-B) Greek
-C) Roman
-D) Egyptian
+[Easy] Question: What is the stock market?
+A) A physical location where stocks are traded
+B) A network of exchanges where investors buy and sell shares of companies
+C) A type of savings account
+D) A government bond
 Correct Answer: B
 
 ## MCQ 2
-[Easy] Question: In antiquity, how many "planets" were recognized besides the Sun and Moon?
-A) Three
-B) Four
-C) Five
-D) Seven
-Correct Answer: C
+[Easy] Question:  What does "stock" represent?
+A) A loan to a company
+B) Ownership in a company
+C) A type of currency
+D) A government bond
+Correct Answer: B
 
 ## MCQ 3
-[Easy] Question:  What significant shift in astronomical understanding led to Earth being recognized as a planet?
-A) The invention of the telescope
-B) The discovery of exoplanets
-C) The adoption of heliocentrism
-D) The identification of the asteroid belt
-Correct Answer: C
+[Medium] Question: What is a stock exchange?
+A) A place where companies store their inventory
+B) A marketplace where stocks are bought and sold
+C) A government agency that regulates stocks
+D) A type of bank
+Correct Answer: B
 
 ## MCQ 4
-[Medium] Question: Uranus and Neptune are classified as:
-A) Terrestrial planets
-B) Gas giants
-C) Ice giants
-D) Dwarf planets
-Correct Answer: C
+[Hard] Question: What is an IPO (Initial Public Offering)?
+A) When a company's stock is available to the public for the first time
+B) When a company buys back its own shares
+C) When a company merges with another company
+D) When a company declares bankruptcy
+Correct Answer: A
 
 ## MCQ 5
-[Medium] Question:  Ceres is part of the:
-A) Kuiper belt
-B) Asteroid belt
-C) Oort cloud
-D) Inner solar system
-Correct Answer: B
+[Easy] Question: What is a "share"?
+A) A portion of ownership in a company
+B) A type of loan
+C) A type of bond
+D) A government security
+Correct Answer: A
 
 ## MCQ 6
-[Medium] Question: Which celestial body spurred the debate that led to the 2006 IAU definition of a planet?
-A) Pluto
-B) Ceres
-C) Eris
-D) Makemake
-Correct Answer: C
+[Medium] Question: What is a "bull market"?
+A) A market where stock prices are generally rising
+B) A market where stock prices are generally falling
+C) A market where stock prices are stable
+D) A market where only bulls are traded
+Correct Answer: A
 
 ## MCQ 7
-[Medium] Question: According to the 2006 IAU definition, how many planets are there in our solar system?
-A) Five
-B) Eight
-C) Nine
-D) Twelve
-Correct Answer: B
+[Medium] Question: What is a "bear market"?
+A) A market where stock prices are generally falling
+B) A market where stock prices are generally rising
+C) A market where stock prices are stable
+D) A market where only bears are traded
+Correct Answer: A
+
 
 ## MCQ 8
-[Hard] Question:  Some planetary scientists disagree with the IAU definition and include which other types of celestial bodies as planets?
-A) Only moons of other planets
-B) Only dwarf planets
-C) Dwarf planets and some rounded satellites
-D) All trans-Neptunian objects
-Correct Answer: C
+[Hard] Question: What is "market capitalization"?
+A) The total value of a company's outstanding shares
+B) The amount of cash a company has on hand
+C) The company's annual revenue
+D) The company's annual profit
+Correct Answer: A
 
 ## MCQ 9
-[Easy] Question:  Planets outside our solar system are called:
-A) Exoplanets
-B) Extrasolar planets
-C) Alien planets
-D) All of the above
-Correct Answer: D (While all technically correct, "Exoplanets" is the most commonly used and scientifically accepted term)
+[Easy] Question:  What is a "dividend"?
+A) A portion of a company's earnings paid to shareholders
+B) The interest paid on a bond
+C) The price of a stock
+D) A fee paid to a broker
+Correct Answer: A
 
 
 ## MCQ 10
-[Medium] Question:  "Hot Jupiters" are characterized by:
-A) Being much hotter than Jupiter
-B) Orbiting close to their stars
-C) Being made primarily of ice
-D) Having rings
-Correct Answer: B
-
+[Medium] Question: What is a "broker"?
+A) A person or firm that facilitates the buying and selling of stocks
+B) A person who manages a company's finances
+C) A government regulator of the stock market
+D) A type of investor
+Correct Answer: A
 
 ## MCQ 11
-[Hard] Question: The discovery of which celestial bodies has blurred the line between planets and stars?
-A) Brown dwarfs and large exoplanets
-B) Hot Jupiters and ice giants
-C) Dwarf planets and asteroids
-D) Comets and asteroids
+[Hard] Question: What is "short selling"?
+A) Borrowing shares, selling them, and hoping to buy them back at a lower price
+B) Buying shares and hoping they increase in value
+C) Selling shares you already own
+D) Buying and selling shares within the same day
 Correct Answer: A
 
 ## MCQ 12
-[Easy] Question: What does the habitable zone refer to?
-A) The region around a star where conditions are right for liquid water
-B) The area on a planet's surface with the most life
-C) The part of the galaxy most likely to contain life
-D) The atmosphere of a planet
+[Easy] Question: What does "volume" refer to in the stock market?
+A) The number of shares traded
+B) The price of a stock
+C) The size of a company
+D) The amount of news about a company
 Correct Answer: A
 
 ## MCQ 13
-[Easy] Question:  Which planet is the only one currently known to support life?
-A) Mars
-B) Earth
-C) Venus
-D) Jupiter
-Correct Answer: B
+[Medium] Question:  What is a "stock index"?
+A) A measurement of the performance of a group of stocks
+B) A list of all stocks traded on a particular exchange
+C) A type of bond
+D) A type of mutual fund
+Correct Answer: A
+
 
 ## MCQ 14
-[Medium] Question: The ancient Greeks considered which two celestial bodies as "wanderers"?
-A) Earth and Mars
-B) Sun and Moon
-C) Jupiter and Saturn
-D) Mercury and Venus
-Correct Answer: B
-
+[Hard] Question: What is "volatility" in the stock market?
+A) The degree of price fluctuation of a stock or the market as a whole
+B) The average price of a stock over a period of time
+C) The number of shares traded in a day
+D) The stability of a company's earnings
+Correct Answer: A
 
 ## MCQ 15
-[Medium] Question: The five points of light visible to the naked eye that the ancient Greeks called planets were:
-A) Mercury, Venus, Mars, Jupiter, Uranus
-B) Venus, Mars, Jupiter, Saturn, Neptune
-C) Mercury, Venus, Mars, Jupiter, Saturn
-D) Mars, Jupiter, Saturn, Uranus, Neptune
-Correct Answer: C
-
+[Easy] Question: What is a "ticker symbol"?
+A) A short abbreviation used to identify a particular stock
+B) A graph showing the price history of a stock
+C) A news report about a company
+D) A type of financial statement
+Correct Answer: A
 
 ## MCQ 16
-[Hard] Question: What does the term geocentrism refer to?
-A) Earth being the center of the solar system
-B) Earth being the center of the galaxy
-C) Earth being the center of the universe
-D) The study of Earth's geology
-Correct Answer: C (While A is also technically correct within the context of our solar system, geocentrism historically referred to the universe as a whole.)
+[Medium] Question: What is "market correction"?
+A) A decline of 10% or more in the stock market from its recent high
+B) A rise of 10% or more in the stock market from its recent low
+C) A period of stable stock prices
+D) A period of high volatility
+Correct Answer: A
 
 
 ## MCQ 17
-[Easy] Question: Pluto is now classified as a:
-A) Planet
-B) Dwarf planet
-C) Asteroid
-D) Comet
-Correct Answer: B
+[Hard] Question:  What is "dollar-cost averaging"?
+A) Investing a fixed amount of money at regular intervals regardless of price
+B) Investing all your money at once
+C) Investing only when the market is down
+D) Investing only when the market is up
+Correct Answer: A
 
 ## MCQ 18
-[Medium]  Question: The Kuiper belt is a collection of:
-A) Rocky bodies
-B) Icy bodies
-C) Gaseous bodies
-D) Metallic bodies
-Correct Answer: B
+[Easy] Question:  What is a "portfolio"?
+A) A collection of investments held by an individual or institution
+B) A type of stock
+C) A type of bond
+D) A financial statement
+Correct Answer: A
+
 
 ## MCQ 19
-[Easy] Question: What instrument expanded our understanding of the solar system and beyond?
-A) Microscope
-B) Telescope
-C) Spectrometer
-D) Radio telescope
-Correct Answer: B
+[Medium] Question:  What is "diversification" in investing?
+A) Spreading investments across different asset classes to reduce risk
+B) Investing all your money in one stock
+C) Investing only in high-risk stocks
+D) Investing only in low-risk bonds
+Correct Answer: A
+
 
 ## MCQ 20
-[Hard]  Question:  HD 20782 b is mentioned in the text as an example of an exoplanet with:
-A) A close orbit to its star
-B) An extremely eccentric orbit
-C) A ring system
-D) Multiple moons
-Correct Answer: B
-
+[Hard] Question: What is a "circuit breaker" in the stock market?
+A) A temporary halt in trading designed to curb panic selling
+B) A type of stock index
+C) A type of investment strategy
+D) A government regulation on stock prices
+Correct Answer: A
 
 ## MCQ 21
-[Easy]  Question:  What is 51 Pegasi b an example of?
-A) A hot Jupiter
-B) A brown dwarf
-C) A dwarf planet
-D) An asteroid
+[Easy] Question:  What does "bid" price represent?
+A) The highest price a buyer is willing to pay for a stock
+B) The lowest price a seller is willing to accept for a stock
+C) The last traded price of a stock
+D) The average price of a stock
 Correct Answer: A
 
 ## MCQ 22
-[Medium] Question:  Historically, planets have been associated with:
-A) Religion and mythology
-B) Science and technology
-C) Art and literature
-D) All of the above
+[Medium] Question: What does "ask" price represent?
+A) The lowest price a seller is willing to accept for a stock
+B) The highest price a buyer is willing to pay for a stock
+C) The last traded price of a stock
+D) The average price of a stock
 Correct Answer: A
 
 
 ## MCQ 23
-[Hard] Question: The debate on the definition of a planet primarily revolves around:
-A) Size and composition
-B) Orbit and gravitational dominance
-C) Distance from the star and temperature
-D) Presence or absence of an atmosphere
-Correct Answer: B
+[Hard] Question: What is "insider trading"?
+A) Illegal trading of a company's stock by someone with non-public information
+B) Legal trading of a company's stock by its employees
+C) Buying and selling stocks based on publicly available information
+D) Analyzing financial statements to make investment decisions
+Correct Answer: A
+
 
 ## MCQ 24
-[Medium] Question: The IAU stands for:
-A) International Astronomical Union
-B) International Astrophysical Union
-C) Incorporated Astronomical Union
-D) Institute of Astronomical Understanding
+[Easy] Question: What is a "mutual fund"?
+A) A professionally managed investment vehicle that pools money from many investors to purchase securities.
+B) A type of individual stock
+C) A type of bond
+D) A government security
 Correct Answer: A
 
 ## MCQ 25
-[Easy] Question: The text suggests that the meaning of "planet" has:
-A) Remained constant throughout history
-B) Changed and evolved over time
-C) Become less important in modern astronomy
-D) Only been clearly defined in recent times
-Correct Answer: B
+[Medium] Question: What is an ETF (Exchange Traded Fund)?
+A) A type of investment fund that is traded on a stock exchange, typically tracking a specific index.
+B) A type of individual stock
+C) A type of bond
+D) A government security
+Correct Answer: A

@@ -3,6 +3,7 @@ import 'dart:convert'; // For JSON decoding
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:http/http.dart' as http;
+import 'package:mcqapp/quiz_attempt.dart';
 import 'package:path/path.dart';
 import 'package:cloud_firestore/cloud_firestore.dart'; // Firebase Firestore
 import 'package:firebase_auth/firebase_auth.dart'; // Firebase Authentication
@@ -10,6 +11,7 @@ import 'mcq_results.dart'; // Import the MCQResults screen
 import 'mcq_code.dart'; // Import the MCQCode screen
 import 'login.dart'; // Import your login page
 import 'quizzes.dart'; // Import the new quizzes page
+import 'quiz_attempt.dart'; // Import the new QuizAttempt screen
 import 'dart:math'; // For generating random code
 
 class MCQGenerator extends StatefulWidget {
@@ -241,6 +243,24 @@ class _MCQGeneratorState extends State<MCQGenerator> {
                     onPressed: () => _generateMCQs(context),
                     child: Text('Generate MCQs'),
                   ),
+
+            SizedBox(height: 30),
+
+            // Button to attempt quiz
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => QuizAttempt(
+                      userEmail: FirebaseAuth.instance.currentUser!.email ?? 'Unknown', // Pass current user's email
+                      quizId: 'VNZVEG', // The specified quiz document ID
+                    ),
+                  ),
+                );
+              },
+              child: Text('Attempt Quiz'),
+            ),
           ],
         ),
       ),
