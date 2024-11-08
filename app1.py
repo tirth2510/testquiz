@@ -46,7 +46,7 @@ def parse_mcqs_text(mcqs_text):
     
     return mcqs
 
-@app.route('/fetch_quiz/<quiz_id>', methods=['GET'])
+@app.route('/fetch_quiz//<user_email>/<quiz_id>', methods=['GET'])
 def fetch_quiz(user_email, quiz_id):
     try:
         # Access MCQs from Firebase
