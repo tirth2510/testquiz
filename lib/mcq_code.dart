@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart'; // Firestore
 import 'package:firebase_auth/firebase_auth.dart'; // Firebase Auth
-import 'mcq_student.dart'; // Import the MCQStudent screen
+import 'quiz_attempt.dart'; // Import the QuizAttempt screen
 import 'login.dart'; // Import the login screen
 
 class MCQCode extends StatefulWidget {
@@ -21,11 +21,14 @@ class _MCQCodeState extends State<MCQCode> {
       if (quizDoc.exists) {
         // Check if the 'status' field is 'enabled'
         if (quizDoc['status'] == 'enabled') {
-          // Redirect to MCQStudent screen
+          // Redirect to QuizAttempt screen with the quiz code
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => MCQStudent(quizCode: code),
+              builder: (context) => QuizAttempt(
+                userEmail: FirebaseAuth.instance.currentUser!.email ?? '',
+                quizId: code, // Pass the entered code as quizId
+              ),
             ),
           );
         } else {
