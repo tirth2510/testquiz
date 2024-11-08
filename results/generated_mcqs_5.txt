@@ -1,39 +1,39 @@
 ## MCQ 1
-Question: What is a planet generally required to orbit?
-A) A moon
-B) A star, stellar remnant, or brown dwarf
-C) Another planet
-D) An asteroid
+Question: What is the main purpose of mutation testing?
+A) To fix bugs in the original program
+B) To evaluate the effectiveness of test cases
+C) To introduce new features into the software
+D) To measure the execution time of the program
 Correct Answer: B
 
 ## MCQ 2
-Question: How many planets are in our Solar System according to the strictest definition?
-A) Nine
-B) Eight
-C) Ten
-D) Seven
+Question: What is a "killed" mutant?
+A) A mutant that causes the original program to crash
+B) A mutant that is detected by a failing test case
+C) A mutant that is not detected by any test case
+D) A mutant that is removed from the program
 Correct Answer: B
 
 ## MCQ 3
-Question: What is the name of the leading theory of planet formation?
-A) The Big Bang Theory
-B) The Nebular Hypothesis
-C) The Planetary Collision Theory
-D) The Steady State Theory
-Correct Answer: B
+Question: Which type of mutation testing focuses on changing logical operators?
+A) Statement Mutation Testing
+B) Value Mutation Testing
+C) Logical Mutation Testing
+D) Industry Trend Mutation Testing
+Correct Answer: C
 
 ## MCQ 4
-Question: What process leads to the growth of planets within a protoplanetary disk?
-A) Erosion
-B) Accretion
-C) Combustion
-D) Sublimation
-Correct Answer: B
+Question:  What is the starting point in mutation testing?
+A) The mutated program (P')
+B) The test cases (T)
+C) The original program (P)
+D) The live mutants analysis
+Correct Answer: C
 
 ## MCQ 5
-Question: Which of these is NOT a terrestrial planet?
-A) Earth
-B) Mars
-C) Jupiter
-D) Mercury
+Question: According to the text, in which industry is mutation testing considered particularly important due to the critical nature of software reliability?
+A) E-commerce
+B) Social Media
+C) Healthcare
+D) Gaming
 Correct Answer: C

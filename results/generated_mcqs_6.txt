@@ -1,0 +1,52 @@
+## MCQ 1
+Question: What is the primary purpose of mutation testing?
+A) To optimize the performance of the original program.
+B) To evaluate the effectiveness of test cases.
+C) To introduce bugs into the code to make it more resilient.
+D) To measure the code coverage of the test suite.
+Correct Answer: B
+
+
+## MCQ 2
+Question: Which type of mutation testing focuses on changing logical operators in conditional statements?
+A) Statement Mutation Testing
+B) Value Mutation Testing
+C) Logical Mutation Testing
+D) Program Mutation Testing
+Correct Answer: C
+
+
+## MCQ 3
+Question:  A mutant is considered "killed" when:
+A) A test case passes against the mutated program.
+B) A test case fails against the mutated program.
+C) The mutated program compiles without errors.
+D) The original program passes all test cases.
+Correct Answer: B
+
+
+## MCQ 4
+Question: According to the text, mutation testing can be beneficial during which software development activity?
+A) Requirements gathering
+B) Code reviews
+C) Deployment
+D) User acceptance testing
+Correct Answer: B
+
+
+## MCQ 5
+Question:  Which industry application of mutation testing is mentioned in relation to trajectory calculations?
+A) Healthcare Systems
+B) Financial Systems
+C) Defense Systems
+D) E-commerce Platforms
+Correct Answer: C
+
+
+## MCQ 6
+Question: What does mutation testing help identify besides weak test cases?
+A)  Unused code blocks
+B) Redundant test cases
+C) Performance bottlenecks
+D) Security vulnerabilities
+Correct Answer: B
