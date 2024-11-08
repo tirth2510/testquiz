@@ -1,39 +1,39 @@
 ## MCQ 1
-Question: What is the main purpose of mutation testing?
-A) To fix bugs in the original program
-B) To evaluate the effectiveness of test cases
-C) To introduce new features into the software
-D) To measure the execution time of the program
+Question: The word "planet" originates from which language?
+A) Latin
+B) Greek
+C) Roman
+D) Egyptian
 Correct Answer: B
 
 ## MCQ 2
-Question: What is a "killed" mutant?
-A) A mutant that causes the original program to crash
-B) A mutant that is detected by a failing test case
-C) A mutant that is not detected by any test case
-D) A mutant that is removed from the program
-Correct Answer: B
-
-## MCQ 3
-Question: Which type of mutation testing focuses on changing logical operators?
-A) Statement Mutation Testing
-B) Value Mutation Testing
-C) Logical Mutation Testing
-D) Industry Trend Mutation Testing
+Question: In ancient times, how many "planets" were recognized besides the Sun and Moon?
+A) Three
+B) Four
+C) Five
+D) Seven
 Correct Answer: C
 
+## MCQ 3
+Question: What scientific shift led to Earth being recognized as a planet?
+A) Geocentrism to Heliocentrism
+B) Heliocentrism to Geocentrism
+C) The invention of the astrolabe
+D) The discovery of Neptune
+Correct Answer: A
+
 ## MCQ 4
-Question:  What is the starting point in mutation testing?
-A) The mutated program (P')
-B) The test cases (T)
-C) The original program (P)
-D) The live mutants analysis
+Question: Which of these is NOT a type of planet mentioned in the text?
+A) Terrestrial planets
+B) Giant planets
+C) Gaseous planets
+D) Dwarf planets
 Correct Answer: C
 
 ## MCQ 5
-Question: According to the text, in which industry is mutation testing considered particularly important due to the critical nature of software reliability?
-A) E-commerce
-B) Social Media
-C) Healthcare
-D) Gaming
+Question: Besides Earth, are there other planets known to support life?
+A) Yes, many exoplanets support life.
+B) Yes, Mars supports life.
+C) No, Earth is the only planet currently known to support life.
+D) Maybe, scientists are still researching.
 Correct Answer: C

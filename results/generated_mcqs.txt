@@ -1,0 +1,206 @@
+## MCQ 1
+[Easy] Question: The word "planet" originates from which language?
+A) Latin
+B) Greek
+C) Roman
+D) Egyptian
+Correct Answer: B
+
+## MCQ 2
+[Easy] Question: In antiquity, how many "planets" were recognized besides the Sun and Moon?
+A) Three
+B) Four
+C) Five
+D) Seven
+Correct Answer: C
+
+## MCQ 3
+[Easy] Question:  What significant shift in astronomical understanding led to Earth being recognized as a planet?
+A) The invention of the telescope
+B) The discovery of exoplanets
+C) The adoption of heliocentrism
+D) The identification of the asteroid belt
+Correct Answer: C
+
+## MCQ 4
+[Medium] Question: Uranus and Neptune are classified as:
+A) Terrestrial planets
+B) Gas giants
+C) Ice giants
+D) Dwarf planets
+Correct Answer: C
+
+## MCQ 5
+[Medium] Question:  Ceres is part of the:
+A) Kuiper belt
+B) Asteroid belt
+C) Oort cloud
+D) Inner solar system
+Correct Answer: B
+
+## MCQ 6
+[Medium] Question: Which celestial body spurred the debate that led to the 2006 IAU definition of a planet?
+A) Pluto
+B) Ceres
+C) Eris
+D) Makemake
+Correct Answer: C
+
+## MCQ 7
+[Medium] Question: According to the 2006 IAU definition, how many planets are there in our solar system?
+A) Five
+B) Eight
+C) Nine
+D) Twelve
+Correct Answer: B
+
+## MCQ 8
+[Hard] Question:  Some planetary scientists disagree with the IAU definition and include which other types of celestial bodies as planets?
+A) Only moons of other planets
+B) Only dwarf planets
+C) Dwarf planets and some rounded satellites
+D) All trans-Neptunian objects
+Correct Answer: C
+
+## MCQ 9
+[Easy] Question:  Planets outside our solar system are called:
+A) Exoplanets
+B) Extrasolar planets
+C) Alien planets
+D) All of the above
+Correct Answer: D (While all technically correct, "Exoplanets" is the most commonly used and scientifically accepted term)
+
+
+## MCQ 10
+[Medium] Question:  "Hot Jupiters" are characterized by:
+A) Being much hotter than Jupiter
+B) Orbiting close to their stars
+C) Being made primarily of ice
+D) Having rings
+Correct Answer: B
+
+
+## MCQ 11
+[Hard] Question: The discovery of which celestial bodies has blurred the line between planets and stars?
+A) Brown dwarfs and large exoplanets
+B) Hot Jupiters and ice giants
+C) Dwarf planets and asteroids
+D) Comets and asteroids
+Correct Answer: A
+
+## MCQ 12
+[Easy] Question: What does the habitable zone refer to?
+A) The region around a star where conditions are right for liquid water
+B) The area on a planet's surface with the most life
+C) The part of the galaxy most likely to contain life
+D) The atmosphere of a planet
+Correct Answer: A
+
+## MCQ 13
+[Easy] Question:  Which planet is the only one currently known to support life?
+A) Mars
+B) Earth
+C) Venus
+D) Jupiter
+Correct Answer: B
+
+## MCQ 14
+[Medium] Question: The ancient Greeks considered which two celestial bodies as "wanderers"?
+A) Earth and Mars
+B) Sun and Moon
+C) Jupiter and Saturn
+D) Mercury and Venus
+Correct Answer: B
+
+
+## MCQ 15
+[Medium] Question: The five points of light visible to the naked eye that the ancient Greeks called planets were:
+A) Mercury, Venus, Mars, Jupiter, Uranus
+B) Venus, Mars, Jupiter, Saturn, Neptune
+C) Mercury, Venus, Mars, Jupiter, Saturn
+D) Mars, Jupiter, Saturn, Uranus, Neptune
+Correct Answer: C
+
+
+## MCQ 16
+[Hard] Question: What does the term geocentrism refer to?
+A) Earth being the center of the solar system
+B) Earth being the center of the galaxy
+C) Earth being the center of the universe
+D) The study of Earth's geology
+Correct Answer: C (While A is also technically correct within the context of our solar system, geocentrism historically referred to the universe as a whole.)
+
+
+## MCQ 17
+[Easy] Question: Pluto is now classified as a:
+A) Planet
+B) Dwarf planet
+C) Asteroid
+D) Comet
+Correct Answer: B
+
+## MCQ 18
+[Medium]  Question: The Kuiper belt is a collection of:
+A) Rocky bodies
+B) Icy bodies
+C) Gaseous bodies
+D) Metallic bodies
+Correct Answer: B
+
+## MCQ 19
+[Easy] Question: What instrument expanded our understanding of the solar system and beyond?
+A) Microscope
+B) Telescope
+C) Spectrometer
+D) Radio telescope
+Correct Answer: B
+
+## MCQ 20
+[Hard]  Question:  HD 20782 b is mentioned in the text as an example of an exoplanet with:
+A) A close orbit to its star
+B) An extremely eccentric orbit
+C) A ring system
+D) Multiple moons
+Correct Answer: B
+
+
+## MCQ 21
+[Easy]  Question:  What is 51 Pegasi b an example of?
+A) A hot Jupiter
+B) A brown dwarf
+C) A dwarf planet
+D) An asteroid
+Correct Answer: A
+
+## MCQ 22
+[Medium] Question:  Historically, planets have been associated with:
+A) Religion and mythology
+B) Science and technology
+C) Art and literature
+D) All of the above
+Correct Answer: A
+
+
+## MCQ 23
+[Hard] Question: The debate on the definition of a planet primarily revolves around:
+A) Size and composition
+B) Orbit and gravitational dominance
+C) Distance from the star and temperature
+D) Presence or absence of an atmosphere
+Correct Answer: B
+
+## MCQ 24
+[Medium] Question: The IAU stands for:
+A) International Astronomical Union
+B) International Astrophysical Union
+C) Incorporated Astronomical Union
+D) Institute of Astronomical Understanding
+Correct Answer: A
+
+## MCQ 25
+[Easy] Question: The text suggests that the meaning of "planet" has:
+A) Remained constant throughout history
+B) Changed and evolved over time
+C) Become less important in modern astronomy
+D) Only been clearly defined in recent times
+Correct Answer: B

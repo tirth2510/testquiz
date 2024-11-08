@@ -47,18 +47,17 @@ def extract_text_from_file(file_path):
             return f.read()
     return None
 
-def Question_mcqs_generator(input_text, num_questions, difficulty):
-    # Adjust the prompt based on difficulty level
+def Question_mcqs_generator(input_text, num_questions):
     prompt = f"""
     You are an AI assistant helping the user generate multiple-choice questions (MCQs) based on the following text:
     '{input_text}'
-    Please generate {num_questions} MCQs with '{difficulty}' difficulty level from the text. Each question should have:
-    - A clear question
+    Please generate 25 MCQs from the text with each question tagged as Easy, Medium, or Hard. Each question should have:
+    - A clear question with the difficulty level indicated at the start (e.g., [Easy], [Medium], [Hard])
     - Four answer options (labeled A, B, C, D)
     - The correct answer clearly indicated
     Format:
-    ## MCQ {num_questions}
-    Question: [question]
+    ## MCQ 1
+    [Difficulty Level] Question: [question]
     A) [option A]
     B) [option B]
     C) [option C]
@@ -68,15 +67,13 @@ def Question_mcqs_generator(input_text, num_questions, difficulty):
     response = model.generate_content(prompt).text.strip()
     return response
 
-def save_mcqs_to_file(mcqs, num_questions):
-    # Save as .txt file
-    txt_filename = f"generated_mcqs_{num_questions}.txt"
+def save_mcqs_to_file(mcqs):
+    txt_filename = "generated_mcqs.txt"
     txt_filepath = os.path.join(app.config['RESULTS_FOLDER'], txt_filename)
     with open(txt_filepath, 'w', encoding='utf-8') as f:
         f.write(mcqs)
     
-    # Save as .pdf file
-    pdf_filename = f"generated_mcqs_{num_questions}.pdf"
+    pdf_filename = "generated_mcqs.pdf"
     pdf_filepath = os.path.join(app.config['RESULTS_FOLDER'], pdf_filename)
     pdf = FPDF()
     pdf.add_page()
@@ -84,50 +81,38 @@ def save_mcqs_to_file(mcqs, num_questions):
     pdf.set_font("Arial", size=12)
 
     try:
-        print("Generated MCQs:", mcqs)  # Log the generated MCQs
         pdf.multi_cell(0, 10, mcqs)
         pdf.output(pdf_filepath)
         print(f"PDF saved successfully to {pdf_filepath}")
     except Exception as e:
         print(f"Error generating PDF: {e}")
-        return txt_filepath, None  # Return None for the PDF path in case of failure
+        return txt_filepath, None
 
     return txt_filepath, pdf_filepath
 
 @app.route('/generate', methods=['POST'])
 def generate_mcqs():
-    # Check if a file is included in the request
     file = request.files.get('file')
-
-    # Extract text from the uploaded file if present
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
         file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(file_path)
 
-        # Extract text from the uploaded file
         text = extract_text_from_file(file_path)
         if text is None or text.strip() == "":
             return "Error extracting text from file or empty file", 500
     else:
-        # If no file is uploaded, check for manual text input
         text = request.form.get('text')
         if not text or text.strip() == "":
-            return "No text input provided", 400  # Adjusted error message
+            return "No text input provided", 400
 
     try:
-        num_questions = int(request.form.get('num_questions', 1))  # Default to 1 if not provided
-        difficulty = request.form.get('difficulty', 'Easy')  # Default to 'Easy'
-        mcqs = Question_mcqs_generator(text, num_questions, difficulty)
+        mcqs = Question_mcqs_generator(text, 25)  # Set to generate 25 questions
+        txt_filepath, pdf_filepath = save_mcqs_to_file(mcqs)
 
-        # Save the generated MCQs to both .txt and .pdf
-        txt_filepath, pdf_filepath = save_mcqs_to_file(mcqs, num_questions)
-
-        # Store the MCQs and file paths in Firestore
         doc_ref = db.collection('mcq_results').add({
             'mcqs': mcqs,
-            'num_questions': num_questions,
-            'difficulty': difficulty,
+            'num_questions': 25,
             'txt_file': txt_filepath,
             'pdf_file': pdf_filepath,
             'timestamp': firestore.SERVER_TIMESTAMP
@@ -140,13 +125,7 @@ def generate_mcqs():
 
 @app.route('/download/<file_type>/<filename>', methods=['GET'])
 def download_file(file_type, filename):
-    if file_type == 'txt':
-        folder = app.config['RESULTS_FOLDER']
-    elif file_type == 'pdf':
-        folder = app.config['RESULTS_FOLDER']
-    else:
-        return "Invalid file type", 400
-
+    folder = app.config['RESULTS_FOLDER']
     file_path = os.path.join(folder, filename)
     if os.path.exists(file_path):
         return send_file(file_path, as_attachment=True)
