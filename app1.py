@@ -46,11 +46,11 @@ def parse_mcqs_text(mcqs_text):
     
     return mcqs
 
-@app.route('/fetch_quiz/<user_email>/<quiz_id>', methods=['GET'])
+@app.route('/fetch_quiz/<quiz_id>', methods=['GET'])
 def fetch_quiz(user_email, quiz_id):
     try:
         # Access MCQs from Firebase
-        user_doc_ref = db.collection('users').document(user_email).collection('timepass').document(quiz_id)
+        user_doc_ref = db.collection('quiz').document(quiz_id)
         doc = user_doc_ref.get()
         
         if doc.exists:
