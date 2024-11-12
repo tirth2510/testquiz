@@ -14,11 +14,14 @@ class QuizAttempt extends StatefulWidget {
 }
 
 class _QuizAttemptState extends State<QuizAttempt> {
+  List<dynamic> _allQuestions = [];
   List<dynamic> _questions = [];
+  Set<int> _askedQuestions = {}; // To track questions that have already been asked
   int _currentQuestionIndex = 0;
   bool _isLoading = true;
   int? _selectedOption;
   int _score = 0;
+  int _totalAnswered = 0;
 
   @override
   void initState() {
@@ -33,8 +36,10 @@ class _QuizAttemptState extends State<QuizAttempt> {
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
       setState(() {
-        // Limit to the first 10 questions only
-        _questions = (data['mcqs'] as List).take(10).toList();
+        _allQuestions = data['mcqs'];
+        // Initialize with 5 easy questions
+        _questions = _allQuestions.where((q) => q['difficulty'] == 'Easy').take(5).toList();
+        _askedQuestions.addAll(_questions.map((q) => _allQuestions.indexOf(q))); // Mark initial 5 as asked
         _isLoading = false;
       });
     } else {
@@ -52,6 +57,7 @@ class _QuizAttemptState extends State<QuizAttempt> {
       return;
     }
 
+    // Check if the selected answer is correct
     final correctAnswer = _questions[_currentQuestionIndex]['correctAnswer'];
     final selectedAnswer = _questions[_currentQuestionIndex]['options'][_selectedOption!][0];
 
@@ -59,15 +65,45 @@ class _QuizAttemptState extends State<QuizAttempt> {
       _score++;
     }
 
-    print("Current Score: $_score");
+    _totalAnswered++;
+
+    print("Current Score: $_score / $_totalAnswered");
+
+    // Determine the score percentage for difficulty selection
+    double scoreRatio = _score / _totalAnswered;
+    String nextDifficulty;
+
+    if (_totalAnswered >= 5 && _totalAnswered < 10) {
+      // Dynamic difficulty selection based on score ratio after the first 5 questions
+      if (scoreRatio <= 0.33) {
+        nextDifficulty = 'Easy';
+      } else if (scoreRatio <= 0.66) {
+        nextDifficulty = 'Medium';
+      } else {
+        nextDifficulty = 'Hard';
+      }
+
+      // Try to find a question of the desired difficulty that hasn't been asked
+      List<dynamic> nextQuestions = _allQuestions.where((q) => q['difficulty'] == nextDifficulty && !_askedQuestions.contains(_allQuestions.indexOf(q))).toList();
+
+      if (nextQuestions.isEmpty) {
+        // Fallback if no question of the desired difficulty is left
+        nextQuestions = _allQuestions.where((q) => !_askedQuestions.contains(_allQuestions.indexOf(q))).toList();
+      }
+
+      if (nextQuestions.isNotEmpty) {
+        _questions.add(nextQuestions.first);
+        _askedQuestions.add(_allQuestions.indexOf(nextQuestions.first));
+      }
+    }
 
     if (_currentQuestionIndex < _questions.length - 1) {
       setState(() {
         _currentQuestionIndex++;
-        _selectedOption = null;
+        _selectedOption = null; // Reset selected option for the new question
       });
     } else {
-      _showFinalScoreDialog();
+      _showFinalScoreDialog(); // Show the final score dialog if last question is answered
     }
   }
 
@@ -200,24 +236,21 @@ class _QuizAttemptState extends State<QuizAttempt> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Progress Indicator
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
                   child: LinearProgressIndicator(
-                    value: (_currentQuestionIndex + 1) / _questions.length,
+                    value: (_currentQuestionIndex + 1) / 10, // Show progress out of 10 questions
                     backgroundColor: Colors.grey[300],
                     color: Colors.orange,
                   ),
                 ),
                 SizedBox(width: 10),
-                Text('${_currentQuestionIndex + 1}/${_questions.length}'),
+                Text('${_currentQuestionIndex + 1}/10'),
               ],
             ),
             SizedBox(height: 20),
-
-            // Difficulty Tag and Question Text
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -246,8 +279,6 @@ class _QuizAttemptState extends State<QuizAttempt> {
               ],
             ),
             SizedBox(height: 20),
-
-            // Options List
             Column(
               children: List.generate(4, (index) {
                 String option = question['options'][index];
@@ -297,8 +328,6 @@ class _QuizAttemptState extends State<QuizAttempt> {
               }),
             ),
             Spacer(),
-
-            // Navigation Buttons
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -312,14 +341,14 @@ class _QuizAttemptState extends State<QuizAttempt> {
                     child: Text('Previous'),
                   ),
                 ElevatedButton(
-                  onPressed: _currentQuestionIndex == _questions.length - 1
+                  onPressed: _currentQuestionIndex == 9 // Submit on the 10th question
                       ? _showFinalScoreDialog
                       : _nextQuestion,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.orange,
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   ),
-                  child: Text(_currentQuestionIndex == _questions.length - 1 ? 'Submit' : 'Next'),
+                  child: Text(_currentQuestionIndex == 9 ? 'Submit' : 'Next'),
                 ),
               ],
             ),
