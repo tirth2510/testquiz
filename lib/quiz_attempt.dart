@@ -16,8 +16,8 @@ class _QuizAttemptState extends State<QuizAttempt> {
   List<dynamic> _questions = [];
   int _currentQuestionIndex = 0;
   bool _isLoading = true;
-  int? _selectedOption; // Variable to track selected option
-  int _score = 0; // Variable to track the score
+  int? _selectedOption;
+  int _score = 0;
 
   @override
   void initState() {
@@ -44,19 +44,17 @@ class _QuizAttemptState extends State<QuizAttempt> {
 
   void _nextQuestion() {
     if (_selectedOption == null) {
-      // If no option is selected, show a warning
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text("Please select an answer before proceeding.")),
       );
       return;
     }
 
-    // Check if the selected answer is correct
     final correctAnswer = _questions[_currentQuestionIndex]['correctAnswer'];
-    final selectedAnswer = _questions[_currentQuestionIndex]['options'][_selectedOption!][0]; // Get the label (e.g., "A") of the selected option
+    final selectedAnswer = _questions[_currentQuestionIndex]['options'][_selectedOption!][0];
 
     if (selectedAnswer == correctAnswer) {
-      _score++; // Increment score if the answer is correct
+      _score++;
     }
 
     print("Current Score: $_score");
@@ -64,10 +62,10 @@ class _QuizAttemptState extends State<QuizAttempt> {
     if (_currentQuestionIndex < _questions.length - 1) {
       setState(() {
         _currentQuestionIndex++;
-        _selectedOption = null; // Reset selected option for the new question
+        _selectedOption = null;
       });
     } else {
-      _showFinalScoreDialog(); // Show the final score dialog on the last question
+      _showFinalScoreDialog();
     }
   }
 
@@ -75,7 +73,7 @@ class _QuizAttemptState extends State<QuizAttempt> {
     if (_currentQuestionIndex > 0) {
       setState(() {
         _currentQuestionIndex--;
-        _selectedOption = null; // Reset selected option for the previous question
+        _selectedOption = null;
       });
     }
   }
@@ -88,13 +86,13 @@ class _QuizAttemptState extends State<QuizAttempt> {
         content: Text("Are you sure you want to submit the quiz?"),
         actions: [
           TextButton(
-            onPressed: () => Navigator.of(context).pop(), // Close dialog without submitting
+            onPressed: () => Navigator.of(context).pop(),
             child: Text("Cancel"),
           ),
           TextButton(
             onPressed: () {
-              Navigator.of(context).pop(); // Close the dialog
-              _showScorePopup(); // Show the final score popup
+              Navigator.of(context).pop();
+              _showScorePopup();
             },
             child: Text("Submit"),
           ),
@@ -111,7 +109,7 @@ class _QuizAttemptState extends State<QuizAttempt> {
         content: Text("Your final score is $_score out of ${_questions.length}."),
         actions: [
           TextButton(
-            onPressed: () => Navigator.of(context).pop(), // Close the score dialog
+            onPressed: () => Navigator.of(context).pop(),
             child: Text("OK"),
           ),
         ],
@@ -138,62 +136,137 @@ class _QuizAttemptState extends State<QuizAttempt> {
     final question = _questions[_currentQuestionIndex];
 
     return Scaffold(
-      appBar: AppBar(title: Text('Quiz Attempt')),
+      appBar: AppBar(
+        title: Text('Quiz Attempt'),
+        leading: IconButton(
+          icon: Icon(Icons.close),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Progress Indicator
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
-                  child: Text(
-                    'Question ${_currentQuestionIndex + 1}: ${question['question']}',
-                    style: TextStyle(fontSize: 20),
+                  child: LinearProgressIndicator(
+                    value: (_currentQuestionIndex + 1) / _questions.length,
+                    backgroundColor: Colors.grey[300],
+                    color: Colors.orange,
                   ),
                 ),
+                SizedBox(width: 10),
+                Text('${_currentQuestionIndex + 1}/${_questions.length}'),
+              ],
+            ),
+            SizedBox(height: 20),
+
+            // Difficulty Tag and Question Text
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Text(
+                    question['question'],
+                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                SizedBox(width: 8),
                 Container(
-                  padding: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(
-                    color: Colors.grey[300],
-                    borderRadius: BorderRadius.circular(8.0),
+                    color: Colors.orange[100],
+                    borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
                     question['difficulty'] ?? 'Unknown',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.orange[800],
+                    ),
                   ),
                 ),
               ],
             ),
             SizedBox(height: 20),
-            ...List.generate(4, (index) {
-              String option = question['options'][index];
-              return ListTile(
-                title: Text(option),
-                leading: Radio<int>(
-                  value: index,
-                  groupValue: _selectedOption,
-                  onChanged: (int? value) {
+
+            // Options List
+            Column(
+              children: List.generate(4, (index) {
+                String option = question['options'][index];
+                return GestureDetector(
+                  onTap: () {
                     setState(() {
-                      _selectedOption = value; // Update selected option
+                      _selectedOption = index;
                     });
                   },
-                ),
-              );
-            }),
-            SizedBox(height: 20),
+                  child: Container(
+                    margin: EdgeInsets.symmetric(vertical: 5),
+                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+                    decoration: BoxDecoration(
+                      color: _selectedOption == index ? Colors.orange[100] : Colors.grey[200],
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 30,
+                          width: 30,
+                          decoration: BoxDecoration(
+                            color: _selectedOption == index ? Colors.orange : Colors.grey[400],
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Center(
+                            child: Text(
+                              option[0], // Option letter
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 10),
+                        Expanded(
+                          child: Text(
+                            option.substring(3), // Option text
+                            style: TextStyle(fontSize: 18),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              }),
+            ),
+            Spacer(),
+
+            // Navigation Buttons
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ElevatedButton(
-                  onPressed: _previousQuestion,
-                  child: Text('Previous'),
-                ),
+                if (_currentQuestionIndex > 0)
+                  ElevatedButton(
+                    onPressed: _previousQuestion,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orange,
+                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    ),
+                    child: Text('Previous'),
+                  ),
                 ElevatedButton(
                   onPressed: _currentQuestionIndex == _questions.length - 1
-                      ? _showFinalScoreDialog // Show "Submit" if on last question
+                      ? _showFinalScoreDialog
                       : _nextQuestion,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.orange,
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  ),
                   child: Text(_currentQuestionIndex == _questions.length - 1 ? 'Submit' : 'Next'),
                 ),
               ],
