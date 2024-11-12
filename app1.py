@@ -50,8 +50,8 @@ def parse_mcqs_text(mcqs_text):
 def fetch_quiz(user_email, quiz_id):
     try:
         # Access MCQs from Firebase
-        user_doc_ref = db.collection('quiz').document(quiz_id)
-        doc = user_doc_ref.get()
+        quiz_doc_ref = db.collection('quiz').document(quiz_id)
+        doc = quiz_doc_ref.get()
         
         if doc.exists:
             mcqs_text = doc.to_dict().get('mcqs')
@@ -59,7 +59,13 @@ def fetch_quiz(user_email, quiz_id):
             # Parse the MCQs text into structured format
             formatted_mcqs = parse_mcqs_text(mcqs_text)
 
-            return jsonify({"mcqs": formatted_mcqs}), 200
+            # Save the formatted MCQs JSON in the nested structure in Firestore
+            user_res_doc_ref = db.collection('res').document(quiz_id).collection('user_email').document(user_email)
+            user_res_doc_ref.set({
+                "mcqs": formatted_mcqs
+            })
+
+            return jsonify({"mcqs": formatted_mcqs, "message": "MCQs saved to res collection in nested structure"}), 200
         else:
             return jsonify({"error": "Quiz not found"}), 404
     except Exception as e:

@@ -17,6 +17,7 @@ class _QuizAttemptState extends State<QuizAttempt> {
   int _currentQuestionIndex = 0;
   bool _isLoading = true;
   int? _selectedOption; // Variable to track selected option
+  int _score = 0; // Variable to track the score
 
   @override
   void initState() {
@@ -42,11 +43,31 @@ class _QuizAttemptState extends State<QuizAttempt> {
   }
 
   void _nextQuestion() {
+    if (_selectedOption == null) {
+      // If no option is selected, show a warning
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Please select an answer before proceeding.")),
+      );
+      return;
+    }
+
+    // Check if the selected answer is correct
+    final correctAnswer = _questions[_currentQuestionIndex]['correctAnswer'];
+    final selectedAnswer = _questions[_currentQuestionIndex]['options'][_selectedOption!][0]; // Get the label (e.g., "A") of the selected option
+
+    if (selectedAnswer == correctAnswer) {
+      _score++; // Increment score if the answer is correct
+    }
+
+    print("Current Score: $_score");
+
     if (_currentQuestionIndex < _questions.length - 1) {
       setState(() {
         _currentQuestionIndex++;
         _selectedOption = null; // Reset selected option for the new question
       });
+    } else {
+      _showFinalScoreDialog(); // Show the final score dialog on the last question
     }
   }
 
@@ -57,6 +78,45 @@ class _QuizAttemptState extends State<QuizAttempt> {
         _selectedOption = null; // Reset selected option for the previous question
       });
     }
+  }
+
+  void _showFinalScoreDialog() {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text("Submit Quiz"),
+        content: Text("Are you sure you want to submit the quiz?"),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(), // Close dialog without submitting
+            child: Text("Cancel"),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop(); // Close the dialog
+              _showScorePopup(); // Show the final score popup
+            },
+            child: Text("Submit"),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _showScorePopup() {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text("Quiz Completed!"),
+        content: Text("Your final score is $_score out of ${_questions.length}."),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(), // Close the score dialog
+            child: Text("OK"),
+          ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -131,8 +191,10 @@ class _QuizAttemptState extends State<QuizAttempt> {
                   child: Text('Previous'),
                 ),
                 ElevatedButton(
-                  onPressed: _nextQuestion,
-                  child: Text('Next'),
+                  onPressed: _currentQuestionIndex == _questions.length - 1
+                      ? _showFinalScoreDialog // Show "Submit" if on last question
+                      : _nextQuestion,
+                  child: Text(_currentQuestionIndex == _questions.length - 1 ? 'Submit' : 'Next'),
                 ),
               ],
             ),
