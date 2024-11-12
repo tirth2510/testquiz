@@ -33,7 +33,8 @@ class _QuizAttemptState extends State<QuizAttempt> {
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
       setState(() {
-        _questions = data['mcqs'];
+        // Limit to the first 10 questions only
+        _questions = (data['mcqs'] as List).take(10).toList();
         _isLoading = false;
       });
     } else {
@@ -86,11 +87,19 @@ class _QuizAttemptState extends State<QuizAttempt> {
         title: Text("Submit Quiz"),
         content: Text("Are you sure you want to submit the quiz?"),
         actions: [
-          TextButton(
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.orange,
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            ),
             onPressed: () => Navigator.of(context).pop(),
             child: Text("Cancel"),
           ),
-          TextButton(
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.orange,
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            ),
             onPressed: () {
               Navigator.of(context).pop();
               _showScorePopup();
@@ -109,11 +118,19 @@ class _QuizAttemptState extends State<QuizAttempt> {
         title: Text("Exit Quiz"),
         content: Text("Are you sure you want to exit? Your quiz will be submitted."),
         actions: [
-          TextButton(
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.orange,
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            ),
             onPressed: () => Navigator.of(context).pop(),
             child: Text("Cancel"),
           ),
-          TextButton(
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.orange,
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            ),
             onPressed: () {
               Navigator.of(context).pop();
               _showScorePopup();
@@ -132,13 +149,17 @@ class _QuizAttemptState extends State<QuizAttempt> {
         title: Text("Quiz Completed!"),
         content: Text("Your final score is $_score out of ${_questions.length}."),
         actions: [
-          TextButton(
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.orange,
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            ),
             onPressed: () {
-              Navigator.of(context).pop(); // Close the score dialog
+              Navigator.of(context).pop();
               Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(builder: (context) => MCQCode()),
-                (Route<dynamic> route) => false, // Remove all previous routes
+                (Route<dynamic> route) => false,
               );
             },
             child: Text("OK"),
