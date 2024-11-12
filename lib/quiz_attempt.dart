@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'mcq_code.dart'; // Import MCQCode screen
 
 class QuizAttempt extends StatefulWidget {
   final String userEmail;
@@ -101,6 +102,29 @@ class _QuizAttemptState extends State<QuizAttempt> {
     );
   }
 
+  void _showExitConfirmationDialog() {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text("Exit Quiz"),
+        content: Text("Are you sure you want to exit? Your quiz will be submitted."),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: Text("Cancel"),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+              _showScorePopup();
+            },
+            child: Text("Exit & Submit"),
+          ),
+        ],
+      ),
+    );
+  }
+
   void _showScorePopup() {
     showDialog(
       context: context,
@@ -109,7 +133,14 @@ class _QuizAttemptState extends State<QuizAttempt> {
         content: Text("Your final score is $_score out of ${_questions.length}."),
         actions: [
           TextButton(
-            onPressed: () => Navigator.of(context).pop(),
+            onPressed: () {
+              Navigator.of(context).pop(); // Close the score dialog
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => MCQCode()),
+                (Route<dynamic> route) => false, // Remove all previous routes
+              );
+            },
             child: Text("OK"),
           ),
         ],
@@ -140,7 +171,7 @@ class _QuizAttemptState extends State<QuizAttempt> {
         title: Text('Quiz Attempt'),
         leading: IconButton(
           icon: Icon(Icons.close),
-          onPressed: () => Navigator.pop(context),
+          onPressed: _showExitConfirmationDialog,
         ),
       ),
       body: Padding(
@@ -223,7 +254,7 @@ class _QuizAttemptState extends State<QuizAttempt> {
                           ),
                           child: Center(
                             child: Text(
-                              option[0], // Option letter
+                              option[0],
                               style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
@@ -234,7 +265,7 @@ class _QuizAttemptState extends State<QuizAttempt> {
                         SizedBox(width: 10),
                         Expanded(
                           child: Text(
-                            option.substring(3), // Option text
+                            option.substring(3),
                             style: TextStyle(fontSize: 18),
                           ),
                         ),
