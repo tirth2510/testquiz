@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'leaderboard.dart'; // Import the LeaderboardPage
+import 'leaderboard.dart';
 
 class QuizzesPage extends StatefulWidget {
   @override
@@ -72,23 +72,38 @@ class _QuizzesPageState extends State<QuizzesPage> {
                     var quizId = quizDoc.id;
                     var currentStatus = quizDoc['status'] == 'enabled';
 
-                    return ListTile(
-                      title: GestureDetector(
-                        child: Text('Quiz ID: $quizId'),
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => LeaderboardPage(quizId: quizId),
-                            ),
-                          );
-                        },
-                      ),
-                      trailing: Switch(
-                        value: currentStatus,
-                        onChanged: (value) {
-                          _toggleStatus(quizId, currentStatus);
-                        },
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        elevation: 4,
+                        child: ListTile(
+                          title: Text(
+                            'Quiz ID: $quizId',
+                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                          ),
+                          subtitle: Text(
+                            currentStatus ? 'Status: Enabled' : 'Status: Disabled',
+                            style: TextStyle(color: currentStatus ? Colors.green : Colors.red),
+                          ),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => LeaderboardPage(quizId: quizId),
+                              ),
+                            );
+                          },
+                          trailing: Switch(
+                            value: currentStatus,
+                            activeColor: Colors.orange,
+                            onChanged: (value) {
+                              _toggleStatus(quizId, currentStatus);
+                            },
+                          ),
+                        ),
                       ),
                     );
                   },

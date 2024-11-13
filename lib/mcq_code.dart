@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'quiz_attempt.dart'; // Import the QuizAttempt screen
-import 'login.dart'; // Import the login screen
+import 'quiz_attempt.dart';
+import 'login.dart';
 
 class MCQCode extends StatefulWidget {
   @override
@@ -12,7 +12,6 @@ class MCQCode extends StatefulWidget {
 class _MCQCodeState extends State<MCQCode> {
   String? enteredCode = '';
 
-  // Function to check quiz status from Firestore
   Future<void> _checkQuizStatus(String code) async {
     try {
       var quizDoc = await FirebaseFirestore.instance.collection('quiz').doc(code).get();
@@ -29,28 +28,41 @@ class _MCQCodeState extends State<MCQCode> {
             ),
           );
         } else {
-          _showQuizDisabledDialog();
+          _showCustomDialog(
+            title: 'Quiz Disabled',
+            content: 'This quiz is currently disabled. Please try another one.',
+          );
         }
       } else {
-        _showInvalidCodeDialog();
+        _showCustomDialog(
+          title: 'Invalid Code',
+          content: 'The quiz code you entered is invalid or does not exist.',
+        );
       }
     } catch (e) {
       print('Error checking quiz status: $e');
     }
   }
 
-  // Show dialog when quiz is disabled
-  void _showQuizDisabledDialog() {
+  void _showCustomDialog({required String title, required String content}) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Quiz Disabled'),
-          content: Text('This quiz is currently disabled. Please try another one.'),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+          title: Text(title, style: TextStyle(fontWeight: FontWeight.bold)),
+          content: Text(content),
           actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: Text('OK'),
+            Center(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.orange,
+                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 12),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                ),
+                onPressed: () => Navigator.of(context).pop(),
+                child: Text('OK', style: TextStyle(fontSize: 16)),
+              ),
             ),
           ],
         );
@@ -58,26 +70,6 @@ class _MCQCodeState extends State<MCQCode> {
     );
   }
 
-  // Show dialog when code is invalid
-  void _showInvalidCodeDialog() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Invalid Code'),
-          content: Text('The quiz code you entered is invalid or does not exist.'),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: Text('OK'),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
-  // Function to handle logout
   void _logout() async {
     try {
       await FirebaseAuth.instance.signOut();
