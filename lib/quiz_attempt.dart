@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'mcq_code.dart'; // Import MCQCode screen
+import 'mcq_code.dart';
 
 class QuizAttempt extends StatefulWidget {
   final String userEmail;
@@ -16,12 +16,14 @@ class QuizAttempt extends StatefulWidget {
 class _QuizAttemptState extends State<QuizAttempt> {
   List<dynamic> _allQuestions = [];
   List<dynamic> _questions = [];
-  Set<int> _askedQuestions = {}; // To track questions that have already been asked
+  Set<int> _askedQuestions = {}; // Track questions that have been asked
   int _currentQuestionIndex = 0;
   bool _isLoading = true;
   int? _selectedOption;
   int _score = 0;
   int _totalAnswered = 0;
+  List<int> _timePerQuestion = []; // Track time for each question in seconds
+  DateTime? _questionStartTime; // Start time for the current question
 
   @override
   void initState() {
@@ -37,15 +39,32 @@ class _QuizAttemptState extends State<QuizAttempt> {
       final data = json.decode(response.body);
       setState(() {
         _allQuestions = data['mcqs'];
-        // Initialize with 5 easy questions
         _questions = _allQuestions.where((q) => q['difficulty'] == 'Easy').take(5).toList();
         _askedQuestions.addAll(_questions.map((q) => _allQuestions.indexOf(q))); // Mark initial 5 as asked
         _isLoading = false;
+        _initializeTimerForCurrentQuestion();
       });
     } else {
       setState(() {
         _isLoading = false;
       });
+    }
+  }
+
+  // Initialize timer for the current question
+  void _initializeTimerForCurrentQuestion() {
+    if (_timePerQuestion.length <= _currentQuestionIndex) {
+      _timePerQuestion.add(0); // Initialize time if this question is accessed for the first time
+    }
+    _questionStartTime = DateTime.now();
+  }
+
+  // Calculate and update time spent on the current question
+  void _updateTimeForCurrentQuestion() {
+    if (_questionStartTime != null) {
+      final timeSpent = DateTime.now().difference(_questionStartTime!).inSeconds;
+      _timePerQuestion[_currentQuestionIndex] += timeSpent;
+      print("Time taken for question ${_currentQuestionIndex + 1}: ${_timePerQuestion[_currentQuestionIndex]} seconds");
     }
   }
 
@@ -67,7 +86,8 @@ class _QuizAttemptState extends State<QuizAttempt> {
 
     _totalAnswered++;
 
-    print("Current Score: $_score / $_totalAnswered");
+    // Update time for the current question
+    _updateTimeForCurrentQuestion();
 
     // Determine the score percentage for difficulty selection
     double scoreRatio = _score / _totalAnswered;
@@ -83,7 +103,7 @@ class _QuizAttemptState extends State<QuizAttempt> {
         nextDifficulty = 'Hard';
       }
 
-      // Try to find a question of the desired difficulty that hasn't been asked
+      // Find a question of the desired difficulty that hasn't been asked
       List<dynamic> nextQuestions = _allQuestions.where((q) => q['difficulty'] == nextDifficulty && !_askedQuestions.contains(_allQuestions.indexOf(q))).toList();
 
       if (nextQuestions.isEmpty) {
@@ -101,17 +121,22 @@ class _QuizAttemptState extends State<QuizAttempt> {
       setState(() {
         _currentQuestionIndex++;
         _selectedOption = null; // Reset selected option for the new question
+        _initializeTimerForCurrentQuestion(); // Start timer for the new question
       });
     } else {
-      _showFinalScoreDialog(); // Show the final score dialog if last question is answered
+      _showFinalScoreDialog(); // Show the final score dialog on the 10th question
     }
   }
 
   void _previousQuestion() {
     if (_currentQuestionIndex > 0) {
+      // Update time for the current question before navigating back
+      _updateTimeForCurrentQuestion();
+
       setState(() {
         _currentQuestionIndex--;
         _selectedOption = null;
+        _initializeTimerForCurrentQuestion(); // Resume timer for the previous question
       });
     }
   }
@@ -179,11 +204,16 @@ class _QuizAttemptState extends State<QuizAttempt> {
   }
 
   void _showScorePopup() {
+    int totalTimeTaken = _timePerQuestion.reduce((a, b) => a + b); // Calculate total time in seconds
+
+    // Debug print for time taken on each question
+    print("Time taken per question (in seconds): $_timePerQuestion");
+
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
         title: Text("Quiz Completed!"),
-        content: Text("Your final score is $_score out of ${_questions.length}."),
+        content: Text("Your final score is $_score out of ${_questions.length}.\nTotal time taken: $totalTimeTaken seconds."),
         actions: [
           ElevatedButton(
             style: ElevatedButton.styleFrom(
@@ -241,7 +271,7 @@ class _QuizAttemptState extends State<QuizAttempt> {
               children: [
                 Expanded(
                   child: LinearProgressIndicator(
-                    value: (_currentQuestionIndex + 1) / 10, // Show progress out of 10 questions
+                    value: (_currentQuestionIndex + 1) / 10,
                     backgroundColor: Colors.grey[300],
                     color: Colors.orange,
                   ),
@@ -341,7 +371,7 @@ class _QuizAttemptState extends State<QuizAttempt> {
                     child: Text('Previous'),
                   ),
                 ElevatedButton(
-                  onPressed: _currentQuestionIndex == 9 // Submit on the 10th question
+                  onPressed: _currentQuestionIndex == 9
                       ? _showFinalScoreDialog
                       : _nextQuestion,
                   style: ElevatedButton.styleFrom(
