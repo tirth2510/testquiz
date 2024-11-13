@@ -1,204 +1,202 @@
 ## MCQ 1
 [Easy] Question: What is social media marketing primarily used for?
-A) Building personal relationships
+A) Building personal connections
 B) Selling or promoting a brand, product, or service
-C) Connecting with old friends
-D) Sharing personal photos and videos
+C) Sharing personal updates and photos
+D) Connecting with old friends
 Correct Answer: B
 
 ## MCQ 2
-[Easy] Question: What is the first step in creating a winning social media strategy?
-A) Creating compelling content
-B) Establishing your objectives and goals
-C) Analyzing your competition
-D) Setting up social media accounts
-Correct Answer: B
+[Easy] Question: According to the text, which of these is NOT a benefit of social media marketing?
+A) Increasing brand awareness
+B) Providing customer service
+C) Guaranteeing sales
+D) Measuring public sentiment about your business
+Correct Answer: C
 
 ## MCQ 3
-[Medium] Question: Which of the following is NOT a characteristic of a well-defined social media goal?
-A) Specific
-B) Measurable
-C) Viral
-D) Attainable
-Correct Answer: C
+[Medium] Question: What does a social media strategy document outline?
+A) Only the social media goals
+B) Only the tactics to achieve goals
+C) Only the metrics to track progress
+D) Goals, tactics, metrics, and account details
+Correct Answer: D
 
 ## MCQ 4
-[Easy] Question: Which metric is considered a "vanity metric"?
-A) Conversion rate
-B) Click-through rate
-C) Number of followers
-D) Engagement rate
-Correct Answer: C
-
-## MCQ 5
-[Medium] Question: What does CPC stand for in social media marketing?
-A) Cost per click
-B) Content per click
-C) Customer per click
-D) Conversion per click
-Correct Answer: A
-
-## MCQ 6
-[Easy] Question:  What is a social media strategy?
-A) A random collection of posts
-B) A document outlining your social media goals and tactics
-C) A list of all your social media accounts
-D) A way to connect with friends and family
+[Easy] Question: What is the first step in creating a social media strategy plan?
+A) Creating compelling content
+B) Choosing marketing goals aligned with business objectives
+C) Learning about the audience
+D) Getting to know the competition
 Correct Answer: B
 
-## MCQ 7
-[Hard] Question:  According to the text, what should a good social media plan define in addition to goals and tactics?
-A) Budget allocation for each platform
-B) Content creation software to be used
-C) Roles and responsibilities within the team
-D) Number of posts per day on each platform
+## MCQ 5
+[Hard] Question: What does the acronym "ROI" stand for in the context of social media marketing?
+A) Return on Investment
+B) Rate of Interest
+C) Report on Impressions
+D) Real-time Optimization Insights
+Correct Answer: A
+
+
+## MCQ 6
+[Medium] Question:  Which metrics are considered "vanity metrics"?
+A) Engagement and clickthrough rates
+B) Conversion rates and cost-per-click
+C) Number of followers and likes
+D) Website traffic and sales
 Correct Answer: C
 
+## MCQ 7
+[Easy] Question: What is the second step in creating a social media strategy plan?
+A) Choosing marketing goals
+B) Learning everything about your audience
+C) Getting to know your competition
+D) Doing a Facebook account audit
+Correct Answer: B
+
 ## MCQ 8
-[Medium] Question: In step 2, creating audience personas involves understanding characteristics like:
-A) Age and location
-B) Website traffic sources
-C) Competitor's marketing strategies
-D) Content creation tools
+[Medium] Question: What information should you know about your target customer?
+A) Age, location, income, job title, interests
+B) Their favorite movies and books
+C) Their personal phone numbers
+D) Their political affiliations
 Correct Answer: A
 
 ## MCQ 9
-[Easy] Question: What is the purpose of conducting a competitive analysis?
-A) To copy your competitor's strategies
-B) To understand your competition and identify opportunities
-C) To criticize your competition's efforts
-D) To ignore your competition completely
+[Easy] Question: What is the purpose of a competitive analysis in social media marketing?
+A) To copy your competitors' strategies
+B) To understand the competition and identify opportunities
+C) To criticize your competitors' efforts
+D) To ignore your competitors altogether
 Correct Answer: B
 
 ## MCQ 10
-[Medium] Question:  What is social listening?
+[Medium] Question: What is social listening?
 A) Monitoring conversations and mentions related to your brand and competitors
-B) Listening to music while using social media
-C) Responding to every comment on your posts
-D) Creating podcasts for your social media audience
+B) Literally listening to audio content on social media
+C) Conducting surveys and polls on social media
+D) Ignoring all social media activity
 Correct Answer: A
 
 ## MCQ 11
-[Easy] Question:  What should you do during a social media account audit?
-A) Delete all your old posts
-B) Evaluate what's working and what's not
-C) Change your profile picture and cover photo
-D) Unfollow all your competitors
+[Easy] Question:  What is the purpose of a Facebook account audit?
+A) To delete all existing content
+B) To evaluate current performance and identify areas for improvement
+C) To create a new account
+D) To ignore your Facebook page
 Correct Answer: B
 
-
 ## MCQ 12
-[Easy] Question: When setting up social media profiles, what should you ensure regarding branding?
-A) Use different logos for each platform
-B) Use inconsistent brand colors and fonts
-C) Use consistent branding across all networks
-D) Copy your competitor's branding
-Correct Answer: C
+[Medium] Question: What should you include in your social media profiles?
+A) Complete profile fields, keywords, consistent branding
+B) Personal opinions and controversial statements
+C) False information to attract more followers
+D) Only your company logo
+Correct Answer: A
 
 ## MCQ 13
-[Medium] Question: What is the purpose of a social media content calendar?
-A) To randomly post content whenever you feel like it
-B) To schedule and plan your social media activities
-C) To track your website traffic
-D) To analyze your competitor's activities
+[Easy] Question: What is the purpose of a social media content calendar?
+A) To randomly post content
+B) To plan and schedule content for maximum impact
+C) To avoid posting content altogether
+D) To copy content from other businesses
 Correct Answer: B
 
 ## MCQ 14
-[Hard] Question:  What does the Results section's "Social Media Marketing Plan for Restaurant Website" primarily focus on?
-A) A theoretical framework for social media marketing
-B) A practical application of the theory discussed in the text
-C) A comparison of different social media platforms
-D) A critique of existing restaurant marketing strategies
-Correct Answer: B
+[Hard] Question: What does UGC stand for in the context of social media marketing?
+A) User-Generated Content
+B) Universal Graphic Creation
+C) Unique Group Collaboration
+D) User Guidance Checklist
+Correct Answer: A
 
 ## MCQ 15
-[Easy] Question:  What is recommended for the "About Section" of a restaurant's Facebook page?
-A) A brief, generic description
-B) A long, rambling story about the restaurant's history
-C) A compelling, keyword-rich description
-D) Contact information only
+[Medium] Question: How often should you track the performance of your social media channels?
+A) Never
+B) Once a year
+C) At least once a week
+D) Every few months
 Correct Answer: C
 
+
 ## MCQ 16
-[Medium] Question: Which of the following is NOT a suggested marketing goal for the restaurant in the Results section?
-A) Increase brand awareness
-B) Offer free meals to all followers
-C) Drive traffic to website
-D) Engage community
+[Easy] According to the provided restaurant example, what is a good profile picture choice for a Facebook page?
+A) A picture of the owner
+B) The restaurant logo
+C) A random stock photo
+D) A picture of a competitor's restaurant
 Correct Answer: B
 
 ## MCQ 17
-[Easy] Question: What type of content is recommended for the restaurant to post on Facebook?
-A) Images of dishes and ambiance
-B) Irrelevant content about unrelated topics
-C) Negative reviews from competitors
-D) Personal photos of the restaurant owner
-Correct Answer: A
+[Medium] In the restaurant example, what is one marketing goal mentioned?
+A) To reduce customer complaints
+B) To increase brand awareness
+C) To lower staff wages
+D) To ignore online reviews
+Correct Answer: B
 
 ## MCQ 18
-[Hard] What "opportunity" is identified in the competitive analysis of the restaurant's competitors?
-A) Lowering prices to undercut the competition
-B) Copying the competitor's successful strategies
-C) Leveraging consistent content posting and UGC
-D) Ignoring social media marketing altogether
-Correct Answer: C
+[Hard]  Which persona in the restaurant example is described as "family-oriented"?
+A) Sarah
+B) Alex
+C) Both Sarah and Alex
+D) Neither Sarah nor Alex
+Correct Answer: B
 
 
 ## MCQ 19
-[Medium]  What is one of the weaknesses identified for "Competitor 2" in the restaurant example?
-A) High quality images
-B) Inconsistent posting schedule
-C) Strong Facebook presence
-D) Regular promotions and offers
-Correct Answer: B
-
+[Easy] What type of content is recommended for the restaurant's Facebook page?
+A) Images of dishes
+B) Political discussions
+C) Negative reviews of competitors
+D) Personal updates from the chef's life
+Correct Answer: A
 
 ## MCQ 20
-[Easy]  What should the restaurant do with customer reviews on their Facebook page?
-A) Ignore them
-B) Delete negative reviews
-C) Respond professionally to both positive and negative feedback
-D) Only respond to positive reviews
+[Medium] What is a weakness identified in "Competitor 2" in the restaurant example?
+A) Strong Facebook presence
+B) High quality images
+C) Inconsistent posting schedule
+D) Regular interaction with followers
 Correct Answer: C
-
 
 ## MCQ 21
-[Easy] Which social media platform is the focus of this experiment?
-A) Instagram
-B) Twitter
-C) Facebook
-D) LinkedIn
-Correct Answer: C
+[Easy] What should the "About Section" of the restaurant's Facebook page include?
+A) A keyword-rich description highlighting cuisine, location, and unique value
+B) The owner's personal life story
+C) Negative reviews of competitors
+D) Only the restaurant's address
+Correct Answer: A
 
 ## MCQ 22
-[Medium] What is the recommended approach for setting a posting schedule for social media?
-A) Post randomly throughout the day
-B) Post only during business hours
-C) Use a social media content calendar to plan and schedule posts
-D) Post as frequently as possible, regardless of content quality
-Correct Answer: C
-
+[Medium] What is the recommended Call to Action for the restaurant's Facebook page?
+A) "Call Now" or "Book a Table"
+B) "Leave a negative review"
+C) "Ignore our page"
+D) "Visit our competitor"
+Correct Answer: A
 
 ## MCQ 23
-[Hard] The experiment mentions tracking "meaningful metrics." Which of the following is an example of a meaningful metric according to the text?
-A) Number of likes on a post
-B) Number of followers
-C) Conversion rate from social media traffic to website purchases
-D) Number of shares a post receives without leading to any further action
-Correct Answer: C
+[Hard] What is an example of interactive content suggested for the restaurant's Facebook page?
+A) Polls or quizzes about favorite dishes
+B) A static menu image
+C) A long, text-heavy post about the restaurant's history
+D) A single image of the restaurant's exterior
+Correct Answer: A
 
 ## MCQ 24
-[Easy] What is the primary purpose of the "Procedure" section in the experiment document?
-A) To explain the theoretical background of social media marketing
-B) To outline the steps students need to follow to complete the experiment
-C) To provide examples of successful social media campaigns
-D) To list resources for further learning about social media marketing
-Correct Answer: B
+[Easy] What is the benefit of encouraging customer reviews on the Facebook page?
+A) Builds community trust and engagement
+B) Scares away potential customers
+C) Creates negative publicity
+D) Has no impact on the business
+Correct Answer: A
 
 ## MCQ 25
-[Medium]  According to the experiment, what is essential for aligning social media efforts with business objectives?
-A) Focusing solely on increasing follower count
-B) Choosing social media goals that align with overall marketing objectives
-C) Posting frequently regardless of relevance to the target audience
-D) Ignoring competitor activity on social media
-Correct Answer: B
+[Medium]  What is the purpose of including a link to the restaurant's website on the Facebook page?
+A) For ordering, reservations, or more information
+B) To confuse customers
+C) To direct traffic away from Facebook
+D) To showcase competitors' websites
+Correct Answer: A
