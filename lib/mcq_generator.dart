@@ -1,18 +1,15 @@
 import 'dart:io';
-import 'dart:convert'; // For JSON decoding
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:http/http.dart' as http;
-import 'package:mcqapp/quiz_attempt.dart';
 import 'package:path/path.dart';
-import 'package:cloud_firestore/cloud_firestore.dart'; // Firebase Firestore
-import 'package:firebase_auth/firebase_auth.dart'; // Firebase Authentication
-import 'mcq_results.dart'; // Import the MCQResults screen
-import 'mcq_code.dart'; // Import the MCQCode screen
-import 'login.dart'; // Import your login page
-import 'quizzes.dart'; // Import the new quizzes page
-import 'quiz_attempt.dart'; // Import the new QuizAttempt screen
-import 'dart:math'; // For generating random code
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'mcq_results.dart';
+import 'login.dart';
+import 'quizzes.dart';
+import 'dart:math';
 
 class MCQGenerator extends StatefulWidget {
   @override
@@ -42,8 +39,8 @@ class _MCQGeneratorState extends State<MCQGenerator> {
     if (result != null) {
       setState(() {
         _file = File(result.files.single.path!);
-        _textInput = null; // Clear text input when a file is picked
-        _textController.clear(); // Clear the text field
+        _textInput = null;
+        _textController.clear();
       });
     }
   }
@@ -55,7 +52,7 @@ class _MCQGeneratorState extends State<MCQGenerator> {
 
     if (_file == null && (_textInput == null || _textInput!.isEmpty)) {
       setState(() {
-        _isLoading = false; // Stop loading indicator
+        _isLoading = false;
       });
       _scaffoldKey.currentState?.showSnackBar(
         SnackBar(content: Text('Please upload a file or enter text.')),
@@ -76,7 +73,7 @@ class _MCQGeneratorState extends State<MCQGenerator> {
     }
     String userEmail = user.email ?? 'Unknown';
 
-    var request = http.MultipartRequest('POST', Uri.parse('http://192.168.1.13:5000/generate'));
+    var request = http.MultipartRequest('POST', Uri.parse('http://192.168.29.182:5000/generate'));
 
     if (_file != null) {
       request.files.add(await http.MultipartFile.fromPath(
@@ -99,26 +96,20 @@ class _MCQGeneratorState extends State<MCQGenerator> {
 
         String randomCode = _generateRandomCode();
 
-        // Get the current user's document reference in Firestore
+        // Store the generated quiz data in Firestore
         var userDocRef = FirebaseFirestore.instance.collection('users').doc(userEmail);
-
-        // Store the random code in the 'timepass' sub-collection under the user's document
         var timepassDocRef = userDocRef.collection('timepass').doc(randomCode);
-
         await timepassDocRef.set({
-          'status': 'enabled', // Add 'status' field as 'enabled' here
-          'generated_by': userEmail, // Save the email of the logged-in user
-          'mcqs': mcqs, // Store the MCQs in the 'mcqs' field
+          'status': 'enabled',
+          'generated_by': userEmail,
+          'mcqs': mcqs,
         });
 
-        // Create a separate 'quiz' collection and store the random code as document ID
         var quizDocRef = FirebaseFirestore.instance.collection('quiz').doc(randomCode);
-
-        // Store 'status', 'mcqs', and 'generated_by' fields in the 'quiz' collection
         await quizDocRef.set({
-          'status': 'enabled', // Add 'status' field as 'enabled' here as well
-          'generated_by': userEmail, // Save the email of the logged-in user
-          'mcqs': mcqs, // Store the MCQs in the 'mcqs' field
+          'status': 'enabled',
+          'generated_by': userEmail,
+          'mcqs': mcqs,
         });
 
         // Navigate to the MCQResults screen after successful submission
@@ -150,15 +141,15 @@ class _MCQGeneratorState extends State<MCQGenerator> {
     await FirebaseAuth.instance.signOut();
     Navigator.pushReplacement(
       this.context,
-      MaterialPageRoute(builder: (context) => LoginPage()), // Navigate to login page
+      MaterialPageRoute(builder: (context) => LoginPage()),
     );
   }
 
   void _deleteFile() {
     setState(() {
-      _file = null; // Clear the selected file
-      _textInput = null; // Optionally clear text input
-      _textController.clear(); // Clear the text field
+      _file = null;
+      _textInput = null;
+      _textController.clear();
     });
   }
 
@@ -174,10 +165,10 @@ class _MCQGeneratorState extends State<MCQGenerator> {
               if (value == 'My quizzes') {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => QuizzesPage()), // Navigate to quizzes page
+                  MaterialPageRoute(builder: (context) => QuizzesPage()),
                 );
               } else if (value == 'Logout') {
-                _logout(); // Perform logout
+                _logout();
               }
             },
             itemBuilder: (BuildContext context) {
@@ -195,24 +186,47 @@ class _MCQGeneratorState extends State<MCQGenerator> {
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
-            Center(child: Text('Generate MCQs from Your Text', style: TextStyle(fontSize: 24))),
+            Center(
+              child: Text(
+                'Generate MCQs from Your Text',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+            ),
             SizedBox(height: 20),
 
-            ElevatedButton(
+            ElevatedButton.icon(
               onPressed: _pickFile,
-              child: Text('Upload your document (PDF, TXT, DOCX)'),
+              icon: Icon(Icons.upload_file),
+              label: Text('Upload Document (PDF, TXT, DOCX)'),
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(vertical: 15),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
             ),
 
             if (_file != null)
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10.0),
-                child: Text('Selected File: ${basename(_file!.path)}'),
+                child: Text(
+                  'Selected File: ${basename(_file!.path)}',
+                  style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic),
+                ),
               ),
 
             if (_file != null)
-              ElevatedButton(
+              ElevatedButton.icon(
                 onPressed: _deleteFile,
-                child: Text('Delete Selected File'),
+                icon: Icon(Icons.delete),
+                label: Text('Delete Selected File'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.redAccent,
+                  padding: EdgeInsets.symmetric(vertical: 15),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
               ),
 
             if (_file == null)
@@ -235,6 +249,7 @@ class _MCQGeneratorState extends State<MCQGenerator> {
                   ),
                 ],
               ),
+
             SizedBox(height: 30),
 
             _isLoading
@@ -242,25 +257,13 @@ class _MCQGeneratorState extends State<MCQGenerator> {
                 : ElevatedButton(
                     onPressed: () => _generateMCQs(context),
                     child: Text('Generate MCQs'),
-                  ),
-
-            SizedBox(height: 30),
-
-            // Button to attempt quiz
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => QuizAttempt(
-                      userEmail: FirebaseAuth.instance.currentUser!.email ?? 'Unknown', // Pass current user's email
-                      quizId: 'VNZVEG', // The specified quiz document ID
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(vertical: 15),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
                     ),
                   ),
-                );
-              },
-              child: Text('Attempt Quiz'),
-            ),
           ],
         ),
       ),
