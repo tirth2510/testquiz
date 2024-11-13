@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart'; // Firestore
-import 'package:firebase_auth/firebase_auth.dart'; // Firebase Auth
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'leaderboard.dart'; // Import the LeaderboardPage
 
 class QuizzesPage extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class _QuizzesPageState extends State<QuizzesPage> {
   @override
   void initState() {
     super.initState();
-    _currentUser = FirebaseAuth.instance.currentUser; // Get the current logged-in user
+    _currentUser = FirebaseAuth.instance.currentUser;
   }
 
   // Function to toggle the status
@@ -34,7 +35,6 @@ class _QuizzesPageState extends State<QuizzesPage> {
       var quizDocRef = FirebaseFirestore.instance.collection('quiz').doc(documentId);
 
       await quizDocRef.update({'status': currentStatus ? 'disabled' : 'enabled'});
-
     } catch (e) {
       print('Error updating status: $e');
     }
@@ -53,7 +53,7 @@ class _QuizzesPageState extends State<QuizzesPage> {
                   .collection('users')
                   .doc(_currentUser!.email)
                   .collection('timepass')
-                  .snapshots(), // Listen to Firestore snapshots
+                  .snapshots(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return Center(child: CircularProgressIndicator());
@@ -70,10 +70,20 @@ class _QuizzesPageState extends State<QuizzesPage> {
                   itemBuilder: (context, index) {
                     var quizDoc = quizDocs[index];
                     var quizId = quizDoc.id;
-                    var currentStatus = quizDoc['status'] == 'enabled'; // Check if status is 'enabled'
+                    var currentStatus = quizDoc['status'] == 'enabled';
 
                     return ListTile(
-                      title: Text('Quiz ID: $quizId'),
+                      title: GestureDetector(
+                        child: Text('Quiz ID: $quizId'),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LeaderboardPage(quizId: quizId),
+                            ),
+                          );
+                        },
+                      ),
                       trailing: Switch(
                         value: currentStatus,
                         onChanged: (value) {

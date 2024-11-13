@@ -1,207 +1,207 @@
 ## MCQ 1
-[Easy] Question: What is the stock market?
-A) A physical location where stocks are traded
-B) A network of exchanges where investors buy and sell shares of companies
-C) A type of savings account
-D) A government bond
+[Easy] Question: The word "planet" originates from which language?
+A) Latin
+B) Greek
+C) Roman
+D) Egyptian
 Correct Answer: B
 
 ## MCQ 2
-[Easy] Question:  What does "stock" represent?
-A) A loan to a company
-B) Ownership in a company
-C) A type of currency
-D) A government bond
-Correct Answer: B
+[Easy] Question: In antiquity, how many planets were recognized besides the Sun and Moon?
+A) Three
+B) Four
+C) Five
+D) Seven
+Correct Answer: C
 
 ## MCQ 3
-[Medium] Question: What is a stock exchange?
-A) A place where companies store their inventory
-B) A marketplace where stocks are bought and sold
-C) A government agency that regulates stocks
-D) A type of bank
+[Easy] Question:  Which of these is NOT a planet visible to the naked eye?
+A) Mars
+B) Uranus
+C) Jupiter
+D) Venus
 Correct Answer: B
 
 ## MCQ 4
-[Hard] Question: What is an IPO (Initial Public Offering)?
-A) When a company's stock is available to the public for the first time
-B) When a company buys back its own shares
-C) When a company merges with another company
-D) When a company declares bankruptcy
-Correct Answer: A
+[Medium] Question: The shift from geocentrism to heliocentrism led to the recognition of which celestial body as a planet?
+A) The Moon
+B) The Sun
+C) Earth
+D) Jupiter
+Correct Answer: C
 
 ## MCQ 5
-[Easy] Question: What is a "share"?
-A) A portion of ownership in a company
-B) A type of loan
-C) A type of bond
-D) A government security
-Correct Answer: A
+[Medium] Question: The discovery of which celestial bodies contributed to broadening the definition of "planet"?
+A) Moons of other planets
+B) Uranus and Neptune
+C) Objects in the asteroid belt
+D) All of the above
+Correct Answer: D
 
 ## MCQ 6
-[Medium] Question: What is a "bull market"?
-A) A market where stock prices are generally rising
-B) A market where stock prices are generally falling
-C) A market where stock prices are stable
-D) A market where only bulls are traded
-Correct Answer: A
+[Medium] Question: Pluto is now categorized as what type of celestial body?
+A) Planet
+B) Asteroid
+C) Dwarf planet
+D) Comet
+Correct Answer: C
 
 ## MCQ 7
-[Medium] Question: What is a "bear market"?
-A) A market where stock prices are generally falling
-B) A market where stock prices are generally rising
-C) A market where stock prices are stable
-D) A market where only bears are traded
-Correct Answer: A
-
+[Hard] Question: What spurred the debate about the definition of a planet in recent times?
+A) The discovery of exoplanets
+B) The discovery of large objects in the Kuiper belt, like Eris
+C) The development of the telescope
+D) The discovery of brown dwarfs
+Correct Answer: B
 
 ## MCQ 8
-[Hard] Question: What is "market capitalization"?
-A) The total value of a company's outstanding shares
-B) The amount of cash a company has on hand
-C) The company's annual revenue
-D) The company's annual profit
-Correct Answer: A
+[Easy] Question:  Which organization officially defined the term "planet" in 2006?
+A) NASA
+B) ESA
+C) IAU
+D) Royal Astronomical Society
+Correct Answer: C
 
 ## MCQ 9
-[Easy] Question:  What is a "dividend"?
-A) A portion of a company's earnings paid to shareholders
-B) The interest paid on a bond
-C) The price of a stock
-D) A fee paid to a broker
-Correct Answer: A
-
+[Medium] Question: According to the IAU's 2006 definition, how many giant planets are there in our solar system?
+A) Two
+B) Four
+C) Six
+D) Eight
+Correct Answer: B
 
 ## MCQ 10
-[Medium] Question: What is a "broker"?
-A) A person or firm that facilitates the buying and selling of stocks
-B) A person who manages a company's finances
-C) A government regulator of the stock market
-D) A type of investor
+[Easy] Question:  What are planets outside our solar system called?
+A) Exoplanets
+B) Dwarf planets
+C) Extrasolar bodies
+D) Outer planets
 Correct Answer: A
+
 
 ## MCQ 11
-[Hard] Question: What is "short selling"?
-A) Borrowing shares, selling them, and hoping to buy them back at a lower price
-B) Buying shares and hoping they increase in value
-C) Selling shares you already own
-D) Buying and selling shares within the same day
-Correct Answer: A
+[Hard] Question:  What are "Hot Jupiters"?
+A) Small, rocky planets orbiting close to their stars
+B) Giant planets orbiting close to their stars
+C) Planets with extremely elliptical orbits
+D) Planets located in the habitable zone
+Correct Answer: B
+
 
 ## MCQ 12
-[Easy] Question: What does "volume" refer to in the stock market?
-A) The number of shares traded
-B) The price of a stock
-C) The size of a company
-D) The amount of news about a company
-Correct Answer: A
+[Medium] Question: The discovery of which type of celestial body also contributed to the debate on the definition of a planet, regarding the distinction between planets and stars?
+A) Exoplanets
+B) Brown dwarfs
+C) Hot Jupiters
+D) Dwarf planets
+Correct Answer: B
+
 
 ## MCQ 13
-[Medium] Question:  What is a "stock index"?
-A) A measurement of the performance of a group of stocks
-B) A list of all stocks traded on a particular exchange
-C) A type of bond
-D) A type of mutual fund
-Correct Answer: A
+[Easy] Question:  What is the habitable zone of a star?
+A) The region where a planet can support life
+B) The region where liquid water can potentially exist on a planetary surface
+C) The region where a planet's temperature is above freezing
+D) The region closest to the star
+Correct Answer: B
 
 
 ## MCQ 14
-[Hard] Question: What is "volatility" in the stock market?
-A) The degree of price fluctuation of a stock or the market as a whole
-B) The average price of a stock over a period of time
-C) The number of shares traded in a day
-D) The stability of a company's earnings
-Correct Answer: A
+[Easy] Question:  Which planet is currently known to support life?
+A) Mars
+B) Earth
+C) Venus
+D) None of the above
+Correct Answer: B
+
 
 ## MCQ 15
-[Easy] Question: What is a "ticker symbol"?
-A) A short abbreviation used to identify a particular stock
-B) A graph showing the price history of a stock
-C) A news report about a company
-D) A type of financial statement
-Correct Answer: A
+[Medium] Question:  The ancient Greeks considered the Sun and Moon to be:
+A) Stars
+B) Planets
+C) Gods
+D) Comets
+Correct Answer: B
+
 
 ## MCQ 16
-[Medium] Question: What is "market correction"?
-A) A decline of 10% or more in the stock market from its recent high
-B) A rise of 10% or more in the stock market from its recent low
-C) A period of stable stock prices
-D) A period of high volatility
-Correct Answer: A
+[Hard] Question: Some planetary scientists continue to use the term "planet" more broadly, including:
+A) Dwarf planets
+B) Rounded satellites
+C) Both A and B
+D) Neither A nor B
+Correct Answer: C
 
 
 ## MCQ 17
-[Hard] Question:  What is "dollar-cost averaging"?
-A) Investing a fixed amount of money at regular intervals regardless of price
-B) Investing all your money at once
-C) Investing only when the market is down
-D) Investing only when the market is up
+[Easy] Question: The word πλανήται (planḗtai) means:
+A) Wanderers
+B) Stars
+C) Gods
+D) Lights
 Correct Answer: A
 
 ## MCQ 18
-[Easy] Question:  What is a "portfolio"?
-A) A collection of investments held by an individual or institution
-B) A type of stock
-C) A type of bond
-D) A financial statement
-Correct Answer: A
-
+[Medium] Question: Ceres is classified as a:
+A) Planet
+B) Dwarf planet
+C) Asteroid
+D) Moon
+Correct Answer: B
 
 ## MCQ 19
-[Medium] Question:  What is "diversification" in investing?
-A) Spreading investments across different asset classes to reduce risk
-B) Investing all your money in one stock
-C) Investing only in high-risk stocks
-D) Investing only in low-risk bonds
-Correct Answer: A
-
+[Hard] Question:  An example of a planet with an extremely eccentric orbit is:
+A) 51 Pegasi b
+B) HD 20782 b
+C) Earth
+D) Jupiter
+Correct Answer: B
 
 ## MCQ 20
-[Hard] Question: What is a "circuit breaker" in the stock market?
-A) A temporary halt in trading designed to curb panic selling
-B) A type of stock index
-C) A type of investment strategy
-D) A government regulation on stock prices
-Correct Answer: A
+[Easy] Question:  Which of these is NOT an ice giant?
+A) Uranus
+B) Neptune
+C) Jupiter
+D) None of the above
+Correct Answer: C
+
 
 ## MCQ 21
-[Easy] Question:  What does "bid" price represent?
-A) The highest price a buyer is willing to pay for a stock
-B) The lowest price a seller is willing to accept for a stock
-C) The last traded price of a stock
-D) The average price of a stock
-Correct Answer: A
+[Medium]  Question: Historically, planets have been associated with:
+A) Religion
+B) Mythology
+C) Folklore
+D) All of the above
+Correct Answer: D
 
 ## MCQ 22
-[Medium] Question: What does "ask" price represent?
-A) The lowest price a seller is willing to accept for a stock
-B) The highest price a buyer is willing to pay for a stock
-C) The last traded price of a stock
-D) The average price of a stock
+[Hard] Question: What technology significantly broadened the understanding of planets?
+A) Telescope
+B) Microscope
+C) Spectrometer
+D) Radio telescope
 Correct Answer: A
-
 
 ## MCQ 23
-[Hard] Question: What is "insider trading"?
-A) Illegal trading of a company's stock by someone with non-public information
-B) Legal trading of a company's stock by its employees
-C) Buying and selling stocks based on publicly available information
-D) Analyzing financial statements to make investment decisions
+[Easy] Question: The Kuiper belt is a collection of:
+A) Icy bodies
+B) Rocky planets
+C) Gas giants
+D) Asteroids
 Correct Answer: A
-
 
 ## MCQ 24
-[Easy] Question: What is a "mutual fund"?
-A) A professionally managed investment vehicle that pools money from many investors to purchase securities.
-B) A type of individual stock
-C) A type of bond
-D) A government security
-Correct Answer: A
+[Medium]  Question: An example of a hot Jupiter is:
+A) Earth
+B) 51 Pegasi b
+C) Pluto
+D) Eris
+Correct Answer: B
 
 ## MCQ 25
-[Medium] Question: What is an ETF (Exchange Traded Fund)?
-A) A type of investment fund that is traded on a stock exchange, typically tracking a specific index.
-B) A type of individual stock
-C) A type of bond
-D) A government security
+[Hard]  Question: Which discovery challenged the conventional understanding of planetary orbits?
+A) Exoplanets with eccentric orbits
+B) The asteroid belt
+C) The moons of Jupiter
+D) The Kuiper belt
 Correct Answer: A
