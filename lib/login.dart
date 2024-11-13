@@ -13,7 +13,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
-  
+
   bool _isLoading = false;
 
   Future<User?> _signInWithGoogle() async {
@@ -64,45 +64,57 @@ class _LoginPageState extends State<LoginPage> {
     await showDialog(
       context: context,
       builder: (context) {
-        return AlertDialog(
-          title: Text('Select Role'),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              ListTile(
-                title: Text('Teacher'),
-                leading: Radio<bool>(
-                  value: true,
-                  groupValue: isTeacher,
-                  onChanged: (bool? value) {
-                    setState(() {
-                      isTeacher = value!;
-                    });
-                  },
-                ),
+        return StatefulBuilder(
+          builder: (context, setState) {
+            return AlertDialog(
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+              title: Center(child: Text('Select Your Role', style: TextStyle(fontWeight: FontWeight.bold))),
+              content: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ListTile(
+                    title: Text('Teacher', style: TextStyle(fontSize: 16)),
+                    leading: Radio<bool>(
+                      value: true,
+                      groupValue: isTeacher,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          isTeacher = value!;
+                        });
+                      },
+                    ),
+                  ),
+                  ListTile(
+                    title: Text('Student', style: TextStyle(fontSize: 16)),
+                    leading: Radio<bool>(
+                      value: false,
+                      groupValue: isTeacher,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          isTeacher = value!;
+                        });
+                      },
+                    ),
+                  ),
+                ],
               ),
-              ListTile(
-                title: Text('Student'),
-                leading: Radio<bool>(
-                  value: false,
-                  groupValue: isTeacher,
-                  onChanged: (bool? value) {
-                    setState(() {
-                      isTeacher = value!;
-                    });
-                  },
+              actions: [
+                Center(
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orange,
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    ),
+                    child: Text('Confirm', style: TextStyle(color: Colors.white)),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
                 ),
-              ),
-            ],
-          ),
-          actions: [
-            TextButton(
-              child: Text('Confirm'),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
-          ],
+              ],
+            );
+          },
         );
       },
     );
@@ -112,35 +124,65 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Login')),
+      appBar: AppBar(
+        title: Text('Login'),
+        centerTitle: true,
+        backgroundColor: Colors.orange,
+      ),
       body: Center(
-        child: _isLoading
-            ? CircularProgressIndicator()
-            : ElevatedButton(
-                onPressed: () async {
-                  User? user = await _signInWithGoogle();
-                  if (user != null) {
-                    // Navigate to the next screen based on role
-                    FirebaseFirestore.instance.collection('users').doc(user.email).get().then((doc) {
-                      if (doc.exists) {
-                        var role = doc['role'];
-                        if (role == 'teacher') {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(builder: (context) => MCQGenerator()),
-                          );
-                        } else {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(builder: (context) => MCQCode()),
-                          );
-                        }
-                      }
-                    });
-                  }
-                },
-                child: Text('Sign In with Google'),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Welcome to the MCQ App',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
               ),
+              SizedBox(height: 30),
+              _isLoading
+                  ? CircularProgressIndicator()
+                  : ElevatedButton.icon(
+                      icon: Icon(Icons.login, color: Colors.white),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.orange,
+                        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                      ),
+                      onPressed: () async {
+                        User? user = await _signInWithGoogle();
+                        if (user != null) {
+                          // Navigate to the next screen based on role
+                          FirebaseFirestore.instance.collection('users').doc(user.email).get().then((doc) {
+                            if (doc.exists) {
+                              var role = doc['role'];
+                              if (role == 'teacher') {
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => MCQGenerator()),
+                                );
+                              } else {
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => MCQCode()),
+                                );
+                              }
+                            }
+                          });
+                        }
+                      },
+                      label: Text('Sign In with Google', style: TextStyle(fontSize: 16)),
+                    ),
+              SizedBox(height: 20),
+              Text(
+                'Please sign in to continue and choose your role.',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.grey[600], fontSize: 14),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

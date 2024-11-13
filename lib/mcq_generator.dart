@@ -24,7 +24,6 @@ class _MCQGeneratorState extends State<MCQGenerator> {
   final TextEditingController _textController = TextEditingController();
   final GlobalKey<ScaffoldMessengerState> _scaffoldKey = GlobalKey<ScaffoldMessengerState>();
 
-  // Function to generate random 6-digit alphanumeric code
   String _generateRandomCode() {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     final rand = Random();
@@ -50,17 +49,21 @@ class _MCQGeneratorState extends State<MCQGenerator> {
       _isLoading = true;
     });
 
+    // Check if a file or text is provided
     if (_file == null && (_textInput == null || _textInput!.isEmpty)) {
       setState(() {
         _isLoading = false;
       });
       _scaffoldKey.currentState?.showSnackBar(
-        SnackBar(content: Text('Please upload a file or enter text.')),
+        SnackBar(
+          content: Text('Please upload a file or enter text to generate MCQs.'),
+          behavior: SnackBarBehavior.floating,
+          backgroundColor: Colors.redAccent,
+        ),
       );
       return;
     }
 
-    // Get the current user's email from Firebase Authentication
     User? user = FirebaseAuth.instance.currentUser;
     if (user == null) {
       setState(() {
@@ -73,7 +76,7 @@ class _MCQGeneratorState extends State<MCQGenerator> {
     }
     String userEmail = user.email ?? 'Unknown';
 
-    var request = http.MultipartRequest('POST', Uri.parse('http://192.168.29.182:5000/generate'));
+    var request = http.MultipartRequest('POST', Uri.parse('http://192.168.1.13:5000/generate'));
 
     if (_file != null) {
       request.files.add(await http.MultipartFile.fromPath(
@@ -96,7 +99,6 @@ class _MCQGeneratorState extends State<MCQGenerator> {
 
         String randomCode = _generateRandomCode();
 
-        // Store the generated quiz data in Firestore
         var userDocRef = FirebaseFirestore.instance.collection('users').doc(userEmail);
         var timepassDocRef = userDocRef.collection('timepass').doc(randomCode);
         await timepassDocRef.set({
@@ -112,7 +114,6 @@ class _MCQGeneratorState extends State<MCQGenerator> {
           'mcqs': mcqs,
         });
 
-        // Navigate to the MCQResults screen after successful submission
         WidgetsBinding.instance.addPostFrameCallback((_) {
           Navigator.push(
             context,
@@ -196,9 +197,10 @@ class _MCQGeneratorState extends State<MCQGenerator> {
 
             ElevatedButton.icon(
               onPressed: _pickFile,
-              icon: Icon(Icons.upload_file),
+              icon: Icon(Icons.upload_file, color: Colors.white),
               label: Text('Upload Document (PDF, TXT, DOCX)'),
               style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.orange,
                 padding: EdgeInsets.symmetric(vertical: 15),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
@@ -218,7 +220,7 @@ class _MCQGeneratorState extends State<MCQGenerator> {
             if (_file != null)
               ElevatedButton.icon(
                 onPressed: _deleteFile,
-                icon: Icon(Icons.delete),
+                icon: Icon(Icons.delete, color: Colors.white),
                 label: Text('Delete Selected File'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.redAccent,
@@ -239,7 +241,9 @@ class _MCQGeneratorState extends State<MCQGenerator> {
                     maxLines: 6,
                     decoration: InputDecoration(
                       hintText: 'Or enter text directly',
-                      border: OutlineInputBorder(),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
                     ),
                     onChanged: (value) {
                       setState(() {
@@ -256,8 +260,9 @@ class _MCQGeneratorState extends State<MCQGenerator> {
                 ? Center(child: CircularProgressIndicator())
                 : ElevatedButton(
                     onPressed: () => _generateMCQs(context),
-                    child: Text('Generate MCQs'),
+                    child: Text('Generate MCQs', style: TextStyle(color: Colors.white)),
                     style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orange,
                       padding: EdgeInsets.symmetric(vertical: 15),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),

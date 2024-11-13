@@ -7,201 +7,199 @@ D) Egyptian
 Correct Answer: B
 
 ## MCQ 2
-[Easy] Question: In antiquity, how many planets were recognized besides the Sun and Moon?
-A) Three
-B) Four
-C) Five
-D) Seven
-Correct Answer: C
+[Easy] Question: In antiquity, the term "planet" included which celestial bodies?
+A) Stars and comets
+B) Sun, Moon, and five visible points of light
+C) Only the five visible points of light
+D) All celestial bodies visible to the naked eye
+Correct Answer: B
 
 ## MCQ 3
-[Easy] Question:  Which of these is NOT a planet visible to the naked eye?
+[Medium] Question:  Heliocentrism led to the recognition of which celestial body as a planet?
 A) Mars
-B) Uranus
-C) Jupiter
+B) Jupiter
+C) Earth
 D) Venus
-Correct Answer: B
+Correct Answer: C
 
 ## MCQ 4
-[Medium] Question: The shift from geocentrism to heliocentrism led to the recognition of which celestial body as a planet?
-A) The Moon
-B) The Sun
-C) Earth
-D) Jupiter
-Correct Answer: C
-
-## MCQ 5
-[Medium] Question: The discovery of which celestial bodies contributed to broadening the definition of "planet"?
-A) Moons of other planets
-B) Uranus and Neptune
-C) Objects in the asteroid belt
-D) All of the above
-Correct Answer: D
-
-## MCQ 6
-[Medium] Question: Pluto is now categorized as what type of celestial body?
-A) Planet
-B) Asteroid
-C) Dwarf planet
-D) Comet
-Correct Answer: C
-
-## MCQ 7
-[Hard] Question: What spurred the debate about the definition of a planet in recent times?
-A) The discovery of exoplanets
-B) The discovery of large objects in the Kuiper belt, like Eris
-C) The development of the telescope
-D) The discovery of brown dwarfs
+[Easy] Question: What technological advancement broadened the meaning of "planet"?
+A) The astrolabe
+B) The telescope
+C) The sextant
+D) The compass
 Correct Answer: B
 
-## MCQ 8
-[Easy] Question:  Which organization officially defined the term "planet" in 2006?
+## MCQ 5
+[Medium] Question:  Ceres is now classified as a:
+A) Planet
+B) Moon
+C) Dwarf planet
+D) Asteroid
+Correct Answer: C
+
+
+## MCQ 6
+[Hard] Question:  The debate about the definition of a planet was reignited by the discovery of:
+A) Uranus
+B) Pluto
+C) Eris
+D) Ceres
+Correct Answer: C
+
+
+## MCQ 7
+[Easy] Question: Which organization officially defines planets in our Solar System?
 A) NASA
 B) ESA
 C) IAU
 D) Royal Astronomical Society
 Correct Answer: C
 
-## MCQ 9
-[Medium] Question: According to the IAU's 2006 definition, how many giant planets are there in our solar system?
+## MCQ 8
+[Medium] Question: How many giant planets are officially recognized in our Solar System?
 A) Two
 B) Four
 C) Six
 D) Eight
 Correct Answer: B
 
-## MCQ 10
-[Easy] Question:  What are planets outside our solar system called?
+## MCQ 9
+[Easy] Question:  What term is used for planets outside our Solar System?
 A) Exoplanets
-B) Dwarf planets
-C) Extrasolar bodies
-D) Outer planets
+B) Extroplanets
+C) Neoplanets
+D) Alien planets
 Correct Answer: A
 
 
-## MCQ 11
-[Hard] Question:  What are "Hot Jupiters"?
-A) Small, rocky planets orbiting close to their stars
-B) Giant planets orbiting close to their stars
-C) Planets with extremely elliptical orbits
-D) Planets located in the habitable zone
-Correct Answer: B
+## MCQ 10
+[Hard] Question: What is a characteristic of "hot Jupiters"?
+A) They are small and cold.
+B) They orbit far from their stars.
+C) They orbit close to their stars.
+D) They have highly elliptical orbits.
+Correct Answer: C
 
+## MCQ 11
+[Medium] Question: HD 20782 b is mentioned as an example of a planet with:
+A) A close orbit to its star
+B) An extremely eccentric orbit
+C) Being located in a habitable zone
+D) Being larger than Jupiter
+Correct Answer: B
 
 ## MCQ 12
-[Medium] Question: The discovery of which type of celestial body also contributed to the debate on the definition of a planet, regarding the distinction between planets and stars?
-A) Exoplanets
-B) Brown dwarfs
-C) Hot Jupiters
-D) Dwarf planets
-Correct Answer: B
+[Easy] Question: Besides planets, the discovery of which other celestial body spurred debate on definitions?
+A) Comets
+B) Asteroids
+C) Brown dwarfs
+D) Black holes
+Correct Answer: C
 
 
 ## MCQ 13
-[Easy] Question:  What is the habitable zone of a star?
-A) The region where a planet can support life
-B) The region where liquid water can potentially exist on a planetary surface
-C) The region where a planet's temperature is above freezing
-D) The region closest to the star
+[Medium] Question: What is the "habitable zone" of a star?
+A) The region where life has been confirmed
+B) The region where liquid water can potentially exist
+C) The region closest to the star
+D) The region farthest from the star
 Correct Answer: B
 
-
 ## MCQ 14
-[Easy] Question:  Which planet is currently known to support life?
+[Easy] Question: Which planet is the only one known to support life?
 A) Mars
 B) Earth
 C) Venus
-D) None of the above
+D) Jupiter
 Correct Answer: B
 
 
 ## MCQ 15
-[Medium] Question:  The ancient Greeks considered the Sun and Moon to be:
-A) Stars
-B) Planets
-C) Gods
-D) Comets
-Correct Answer: B
-
-
-## MCQ 16
-[Hard] Question: Some planetary scientists continue to use the term "planet" more broadly, including:
-A) Dwarf planets
-B) Rounded satellites
-C) Both A and B
-D) Neither A nor B
+[Easy] Question:  Pluto is now classified as a:
+A) Planet
+B) Moon
+C) Dwarf planet
+D) Asteroid
 Correct Answer: C
 
-
-## MCQ 17
-[Easy] Question: The word πλανήται (planḗtai) means:
-A) Wanderers
-B) Stars
-C) Gods
-D) Lights
-Correct Answer: A
-
-## MCQ 18
-[Medium] Question: Ceres is classified as a:
-A) Planet
-B) Dwarf planet
-C) Asteroid
-D) Moon
+## MCQ 16
+[Medium] Question: The ancient Greeks considered how many "wanderers"?
+A) Five
+B) Seven
+C) Nine
+D) Eleven
 Correct Answer: B
 
+## MCQ 17
+[Hard] Question: Some planetary scientists continue to use the term “planet” more broadly to include:
+A) Only exoplanets
+B) Dwarf planets and rounded satellites
+C) Only terrestrial planets
+D) Only gas giants
+Correct Answer: B
+
+## MCQ 18
+[Easy] Question:  The ice giants in our Solar System are:
+A) Jupiter and Saturn
+B) Uranus and Neptune
+C) Earth and Mars
+D) Venus and Mercury
+Correct Answer: B
+
+
 ## MCQ 19
-[Hard] Question:  An example of a planet with an extremely eccentric orbit is:
-A) 51 Pegasi b
-B) HD 20782 b
-C) Earth
-D) Jupiter
+[Medium] Question: The Kuiper belt is primarily composed of:
+A) Rocky asteroids
+B) Icy bodies
+C) Gas clouds
+D) Dust particles
 Correct Answer: B
 
 ## MCQ 20
-[Easy] Question:  Which of these is NOT an ice giant?
-A) Uranus
-B) Neptune
-C) Jupiter
-D) None of the above
-Correct Answer: C
-
+[Hard] Question: 51 Pegasi b is an example of:
+A) A brown dwarf
+B) A hot Jupiter
+C) A dwarf planet
+D) An ice giant
+Correct Answer: B
 
 ## MCQ 21
-[Medium]  Question: Historically, planets have been associated with:
-A) Religion
-B) Mythology
-C) Folklore
-D) All of the above
-Correct Answer: D
+[Easy] Question: What did the ancient Greeks call the “wanderers”?
+A) πλανήται (planḗtai)
+B) αστρονομία (astronomía)
+C) γαλαξίας (galaxías)
+D)  ἥλιος (hḗlios)
+Correct Answer: A
 
 ## MCQ 22
-[Hard] Question: What technology significantly broadened the understanding of planets?
-A) Telescope
-B) Microscope
-C) Spectrometer
-D) Radio telescope
-Correct Answer: A
+[Medium] Question:  The text mentions that planets have historically had associations with:
+A) Science
+B) Religion
+C) Literature
+D) Mathematics
+Correct Answer: B
 
 ## MCQ 23
-[Easy] Question: The Kuiper belt is a collection of:
-A) Icy bodies
-B) Rocky planets
-C) Gas giants
-D) Asteroids
-Correct Answer: A
+[Hard] Question: According to the IAU, how many planets are in our Solar System?
+A) Four
+B) Eight
+C) Twelve
+D) Sixteen
+Correct Answer: B
 
 ## MCQ 24
-[Medium]  Question: An example of a hot Jupiter is:
-A) Earth
-B) 51 Pegasi b
-C) Pluto
-D) Eris
+[Easy] Question:  The asteroid belt lies between which two planets?
+A) Earth and Mars
+B) Mars and Jupiter
+C) Jupiter and Saturn
+D) Saturn and Uranus
 Correct Answer: B
 
 ## MCQ 25
-[Hard]  Question: Which discovery challenged the conventional understanding of planetary orbits?
-A) Exoplanets with eccentric orbits
-B) The asteroid belt
-C) The moons of Jupiter
-D) The Kuiper belt
-Correct Answer: A
+[Medium] Question:  More than how many exoplanets have been discovered?
+A) Five hundred
+B) Five thousand
+C) Fifty thousand
+D) Five million
+Correct Answer: B

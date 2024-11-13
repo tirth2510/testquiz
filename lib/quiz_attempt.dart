@@ -33,7 +33,7 @@ class _QuizAttemptState extends State<QuizAttempt> {
   }
 
   Future<void> _fetchQuizData() async {
-    final url = 'http://192.168.29.182:5001/fetch_quiz/${widget.userEmail}/${widget.quizId}';
+    final url = 'http://192.168.1.13:5001/fetch_quiz/${widget.userEmail}/${widget.quizId}';
     final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
