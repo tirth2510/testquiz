@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:cloud_firestore/cloud_firestore.dart'; // Import Firestore
 import 'mcq_code.dart';
 
 class QuizAttempt extends StatefulWidget {
@@ -16,14 +17,14 @@ class QuizAttempt extends StatefulWidget {
 class _QuizAttemptState extends State<QuizAttempt> {
   List<dynamic> _allQuestions = [];
   List<dynamic> _questions = [];
-  Set<int> _askedQuestions = {}; // Track questions that have been asked
+  Set<int> _askedQuestions = {};
   int _currentQuestionIndex = 0;
   bool _isLoading = true;
   int? _selectedOption;
   int _score = 0;
   int _totalAnswered = 0;
-  List<int> _timePerQuestion = []; // Track time for each question in seconds
-  DateTime? _questionStartTime; // Start time for the current question
+  List<int> _timePerQuestion = []; // Track time for each question
+  DateTime? _questionStartTime;
 
   @override
   void initState() {
@@ -40,7 +41,7 @@ class _QuizAttemptState extends State<QuizAttempt> {
       setState(() {
         _allQuestions = data['mcqs'];
         _questions = _allQuestions.where((q) => q['difficulty'] == 'Easy').take(5).toList();
-        _askedQuestions.addAll(_questions.map((q) => _allQuestions.indexOf(q))); // Mark initial 5 as asked
+        _askedQuestions.addAll(_questions.map((q) => _allQuestions.indexOf(q)));
         _isLoading = false;
         _initializeTimerForCurrentQuestion();
       });
@@ -51,15 +52,13 @@ class _QuizAttemptState extends State<QuizAttempt> {
     }
   }
 
-  // Initialize timer for the current question
   void _initializeTimerForCurrentQuestion() {
     if (_timePerQuestion.length <= _currentQuestionIndex) {
-      _timePerQuestion.add(0); // Initialize time if this question is accessed for the first time
+      _timePerQuestion.add(0);
     }
     _questionStartTime = DateTime.now();
   }
 
-  // Calculate and update time spent on the current question
   void _updateTimeForCurrentQuestion() {
     if (_questionStartTime != null) {
       final timeSpent = DateTime.now().difference(_questionStartTime!).inSeconds;
@@ -76,7 +75,6 @@ class _QuizAttemptState extends State<QuizAttempt> {
       return;
     }
 
-    // Check if the selected answer is correct
     final correctAnswer = _questions[_currentQuestionIndex]['correctAnswer'];
     final selectedAnswer = _questions[_currentQuestionIndex]['options'][_selectedOption!][0];
 
@@ -85,16 +83,12 @@ class _QuizAttemptState extends State<QuizAttempt> {
     }
 
     _totalAnswered++;
-
-    // Update time for the current question
     _updateTimeForCurrentQuestion();
 
-    // Determine the score percentage for difficulty selection
     double scoreRatio = _score / _totalAnswered;
     String nextDifficulty;
 
     if (_totalAnswered >= 5 && _totalAnswered < 10) {
-      // Dynamic difficulty selection based on score ratio after the first 5 questions
       if (scoreRatio <= 0.33) {
         nextDifficulty = 'Easy';
       } else if (scoreRatio <= 0.66) {
@@ -103,11 +97,9 @@ class _QuizAttemptState extends State<QuizAttempt> {
         nextDifficulty = 'Hard';
       }
 
-      // Find a question of the desired difficulty that hasn't been asked
       List<dynamic> nextQuestions = _allQuestions.where((q) => q['difficulty'] == nextDifficulty && !_askedQuestions.contains(_allQuestions.indexOf(q))).toList();
 
       if (nextQuestions.isEmpty) {
-        // Fallback if no question of the desired difficulty is left
         nextQuestions = _allQuestions.where((q) => !_askedQuestions.contains(_allQuestions.indexOf(q))).toList();
       }
 
@@ -120,23 +112,21 @@ class _QuizAttemptState extends State<QuizAttempt> {
     if (_currentQuestionIndex < _questions.length - 1) {
       setState(() {
         _currentQuestionIndex++;
-        _selectedOption = null; // Reset selected option for the new question
-        _initializeTimerForCurrentQuestion(); // Start timer for the new question
+        _selectedOption = null;
+        _initializeTimerForCurrentQuestion();
       });
     } else {
-      _showFinalScoreDialog(); // Show the final score dialog on the 10th question
+      _showFinalScoreDialog();
     }
   }
 
   void _previousQuestion() {
     if (_currentQuestionIndex > 0) {
-      // Update time for the current question before navigating back
       _updateTimeForCurrentQuestion();
-
       setState(() {
         _currentQuestionIndex--;
         _selectedOption = null;
-        _initializeTimerForCurrentQuestion(); // Resume timer for the previous question
+        _initializeTimerForCurrentQuestion();
       });
     }
   }
@@ -203,10 +193,32 @@ class _QuizAttemptState extends State<QuizAttempt> {
     );
   }
 
-  void _showScorePopup() {
-    int totalTimeTaken = _timePerQuestion.reduce((a, b) => a + b); // Calculate total time in seconds
+  Future<void> _saveResultsToFirestore() async {
+    int totalTimeTaken = _timePerQuestion.reduce((a, b) => a + b);
 
-    // Debug print for time taken on each question
+    // Structure the data with score, time per question, and total time taken
+    final quizData = {
+      'score': _score,
+      'timePerQuestion': _timePerQuestion,
+      'totalTimeTaken': totalTimeTaken,
+    };
+
+    // Reference to the document in Firestore
+    final leaderboardRef = FirebaseFirestore.instance
+        .collection('leaderboard')
+        .doc(widget.quizId)
+        .collection('user_email')
+        .doc(widget.userEmail);
+
+    await leaderboardRef.set(quizData);
+    print("Quiz results saved to Firestore: ${quizData}");
+  }
+
+  void _showScorePopup() async {
+    await _saveResultsToFirestore(); // Save results before showing the popup
+
+    int totalTimeTaken = _timePerQuestion.reduce((a, b) => a + b);
+
     print("Time taken per question (in seconds): $_timePerQuestion");
 
     showDialog(

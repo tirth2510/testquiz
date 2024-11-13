@@ -12,6 +12,7 @@ import 'mcq_code.dart'; // Import the MCQCode screen
 import 'login.dart'; // Import your login page
 import 'quizzes.dart'; // Import the new quizzes page
 import 'quiz_attempt.dart'; // Import the new QuizAttempt screen
+import 'leaderboard.dart'; // Import the Leaderboard screen
 import 'dart:math'; // For generating random code
 
 class MCQGenerator extends StatefulWidget {
@@ -176,12 +177,17 @@ class _MCQGeneratorState extends State<MCQGenerator> {
                   context,
                   MaterialPageRoute(builder: (context) => QuizzesPage()), // Navigate to quizzes page
                 );
+              } else if (value == 'Leaderboard') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LeaderboardPage()), // Navigate to leaderboard page
+                );
               } else if (value == 'Logout') {
                 _logout(); // Perform logout
               }
             },
             itemBuilder: (BuildContext context) {
-              return {'My quizzes', 'Logout'}.map((String choice) {
+              return {'My quizzes', 'Leaderboard', 'Logout'}.map((String choice) {
                 return PopupMenuItem<String>(
                   value: choice,
                   child: Text(choice),
