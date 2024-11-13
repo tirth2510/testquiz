@@ -1,205 +1,204 @@
 ## MCQ 1
-[Easy] Question: The word "planet" originates from which language?
-A) Latin
-B) Greek
-C) Roman
-D) Egyptian
+[Easy] Question: What is social media marketing primarily used for?
+A) Building personal relationships
+B) Selling or promoting a brand, product, or service
+C) Connecting with old friends
+D) Sharing personal photos and videos
 Correct Answer: B
 
 ## MCQ 2
-[Easy] Question: In antiquity, the term "planet" included which celestial bodies?
-A) Stars and comets
-B) Sun, Moon, and five visible points of light
-C) Only the five visible points of light
-D) All celestial bodies visible to the naked eye
+[Easy] Question: What is the first step in creating a winning social media strategy?
+A) Creating compelling content
+B) Establishing your objectives and goals
+C) Analyzing your competition
+D) Setting up social media accounts
 Correct Answer: B
 
 ## MCQ 3
-[Medium] Question:  Heliocentrism led to the recognition of which celestial body as a planet?
-A) Mars
-B) Jupiter
-C) Earth
-D) Venus
+[Medium] Question: Which of the following is NOT a characteristic of a well-defined social media goal?
+A) Specific
+B) Measurable
+C) Viral
+D) Attainable
 Correct Answer: C
 
 ## MCQ 4
-[Easy] Question: What technological advancement broadened the meaning of "planet"?
-A) The astrolabe
-B) The telescope
-C) The sextant
-D) The compass
-Correct Answer: B
+[Easy] Question: Which metric is considered a "vanity metric"?
+A) Conversion rate
+B) Click-through rate
+C) Number of followers
+D) Engagement rate
+Correct Answer: C
 
 ## MCQ 5
-[Medium] Question:  Ceres is now classified as a:
-A) Planet
-B) Moon
-C) Dwarf planet
-D) Asteroid
-Correct Answer: C
-
+[Medium] Question: What does CPC stand for in social media marketing?
+A) Cost per click
+B) Content per click
+C) Customer per click
+D) Conversion per click
+Correct Answer: A
 
 ## MCQ 6
-[Hard] Question:  The debate about the definition of a planet was reignited by the discovery of:
-A) Uranus
-B) Pluto
-C) Eris
-D) Ceres
-Correct Answer: C
-
+[Easy] Question:  What is a social media strategy?
+A) A random collection of posts
+B) A document outlining your social media goals and tactics
+C) A list of all your social media accounts
+D) A way to connect with friends and family
+Correct Answer: B
 
 ## MCQ 7
-[Easy] Question: Which organization officially defines planets in our Solar System?
-A) NASA
-B) ESA
-C) IAU
-D) Royal Astronomical Society
+[Hard] Question:  According to the text, what should a good social media plan define in addition to goals and tactics?
+A) Budget allocation for each platform
+B) Content creation software to be used
+C) Roles and responsibilities within the team
+D) Number of posts per day on each platform
 Correct Answer: C
 
 ## MCQ 8
-[Medium] Question: How many giant planets are officially recognized in our Solar System?
-A) Two
-B) Four
-C) Six
-D) Eight
-Correct Answer: B
-
-## MCQ 9
-[Easy] Question:  What term is used for planets outside our Solar System?
-A) Exoplanets
-B) Extroplanets
-C) Neoplanets
-D) Alien planets
+[Medium] Question: In step 2, creating audience personas involves understanding characteristics like:
+A) Age and location
+B) Website traffic sources
+C) Competitor's marketing strategies
+D) Content creation tools
 Correct Answer: A
 
-
-## MCQ 10
-[Hard] Question: What is a characteristic of "hot Jupiters"?
-A) They are small and cold.
-B) They orbit far from their stars.
-C) They orbit close to their stars.
-D) They have highly elliptical orbits.
-Correct Answer: C
-
-## MCQ 11
-[Medium] Question: HD 20782 b is mentioned as an example of a planet with:
-A) A close orbit to its star
-B) An extremely eccentric orbit
-C) Being located in a habitable zone
-D) Being larger than Jupiter
+## MCQ 9
+[Easy] Question: What is the purpose of conducting a competitive analysis?
+A) To copy your competitor's strategies
+B) To understand your competition and identify opportunities
+C) To criticize your competition's efforts
+D) To ignore your competition completely
 Correct Answer: B
 
+## MCQ 10
+[Medium] Question:  What is social listening?
+A) Monitoring conversations and mentions related to your brand and competitors
+B) Listening to music while using social media
+C) Responding to every comment on your posts
+D) Creating podcasts for your social media audience
+Correct Answer: A
+
+## MCQ 11
+[Easy] Question:  What should you do during a social media account audit?
+A) Delete all your old posts
+B) Evaluate what's working and what's not
+C) Change your profile picture and cover photo
+D) Unfollow all your competitors
+Correct Answer: B
+
+
 ## MCQ 12
-[Easy] Question: Besides planets, the discovery of which other celestial body spurred debate on definitions?
-A) Comets
-B) Asteroids
-C) Brown dwarfs
-D) Black holes
+[Easy] Question: When setting up social media profiles, what should you ensure regarding branding?
+A) Use different logos for each platform
+B) Use inconsistent brand colors and fonts
+C) Use consistent branding across all networks
+D) Copy your competitor's branding
 Correct Answer: C
 
-
 ## MCQ 13
-[Medium] Question: What is the "habitable zone" of a star?
-A) The region where life has been confirmed
-B) The region where liquid water can potentially exist
-C) The region closest to the star
-D) The region farthest from the star
+[Medium] Question: What is the purpose of a social media content calendar?
+A) To randomly post content whenever you feel like it
+B) To schedule and plan your social media activities
+C) To track your website traffic
+D) To analyze your competitor's activities
 Correct Answer: B
 
 ## MCQ 14
-[Easy] Question: Which planet is the only one known to support life?
-A) Mars
-B) Earth
-C) Venus
-D) Jupiter
+[Hard] Question:  What does the Results section's "Social Media Marketing Plan for Restaurant Website" primarily focus on?
+A) A theoretical framework for social media marketing
+B) A practical application of the theory discussed in the text
+C) A comparison of different social media platforms
+D) A critique of existing restaurant marketing strategies
 Correct Answer: B
 
-
 ## MCQ 15
-[Easy] Question:  Pluto is now classified as a:
-A) Planet
-B) Moon
-C) Dwarf planet
-D) Asteroid
+[Easy] Question:  What is recommended for the "About Section" of a restaurant's Facebook page?
+A) A brief, generic description
+B) A long, rambling story about the restaurant's history
+C) A compelling, keyword-rich description
+D) Contact information only
 Correct Answer: C
 
 ## MCQ 16
-[Medium] Question: The ancient Greeks considered how many "wanderers"?
-A) Five
-B) Seven
-C) Nine
-D) Eleven
+[Medium] Question: Which of the following is NOT a suggested marketing goal for the restaurant in the Results section?
+A) Increase brand awareness
+B) Offer free meals to all followers
+C) Drive traffic to website
+D) Engage community
 Correct Answer: B
 
 ## MCQ 17
-[Hard] Question: Some planetary scientists continue to use the term “planet” more broadly to include:
-A) Only exoplanets
-B) Dwarf planets and rounded satellites
-C) Only terrestrial planets
-D) Only gas giants
-Correct Answer: B
+[Easy] Question: What type of content is recommended for the restaurant to post on Facebook?
+A) Images of dishes and ambiance
+B) Irrelevant content about unrelated topics
+C) Negative reviews from competitors
+D) Personal photos of the restaurant owner
+Correct Answer: A
 
 ## MCQ 18
-[Easy] Question:  The ice giants in our Solar System are:
-A) Jupiter and Saturn
-B) Uranus and Neptune
-C) Earth and Mars
-D) Venus and Mercury
-Correct Answer: B
+[Hard] What "opportunity" is identified in the competitive analysis of the restaurant's competitors?
+A) Lowering prices to undercut the competition
+B) Copying the competitor's successful strategies
+C) Leveraging consistent content posting and UGC
+D) Ignoring social media marketing altogether
+Correct Answer: C
 
 
 ## MCQ 19
-[Medium] Question: The Kuiper belt is primarily composed of:
-A) Rocky asteroids
-B) Icy bodies
-C) Gas clouds
-D) Dust particles
+[Medium]  What is one of the weaknesses identified for "Competitor 2" in the restaurant example?
+A) High quality images
+B) Inconsistent posting schedule
+C) Strong Facebook presence
+D) Regular promotions and offers
 Correct Answer: B
+
 
 ## MCQ 20
-[Hard] Question: 51 Pegasi b is an example of:
-A) A brown dwarf
-B) A hot Jupiter
-C) A dwarf planet
-D) An ice giant
-Correct Answer: B
+[Easy]  What should the restaurant do with customer reviews on their Facebook page?
+A) Ignore them
+B) Delete negative reviews
+C) Respond professionally to both positive and negative feedback
+D) Only respond to positive reviews
+Correct Answer: C
+
 
 ## MCQ 21
-[Easy] Question: What did the ancient Greeks call the “wanderers”?
-A) πλανήται (planḗtai)
-B) αστρονομία (astronomía)
-C) γαλαξίας (galaxías)
-D)  ἥλιος (hḗlios)
-Correct Answer: A
+[Easy] Which social media platform is the focus of this experiment?
+A) Instagram
+B) Twitter
+C) Facebook
+D) LinkedIn
+Correct Answer: C
 
 ## MCQ 22
-[Medium] Question:  The text mentions that planets have historically had associations with:
-A) Science
-B) Religion
-C) Literature
-D) Mathematics
-Correct Answer: B
+[Medium] What is the recommended approach for setting a posting schedule for social media?
+A) Post randomly throughout the day
+B) Post only during business hours
+C) Use a social media content calendar to plan and schedule posts
+D) Post as frequently as possible, regardless of content quality
+Correct Answer: C
+
 
 ## MCQ 23
-[Hard] Question: According to the IAU, how many planets are in our Solar System?
-A) Four
-B) Eight
-C) Twelve
-D) Sixteen
-Correct Answer: B
+[Hard] The experiment mentions tracking "meaningful metrics." Which of the following is an example of a meaningful metric according to the text?
+A) Number of likes on a post
+B) Number of followers
+C) Conversion rate from social media traffic to website purchases
+D) Number of shares a post receives without leading to any further action
+Correct Answer: C
 
 ## MCQ 24
-[Easy] Question:  The asteroid belt lies between which two planets?
-A) Earth and Mars
-B) Mars and Jupiter
-C) Jupiter and Saturn
-D) Saturn and Uranus
+[Easy] What is the primary purpose of the "Procedure" section in the experiment document?
+A) To explain the theoretical background of social media marketing
+B) To outline the steps students need to follow to complete the experiment
+C) To provide examples of successful social media campaigns
+D) To list resources for further learning about social media marketing
 Correct Answer: B
 
 ## MCQ 25
-[Medium] Question:  More than how many exoplanets have been discovered?
-A) Five hundred
-B) Five thousand
-C) Fifty thousand
-D) Five million
+[Medium]  According to the experiment, what is essential for aligning social media efforts with business objectives?
+A) Focusing solely on increasing follower count
+B) Choosing social media goals that align with overall marketing objectives
+C) Posting frequently regardless of relevance to the target audience
+D) Ignoring competitor activity on social media
 Correct Answer: B
