@@ -8,7 +8,7 @@ from fpdf import FPDF
 from firebase_admin import credentials, firestore, initialize_app
 
 # Set your API key
-os.environ["GOOGLE_API_KEY"] = "AIzaSyCfzCErNSYRZY1aKt4l-gzpQmS_oy4T00U"
+os.environ["GOOGLE_API_KEY"] = "AIzaSyDcJXT-_qs1wOKFuDUOvwSbjSy_phRbiYc"
 genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 model = genai.GenerativeModel("models/gemini-1.5-pro")
 

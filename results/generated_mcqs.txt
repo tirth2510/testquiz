@@ -1,202 +1,207 @@
 ## MCQ 1
-[Easy] Question: What is social media marketing primarily used for?
-A) Building personal connections
-B) Selling or promoting a brand, product, or service
-C) Sharing personal updates and photos
-D) Connecting with old friends
-Correct Answer: B
-
-## MCQ 2
-[Easy] Question: According to the text, which of these is NOT a benefit of social media marketing?
-A) Increasing brand awareness
-B) Providing customer service
-C) Guaranteeing sales
-D) Measuring public sentiment about your business
+[Easy] Question: How many planets are officially recognized in our Solar System?
+A) 9
+B) 12
+C) 8
+D) 10
 Correct Answer: C
 
+## MCQ 2
+[Easy] Question: What process is responsible for the formation of planets within a protoplanetary disk?
+A) Combustion
+B) Accretion
+C) Fission
+D) Fusion
+Correct Answer: B
+
 ## MCQ 3
-[Medium] Question: What does a social media strategy document outline?
-A) Only the social media goals
-B) Only the tactics to achieve goals
-C) Only the metrics to track progress
-D) Goals, tactics, metrics, and account details
-Correct Answer: D
+[Easy] Question: The word "planet" originates from a Greek word meaning:
+A) Stars
+B) Wanderers
+C) Gods
+D) Lights
+Correct Answer: B
+
 
 ## MCQ 4
-[Easy] Question: What is the first step in creating a social media strategy plan?
-A) Creating compelling content
-B) Choosing marketing goals aligned with business objectives
-C) Learning about the audience
-D) Getting to know the competition
+[Medium] Question: According to the nebular hypothesis, what precedes the formation of a protostar and protoplanetary disk?
+A) Supernova explosion
+B) Collapse of an interstellar cloud
+C) Collision of asteroids
+D) Merger of black holes
 Correct Answer: B
 
 ## MCQ 5
-[Hard] Question: What does the acronym "ROI" stand for in the context of social media marketing?
-A) Return on Investment
-B) Rate of Interest
-C) Report on Impressions
-D) Real-time Optimization Insights
-Correct Answer: A
-
+[Medium] Question:  Before the development of the telescope, how many planets were known?
+A) 8
+B) 5
+C) 9
+D) 2
+Correct Answer: B
 
 ## MCQ 6
-[Medium] Question:  Which metrics are considered "vanity metrics"?
-A) Engagement and clickthrough rates
-B) Conversion rates and cost-per-click
-C) Number of followers and likes
-D) Website traffic and sales
+[Medium] Question: What significant shift in astronomical understanding led to Earth being recognized as a planet?
+A) The discovery of exoplanets
+B) The development of the telescope
+C) The acceptance of heliocentrism
+D) The adoption of the IAU's definition of a planet
 Correct Answer: C
+
 
 ## MCQ 7
-[Easy] Question: What is the second step in creating a social media strategy plan?
-A) Choosing marketing goals
-B) Learning everything about your audience
-C) Getting to know your competition
-D) Doing a Facebook account audit
-Correct Answer: B
+[Medium] Question: Ceres, Pluto, and Eris are classified as:
+A) Planets
+B) Moons
+C) Dwarf planets
+D) Asteroids
+Correct Answer: C
+
 
 ## MCQ 8
-[Medium] Question: What information should you know about your target customer?
-A) Age, location, income, job title, interests
-B) Their favorite movies and books
-C) Their personal phone numbers
-D) Their political affiliations
-Correct Answer: A
+[Medium] Question: What are "hot Jupiters"?
+A) Small, rocky planets orbiting close to their stars.
+B) Giant planets orbiting close to their stars.
+C) Planets with extremely elliptical orbits.
+D) Planets located in the habitable zone of their stars.
+Correct Answer: B
 
 ## MCQ 9
-[Easy] Question: What is the purpose of a competitive analysis in social media marketing?
-A) To copy your competitors' strategies
-B) To understand the competition and identify opportunities
-C) To criticize your competitors' efforts
-D) To ignore your competitors altogether
-Correct Answer: B
+[Medium] Question: What two ice giant planets were discovered with the aid of telescopes?
+A) Jupiter and Saturn
+B) Mars and Venus
+C) Uranus and Neptune
+D) Earth and Mercury
+Correct Answer: C
+
 
 ## MCQ 10
-[Medium] Question: What is social listening?
-A) Monitoring conversations and mentions related to your brand and competitors
-B) Literally listening to audio content on social media
-C) Conducting surveys and polls on social media
-D) Ignoring all social media activity
-Correct Answer: A
+[Hard] Question:  The discovery of which objects spurred debate about the definition of a planet in the early 21st century?
+A) Hot Jupiters
+B) Exoplanets
+C) Large Kuiper belt objects, particularly Eris
+D) Brown dwarfs
+Correct Answer: C
 
 ## MCQ 11
-[Easy] Question:  What is the purpose of a Facebook account audit?
-A) To delete all existing content
-B) To evaluate current performance and identify areas for improvement
-C) To create a new account
-D) To ignore your Facebook page
-Correct Answer: B
+[Hard] Question: Besides dwarf planets, what other celestial bodies are some planetary scientists considering including under the broader term "planet"?
+A) Asteroids
+B) Comets
+C) Rounded satellites like the Moon
+D) Brown dwarfs
+Correct Answer: C
+
 
 ## MCQ 12
-[Medium] Question: What should you include in your social media profiles?
-A) Complete profile fields, keywords, consistent branding
-B) Personal opinions and controversial statements
-C) False information to attract more followers
-D) Only your company logo
-Correct Answer: A
-
-## MCQ 13
-[Easy] Question: What is the purpose of a social media content calendar?
-A) To randomly post content
-B) To plan and schedule content for maximum impact
-C) To avoid posting content altogether
-D) To copy content from other businesses
+[Hard] Question: What is the name of the zone around a star where liquid water could potentially exist on a planet's surface?
+A) Goldilocks Zone
+B) Habitable Zone
+C) Temperate Zone
+D) Liquid Zone
 Correct Answer: B
 
+
+## MCQ 13
+[Easy] Question: Which of the following is NOT a terrestrial planet?
+A) Mars
+B) Earth
+C) Jupiter
+D) Mercury
+Correct Answer: C
+
 ## MCQ 14
-[Hard] Question: What does UGC stand for in the context of social media marketing?
-A) User-Generated Content
-B) Universal Graphic Creation
-C) Unique Group Collaboration
-D) User Guidance Checklist
-Correct Answer: A
+[Easy] Question:  What is the most widely accepted theory of planet formation?
+A) Big Bang Theory
+B) Nebular Hypothesis
+C) Planetary Collision Theory
+D) Steady State Theory
+Correct Answer: B
+
 
 ## MCQ 15
-[Medium] Question: How often should you track the performance of your social media channels?
-A) Never
-B) Once a year
-C) At least once a week
-D) Every few months
-Correct Answer: C
+[Easy] Question: Which planet is known to support life?
+A) Mars
+B) Earth
+C) Venus
+D) Jupiter
+Correct Answer: B
 
 
 ## MCQ 16
-[Easy] According to the provided restaurant example, what is a good profile picture choice for a Facebook page?
-A) A picture of the owner
-B) The restaurant logo
-C) A random stock photo
-D) A picture of a competitor's restaurant
+[Medium] Question:  What does the term "exoplanet" refer to?
+A) A planet in our Solar System
+B) A planet outside our Solar System
+C) A dwarf planet
+D) A moon of a planet
 Correct Answer: B
 
 ## MCQ 17
-[Medium] In the restaurant example, what is one marketing goal mentioned?
-A) To reduce customer complaints
-B) To increase brand awareness
-C) To lower staff wages
-D) To ignore online reviews
+[Medium] Question: What is the asteroid belt?
+A) A ring of icy bodies beyond Neptune
+B) A region between Mars and Jupiter containing numerous asteroids
+C) A cloud of gas and dust surrounding a young star
+D) A collection of moons orbiting a planet
 Correct Answer: B
 
 ## MCQ 18
-[Hard]  Which persona in the restaurant example is described as "family-oriented"?
-A) Sarah
-B) Alex
-C) Both Sarah and Alex
-D) Neither Sarah nor Alex
+[Medium]  Question: To what did the ancient Greeks refer with the word  πλανήται (planḗtai)?
+A) Only the five planets visible with the naked eye.
+B) The Sun, Moon, and five visible planets.
+C) All celestial bodies.
+D) Only the stars.
 Correct Answer: B
 
-
 ## MCQ 19
-[Easy] What type of content is recommended for the restaurant's Facebook page?
-A) Images of dishes
-B) Political discussions
-C) Negative reviews of competitors
-D) Personal updates from the chef's life
-Correct Answer: A
+[Hard] Question: The discovery of which celestial bodies blurred the lines between planets and stars?
+A) Exoplanets and hot Jupiters
+B) Brown dwarfs and planets larger than Jupiter
+C) Dwarf planets and large moons
+D) Asteroids and comets
+Correct Answer: B
 
 ## MCQ 20
-[Medium] What is a weakness identified in "Competitor 2" in the restaurant example?
-A) Strong Facebook presence
-B) High quality images
-C) Inconsistent posting schedule
-D) Regular interaction with followers
-Correct Answer: C
+[Hard] Question: What is an example of an exoplanet with an extremely eccentric orbit mentioned in the text?
+A) 51 Pegasi b
+B) HD 20782 b
+C) Earth
+D) Jupiter
+Correct Answer: B
 
 ## MCQ 21
-[Easy] What should the "About Section" of the restaurant's Facebook page include?
-A) A keyword-rich description highlighting cuisine, location, and unique value
-B) The owner's personal life story
-C) Negative reviews of competitors
-D) Only the restaurant's address
-Correct Answer: A
+[Easy] Question: What is Pluto classified as?
+A) Planet
+B) Dwarf Planet
+C) Asteroid
+D) Moon
+Correct Answer: B
 
 ## MCQ 22
-[Medium] What is the recommended Call to Action for the restaurant's Facebook page?
-A) "Call Now" or "Book a Table"
-B) "Leave a negative review"
-C) "Ignore our page"
-D) "Visit our competitor"
+[Easy] Question: Which planet is closest to the Sun?
+A) Mercury
+B) Venus
+C) Earth
+D) Mars
 Correct Answer: A
 
 ## MCQ 23
-[Hard] What is an example of interactive content suggested for the restaurant's Facebook page?
-A) Polls or quizzes about favorite dishes
-B) A static menu image
-C) A long, text-heavy post about the restaurant's history
-D) A single image of the restaurant's exterior
-Correct Answer: A
+[Medium] Question:  Which of the following is NOT a giant planet?
+A) Jupiter
+B) Saturn
+C) Mars
+D) Uranus
+Correct Answer: C
 
 ## MCQ 24
-[Easy] What is the benefit of encouraging customer reviews on the Facebook page?
-A) Builds community trust and engagement
-B) Scares away potential customers
-C) Creates negative publicity
-D) Has no impact on the business
-Correct Answer: A
+[Medium]  Question: What was the organization that officially defined the term "planet" in 2006?
+A) NASA
+B) ESA
+C) IAU
+D) Royal Astronomical Society
+Correct Answer: C
 
 ## MCQ 25
-[Medium]  What is the purpose of including a link to the restaurant's website on the Facebook page?
-A) For ordering, reservations, or more information
-B) To confuse customers
-C) To direct traffic away from Facebook
-D) To showcase competitors' websites
-Correct Answer: A
+[Hard] Question: Give an example of a "hot Jupiter" mentioned in the text.
+A) Eris
+B) Ceres
+C) 51 Pegasi b
+D) Pluto
+Correct Answer: C

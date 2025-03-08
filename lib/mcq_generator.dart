@@ -76,7 +76,7 @@ class _MCQGeneratorState extends State<MCQGenerator> {
     }
     String userEmail = user.email ?? 'Unknown';
 
-    var request = http.MultipartRequest('POST', Uri.parse('http://192.168.1.13:5000/generate'));
+    var request = http.MultipartRequest('POST', Uri.parse('http://192.168.29.108:5000/generate'));
 
     if (_file != null) {
       request.files.add(await http.MultipartFile.fromPath(
