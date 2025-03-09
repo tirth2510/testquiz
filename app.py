@@ -47,6 +47,30 @@ def extract_text_from_file(file_path):
             return f.read()
     return None
 
+
+@app.route('/generate_explanation', methods=['POST'])
+def generate_explanation():
+    try:
+        data = request.get_json()
+        question = data.get("question")
+        correct_answer = data.get("correctAnswer")
+
+        if not question or not correct_answer:
+            return jsonify({"error": "Missing question or correct answer"}), 400
+
+        prompt = f"""
+        Explain why the correct answer to the following question is '{correct_answer}':
+        {question}
+        Provide a concise yet detailed explanation in simple terms.
+        """
+
+        response = model.generate_content(prompt).text.strip()
+
+        return jsonify({"explanation": response}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
 def Question_mcqs_generator(input_text, num_questions):
     prompt = f"""
     You are an AI assistant helping the user generate multiple-choice questions (MCQs) based on the following text:

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart'; // Import Firestore
+import 'package:mcqapp/flashcards.dart';
 import 'mcq_code.dart';
 
 class QuizAttempt extends StatefulWidget {
@@ -215,37 +216,31 @@ class _QuizAttemptState extends State<QuizAttempt> {
   }
 
   void _showScorePopup() async {
-    await _saveResultsToFirestore(); // Save results before showing the popup
+  await _saveResultsToFirestore(); // Save results before showing the popup
 
-    int totalTimeTaken = _timePerQuestion.reduce((a, b) => a + b);
+  int totalTimeTaken = _timePerQuestion.reduce((a, b) => a + b);
 
-    print("Time taken per question (in seconds): $_timePerQuestion");
+  List<Map<String, dynamic>> incorrectQuestions = [];
+  for (int i = 0; i < _questions.length; i++) {
+    String correctAnswer = _questions[i]['correctAnswer'];
+    String selectedAnswer = _questions[i]['options'][_selectedOption!][0];
 
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text("Quiz Completed!"),
-        content: Text("Your final score is $_score out of ${_questions.length}.\nTotal time taken: $totalTimeTaken seconds."),
-        actions: [
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.orange,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            ),
-            onPressed: () {
-              Navigator.of(context).pop();
-              Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(builder: (context) => MCQCode()),
-                (Route<dynamic> route) => false,
-              );
-            },
-            child: Text("OK"),
-          ),
-        ],
-      ),
-    );
+    if (selectedAnswer != correctAnswer) {
+      incorrectQuestions.add({
+        'question': _questions[i]['question'],
+        'options': _questions[i]['options'],
+        'correctAnswer': correctAnswer,
+        'selectedAnswer': selectedAnswer,
+      });
+    }
   }
+
+  Navigator.of(context).pushReplacement(
+    MaterialPageRoute(
+      builder: (context) => FlashcardsScreen(incorrectQuestions: incorrectQuestions),
+    ),
+  );
+}
 
   @override
   Widget build(BuildContext context) {

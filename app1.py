@@ -2,7 +2,7 @@ import os
 from flask import Flask, jsonify
 from firebase_admin import credentials, firestore, initialize_app
 import google.generativeai as genai
-
+from flask import request
 # Set up Google API key for Gemini
 os.environ["GOOGLE_API_KEY"] = "AIzaSyCfzCErNSYRZY1aKt4l-gzpQmS_oy4T00U"
 genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
@@ -12,6 +12,8 @@ cred = credentials.Certificate('../aiquizgenerator-b8817-firebase-adminsdk-bml1x
 initialize_app(cred)
 db = firestore.client()
 app = Flask(__name__)
+
+
 
 def parse_mcqs_text(mcqs_text):
     """
