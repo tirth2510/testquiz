@@ -64,12 +64,26 @@ def generate_explanation():
         Provide a concise yet detailed explanation in simple terms.
         """
 
-        response = model.generate_content(prompt).text.strip()
+        print(f"🔹 Prompt Sent to AI: {prompt}")
 
-        return jsonify({"explanation": response}), 200
+        # Create a model instance
+        model = genai.GenerativeModel("gemini-1.5-pro")
+
+        # Generate explanation using Gemini AI (correct method)
+        response = model.generate_content(prompt)
+
+        if response and hasattr(response, "text"):
+            explanation = response.text.strip()
+        else:
+            explanation = "AI could not generate an explanation."
+
+        print(f"✅ Explanation Generated: {explanation}")
+
+        return jsonify({"explanation": explanation}), 200
+
     except Exception as e:
+        print(f"❌ Error Generating Explanation: {e}")
         return jsonify({"error": str(e)}), 500
-
 
 def Question_mcqs_generator(input_text, num_questions):
     prompt = f"""
