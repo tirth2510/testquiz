@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'quiz_attempt.dart';
 import 'login.dart';
+import 'flashcards_menu.dart'; // Import the Flashcards menu screen
 
 class MCQCode extends StatefulWidget {
   @override
@@ -82,6 +83,13 @@ class _MCQCodeState extends State<MCQCode> {
     }
   }
 
+  void _navigateToFlashcardsMenu() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => FlashcardsMenu()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,13 +99,31 @@ class _MCQCodeState extends State<MCQCode> {
           PopupMenuButton<int>(
             onSelected: (value) {
               if (value == 1) {
+                _navigateToFlashcardsMenu(); // Navigate to Flashcards menu
+              } else if (value == 2) {
                 _logout();
               }
             },
             itemBuilder: (context) => [
               PopupMenuItem<int>(
                 value: 1,
-                child: Text('Logout'),
+                child: Row(
+                  children: [
+                    Icon(Icons.menu_book, color: Colors.black), // Flashcard icon
+                    SizedBox(width: 10),
+                    Text('Flashcards'),
+                  ],
+                ),
+              ),
+              PopupMenuItem<int>(
+                value: 2,
+                child: Row(
+                  children: [
+                    Icon(Icons.logout, color: Colors.black), // Logout icon
+                    SizedBox(width: 10),
+                    Text('Logout'),
+                  ],
+                ),
               ),
             ],
           ),

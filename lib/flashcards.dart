@@ -12,14 +12,20 @@ class FlashcardsScreen extends StatefulWidget {
   _FlashcardsScreenState createState() => _FlashcardsScreenState();
 }
 
-class _FlashcardsScreenState extends State<FlashcardsScreen> {
+class _FlashcardsScreenState extends State<FlashcardsScreen> with SingleTickerProviderStateMixin {
   int _currentIndex = 0;
   List<String> _explanations = [];
+  late AnimationController _controller;
+  late Animation<double> _animation;
 
   @override
   void initState() {
     super.initState();
     _fetchExplanations();
+
+    // Animation Controller
+    _controller = AnimationController(vsync: this, duration: Duration(milliseconds: 300));
+    _animation = CurvedAnimation(parent: _controller, curve: Curves.easeInOut);
   }
 
   Future<void> _fetchExplanations() async {
@@ -56,9 +62,10 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Flashcards"),
+        title: Text("Flashcards", style: TextStyle(fontWeight: FontWeight.bold)),
+        backgroundColor: Colors.deepOrange,
         leading: IconButton(
-          icon: Icon(Icons.close), // Cross button
+          icon: Icon(Icons.close, color: Colors.white), // Cross button
           onPressed: () {
             Navigator.pushAndRemoveUntil(
               context,
@@ -70,41 +77,146 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
-        child: SingleChildScrollView(  // Makes content scrollable
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("Q: ${question['question']}", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-              SizedBox(height: 10),
-              Column(
-                children: question['options'].map<Widget>((opt) => Padding(
-                  padding: const EdgeInsets.only(bottom: 5.0),
-                  child: Text(opt, style: TextStyle(fontSize: 16)),
-                )).toList(),
+        child: Column(
+          children: [
+            // Progress Indicator
+            LinearProgressIndicator(
+              value: (_currentIndex + 1) / widget.incorrectQuestions.length,
+              backgroundColor: Colors.grey[300],
+              color: Colors.deepOrange,
+            ),
+            SizedBox(height: 10),
+            Text(
+              "Question ${_currentIndex + 1} of ${widget.incorrectQuestions.length}",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+            ),
+            SizedBox(height: 10),
+
+            // Flashcard UI (Expanded to prevent overflow)
+            Expanded(
+              child: ScaleTransition(
+                scale: _animation,
+                child: Card(
+                  elevation: 6,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  color: Colors.white,
+                  child: Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: SingleChildScrollView( // Ensures scrolling if needed
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // Question Text
+                          Text(
+                            "Q: ${question['question']}",
+                            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black87),
+                          ),
+                          SizedBox(height: 12),
+
+                          // Answer Options
+                          Column(
+                            children: question['options'].map<Widget>((opt) => Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 5.0),
+                              child: Container(
+                                padding: EdgeInsets.all(10),
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                  color: opt.startsWith(question['correctAnswer']) ? Colors.green[100] : Colors.grey[200],
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: Text(
+                                  opt,
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                    color: opt.startsWith(question['correctAnswer']) ? Colors.green[800] : Colors.black87,
+                                  ),
+                                ),
+                              ),
+                            )).toList(),
+                          ),
+
+                          SizedBox(height: 15),
+
+                          // Selected Answer
+                          Text(
+                            "Your Answer: ${question['selectedAnswer']}",
+                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.red),
+                          ),
+
+                          // Correct Answer
+                          Text(
+                            "Correct Answer: ${question['correctAnswer']}",
+                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.green[700]),
+                          ),
+
+                          SizedBox(height: 15),
+
+                          // Explanation
+                          Text("Explanation:", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                          SizedBox(height: 5),
+                          Container(
+                            padding: EdgeInsets.all(12),
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: Colors.orange[50],
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: SingleChildScrollView(
+                              child: Text(
+                                _explanations[_currentIndex],
+                                style: TextStyle(fontSize: 16, color: Colors.black87),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
               ),
-              SizedBox(height: 10),
-              Text("Your Answer: ${question['selectedAnswer']}", style: TextStyle(color: Colors.red, fontSize: 16)),
-              Text("Correct Answer: ${question['correctAnswer']}", style: TextStyle(color: Colors.green, fontSize: 16)),
-              SizedBox(height: 10),
-              Text("Explanation: ${_explanations[_currentIndex]}", style: TextStyle(fontSize: 16)),
-              SizedBox(height: 20),
-              Row(
+            ),
+
+            // Navigation Buttons
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 10),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   if (_currentIndex > 0)
                     ElevatedButton(
-                      onPressed: () => setState(() => _currentIndex--),
-                      child: Text("Previous"),
+                      onPressed: () {
+                        setState(() {
+                          _currentIndex--;
+                          _controller.forward(from: 0.0); // Restart animation
+                        });
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepOrange,
+                        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                      ),
+                      child: Text("Previous", style: TextStyle(fontSize: 16, color: Colors.white)),
                     ),
                   if (_currentIndex < widget.incorrectQuestions.length - 1)
                     ElevatedButton(
-                      onPressed: () => setState(() => _currentIndex++),
-                      child: Text("Next"),
+                      onPressed: () {
+                        setState(() {
+                          _currentIndex++;
+                          _controller.forward(from: 0.0); // Restart animation
+                        });
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepOrange,
+                        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                      ),
+                      child: Text("Next", style: TextStyle(fontSize: 16, color: Colors.white)),
                     ),
                 ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
