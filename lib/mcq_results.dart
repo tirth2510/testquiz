@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:qr_flutter/qr_flutter.dart'; // 👈 Add this line
 
 class MCQResults extends StatelessWidget {
   final String mcqs;
   final String randomCode;
 
-  // Constructor to accept MCQs and random code
   MCQResults({required this.mcqs, required this.randomCode});
 
   List<Map<String, String>> _parseMCQs(String mcqsText) {
@@ -53,15 +53,29 @@ class MCQResults extends StatelessWidget {
         child: ListView(
           children: [
             Center(
-              child: Text(
-                'MCQs Generated',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              child: Column(
+                children: [
+                  Text(
+                    'MCQs Generated',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: 20),
+
+                  // 👇 QR Code for the random code
+                  QrImageView(
+                    data: randomCode,
+                    version: QrVersions.auto,
+                    size: 200.0,
+                  ),
+                  SizedBox(height: 10),
+
+                  // 👇 Display the random code text
+                  Text(
+                    'Random Code: $randomCode',
+                    style: TextStyle(fontSize: 18, color: Colors.grey[600]),
+                  ),
+                ],
               ),
-            ),
-            SizedBox(height: 10),
-            Text(
-              'Random Code: $randomCode',
-              style: TextStyle(fontSize: 18, color: Colors.grey[600]),
             ),
             Divider(),
             SizedBox(height: 20),

@@ -113,6 +113,16 @@ class _MCQGeneratorState extends State<MCQGenerator> {
           'generated_by': userEmail,
           'mcqs': mcqs,
         });
+        // Add this after saving to 'quiz' collection
+
+// Add this to save to 'quiz_qr' collection with same data
+var qrDocRef = FirebaseFirestore.instance.collection('quiz_qr').doc(randomCode);
+await qrDocRef.set({
+  'status': 'enabled',
+  'generated_by': userEmail,
+  'mcqs': mcqs,
+});
+
 
         WidgetsBinding.instance.addPostFrameCallback((_) {
           Navigator.push(

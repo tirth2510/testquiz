@@ -1,124 +1,134 @@
 ## MCQ 1
-[Easy] Question: How many planets are officially recognized in our Solar System?
-A) 9
-B) 12
-C) 8
-D) 10
-Correct Answer: C
+[Easy] Question: The word "planet" originates from which language?
+A) Latin
+B) Greek
+C) Roman
+D) Egyptian
+Correct Answer: B
 
 ## MCQ 2
-[Easy] Question: What process is responsible for the formation of planets within a protoplanetary disk?
-A) Combustion
-B) Accretion
-C) Fission
-D) Fusion
-Correct Answer: B
+[Easy] Question: In antiquity, how many "planets" were recognized besides the Sun and Moon?
+A) Three
+B) Four
+C) Five
+D) Seven
+Correct Answer: C
 
 ## MCQ 3
-[Easy] Question: The word "planet" originates from a Greek word meaning:
-A) Stars
-B) Wanderers
-C) Gods
-D) Lights
-Correct Answer: B
-
+[Easy] Question:  What caused the shift in understanding Earth's status as a planet?
+A) The invention of the telescope
+B) The discovery of Uranus and Neptune
+C) The adoption of heliocentrism
+D) The discovery of exoplanets
+Correct Answer: C
 
 ## MCQ 4
-[Medium] Question: According to the nebular hypothesis, what precedes the formation of a protostar and protoplanetary disk?
-A) Supernova explosion
-B) Collapse of an interstellar cloud
-C) Collision of asteroids
-D) Merger of black holes
-Correct Answer: B
+[Medium] Question: Which of the following is NOT a category officially recognized by the IAU?
+A) Planet
+B) Dwarf Planet
+C) Rounded Satellite
+D) Star
+Correct Answer: C
 
 ## MCQ 5
-[Medium] Question:  Before the development of the telescope, how many planets were known?
-A) 8
-B) 5
-C) 9
-D) 2
+[Medium] Question: Ceres is classified as a:
+A) Planet
+B) Dwarf Planet
+C) Moon
+D) Exoplanet
 Correct Answer: B
 
 ## MCQ 6
-[Medium] Question: What significant shift in astronomical understanding led to Earth being recognized as a planet?
-A) The discovery of exoplanets
-B) The development of the telescope
-C) The acceptance of heliocentrism
-D) The adoption of the IAU's definition of a planet
+[Medium] Question: Which astronomical discovery led to a debate about the definition of a planet in the 21st century?
+A) The discovery of Uranus
+B) The discovery of Pluto
+C) The discovery of Eris
+D) The discovery of exoplanets
 Correct Answer: C
 
 
 ## MCQ 7
-[Medium] Question: Ceres, Pluto, and Eris are classified as:
-A) Planets
-B) Moons
-C) Dwarf planets
-D) Asteroids
+[Hard] Question: The term “wanderers” in antiquity referred to:
+A) All celestial bodies
+B) Stars only
+C) The Sun, Moon, and five visible planets
+D) Comets and asteroids
 Correct Answer: C
-
 
 ## MCQ 8
-[Medium] Question: What are "hot Jupiters"?
-A) Small, rocky planets orbiting close to their stars.
-B) Giant planets orbiting close to their stars.
-C) Planets with extremely elliptical orbits.
-D) Planets located in the habitable zone of their stars.
-Correct Answer: B
+[Hard] Question:  Some planetary scientists disagree with the IAU definition and include which of the following in their broader definition of "planet"?
+A) Stars
+B) Galaxies
+C) Dwarf planets and rounded satellites
+D) Asteroids and comets
+Correct Answer: C
+
 
 ## MCQ 9
-[Medium] Question: What two ice giant planets were discovered with the aid of telescopes?
-A) Jupiter and Saturn
-B) Mars and Venus
-C) Uranus and Neptune
-D) Earth and Mercury
-Correct Answer: C
+[Easy] Question: What instrument broadened the meaning of "planet"?
+A) Astrolabe
+B) Telescope
+C) Microscope
+D) Spectrometer
+Correct Answer: B
 
 
 ## MCQ 10
-[Hard] Question:  The discovery of which objects spurred debate about the definition of a planet in the early 21st century?
-A) Hot Jupiters
-B) Exoplanets
-C) Large Kuiper belt objects, particularly Eris
-D) Brown dwarfs
-Correct Answer: C
+[Easy] Question: Pluto is part of the:
+A) Asteroid belt
+B) Kuiper belt
+C) Oort cloud
+D) Inner solar system
+Correct Answer: B
+
 
 ## MCQ 11
-[Hard] Question: Besides dwarf planets, what other celestial bodies are some planetary scientists considering including under the broader term "planet"?
-A) Asteroids
-B) Comets
-C) Rounded satellites like the Moon
-D) Brown dwarfs
+[Medium] Question: Which organization officially defines planets in our solar system?
+A) NASA
+B) ESA
+C) IAU
+D) Royal Astronomical Society
 Correct Answer: C
 
 
 ## MCQ 12
-[Hard] Question: What is the name of the zone around a star where liquid water could potentially exist on a planet's surface?
-A) Goldilocks Zone
-B) Habitable Zone
-C) Temperate Zone
-D) Liquid Zone
+[Medium] Question:  What are exoplanets?
+A) Planets in our solar system
+B) Planets outside our solar system
+C) Moons of other planets
+D) Dwarf planets
 Correct Answer: B
 
 
 ## MCQ 13
-[Easy] Question: Which of the following is NOT a terrestrial planet?
-A) Mars
-B) Earth
-C) Jupiter
-D) Mercury
-Correct Answer: C
-
-## MCQ 14
-[Easy] Question:  What is the most widely accepted theory of planet formation?
-A) Big Bang Theory
-B) Nebular Hypothesis
-C) Planetary Collision Theory
-D) Steady State Theory
+[Hard] Question: The text suggests that naming conventions for newly discovered celestial bodies often draw on:
+A) Scientific data
+B) Mythology and folklore
+C) Random number generators
+D) Geographical locations on Earth
 Correct Answer: B
 
 
+## MCQ 14
+[Hard] Question: What characteristic makes a "Hot Jupiter" unusual?
+A) Its small size
+B) Its distance from its star
+C) Its proximity to its star
+D) Its composition
+Correct Answer: C
+
+
 ## MCQ 15
-[Easy] Question: Which planet is known to support life?
+[Easy] Question: How many giant planets are officially recognized in our solar system?
+A) Two
+B) Four
+C) Six
+D) Eight
+Correct Answer: B
+
+
+## MCQ 16
+[Easy] Question: Which planet is confirmed to support life?
 A) Mars
 B) Earth
 C) Venus
@@ -126,82 +136,81 @@ D) Jupiter
 Correct Answer: B
 
 
-## MCQ 16
-[Medium] Question:  What does the term "exoplanet" refer to?
-A) A planet in our Solar System
-B) A planet outside our Solar System
-C) A dwarf planet
-D) A moon of a planet
-Correct Answer: B
 
 ## MCQ 17
-[Medium] Question: What is the asteroid belt?
-A) A ring of icy bodies beyond Neptune
-B) A region between Mars and Jupiter containing numerous asteroids
-C) A cloud of gas and dust surrounding a young star
-D) A collection of moons orbiting a planet
+[Medium] Question: 51 Pegasi b is an example of a:
+A) Dwarf planet
+B) Hot Jupiter
+C) Brown dwarf
+D) Red giant
 Correct Answer: B
+
 
 ## MCQ 18
-[Medium]  Question: To what did the ancient Greeks refer with the word  πλανήται (planḗtai)?
-A) Only the five planets visible with the naked eye.
-B) The Sun, Moon, and five visible planets.
-C) All celestial bodies.
-D) Only the stars.
+[Medium] Question: The habitable zone is defined by:
+A) The presence of oxygen
+B) The potential for liquid water
+C) The distance from the Sun
+D) The presence of plant life
 Correct Answer: B
+
 
 ## MCQ 19
-[Hard] Question: The discovery of which celestial bodies blurred the lines between planets and stars?
-A) Exoplanets and hot Jupiters
-B) Brown dwarfs and planets larger than Jupiter
-C) Dwarf planets and large moons
-D) Asteroids and comets
+[Hard] Question:  What spurred the debate on the line between planets and stars?
+A) The discovery of comets
+B) The discovery of brown dwarfs and large planets
+C) The discovery of asteroids
+D) The discovery of new moons
 Correct Answer: B
+
 
 ## MCQ 20
-[Hard] Question: What is an example of an exoplanet with an extremely eccentric orbit mentioned in the text?
-A) 51 Pegasi b
-B) HD 20782 b
-C) Earth
+[Hard] Question: The passage implies that geocentrism placed what at the center of the universe?
+A) The Sun
+B) The Moon
+C) The Earth
 D) Jupiter
-Correct Answer: B
+Correct Answer: C
 
 ## MCQ 21
-[Easy] Question: What is Pluto classified as?
-A) Planet
-B) Dwarf Planet
-C) Asteroid
-D) Moon
-Correct Answer: B
+[Easy] Question:  Uranus and Neptune are categorized as:
+A) Terrestrial planets
+B) Gas giants
+C) Ice giants
+D) Dwarf planets
+Correct Answer: C
 
 ## MCQ 22
-[Easy] Question: Which planet is closest to the Sun?
-A) Mercury
-B) Venus
-C) Earth
-D) Mars
-Correct Answer: A
+[Medium] Question:  HD 20782 b is mentioned as an example of a planet with:
+A) A close orbit to its star
+B) An extremely eccentric orbit
+C) Multiple moons
+D) Rings
+Correct Answer: B
+
 
 ## MCQ 23
-[Medium] Question:  Which of the following is NOT a giant planet?
-A) Jupiter
-B) Saturn
-C) Mars
-D) Uranus
-Correct Answer: C
+[Easy] Question: The asteroid belt is located between which two planets?
+A) Earth and Mars
+B) Mars and Jupiter
+C) Jupiter and Saturn
+D) Saturn and Uranus
+Correct Answer: B
+
 
 ## MCQ 24
-[Medium]  Question: What was the organization that officially defined the term "planet" in 2006?
-A) NASA
-B) ESA
-C) IAU
-D) Royal Astronomical Society
-Correct Answer: C
+[Medium] Question:  According to the IAU, how many planets are in our solar system?
+A) Four
+B) Eight
+C) Nine
+D) Twelve
+Correct Answer: B
+
 
 ## MCQ 25
-[Hard] Question: Give an example of a "hot Jupiter" mentioned in the text.
-A) Eris
-B) Ceres
-C) 51 Pegasi b
-D) Pluto
-Correct Answer: C
+[Hard] Question: The debate about the definition of a planet highlights the:
+A) Static nature of scientific understanding
+B) Evolving nature of scientific understanding
+C) Inaccuracy of astronomical observations
+D) Lack of consensus among scientists
+Correct Answer: B
