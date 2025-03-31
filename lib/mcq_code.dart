@@ -3,15 +3,26 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'quiz_attempt.dart';
 import 'login.dart';
-import 'flashcards_menu.dart'; // Import the Flashcards menu screen
+import 'flashcards_menu.dart';
+import 'qr_scanner.dart'; // Import your QR Scanner Page
 
 class MCQCode extends StatefulWidget {
+  final String? initialCode;
+
+  MCQCode({this.initialCode});
+
   @override
   _MCQCodeState createState() => _MCQCodeState();
 }
 
 class _MCQCodeState extends State<MCQCode> {
-  String? enteredCode = '';
+  late TextEditingController _codeController;
+
+  @override
+  void initState() {
+    super.initState();
+    _codeController = TextEditingController(text: widget.initialCode ?? '');
+  }
 
   Future<void> _checkQuizStatus(String code) async {
     try {
@@ -90,6 +101,13 @@ class _MCQCodeState extends State<MCQCode> {
     );
   }
 
+  void _navigateToQRScanner() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => QRScannerPage()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,7 +117,7 @@ class _MCQCodeState extends State<MCQCode> {
           PopupMenuButton<int>(
             onSelected: (value) {
               if (value == 1) {
-                _navigateToFlashcardsMenu(); // Navigate to Flashcards menu
+                _navigateToFlashcardsMenu();
               } else if (value == 2) {
                 _logout();
               }
@@ -109,7 +127,7 @@ class _MCQCodeState extends State<MCQCode> {
                 value: 1,
                 child: Row(
                   children: [
-                    Icon(Icons.menu_book, color: Colors.black), // Flashcard icon
+                    Icon(Icons.menu_book, color: Colors.black),
                     SizedBox(width: 10),
                     Text('Flashcards'),
                   ],
@@ -119,7 +137,7 @@ class _MCQCodeState extends State<MCQCode> {
                 value: 2,
                 child: Row(
                   children: [
-                    Icon(Icons.logout, color: Colors.black), // Logout icon
+                    Icon(Icons.logout, color: Colors.black),
                     SizedBox(width: 10),
                     Text('Logout'),
                   ],
@@ -148,11 +166,7 @@ class _MCQCodeState extends State<MCQCode> {
             ),
             SizedBox(height: 30),
             TextField(
-              onChanged: (value) {
-                setState(() {
-                  enteredCode = value;
-                });
-              },
+              controller: _codeController,
               decoration: InputDecoration(
                 hintText: 'Enter quiz code',
                 border: OutlineInputBorder(
@@ -164,11 +178,27 @@ class _MCQCodeState extends State<MCQCode> {
               style: TextStyle(fontSize: 18),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 20),
+            ElevatedButton.icon(
+  onPressed: _navigateToQRScanner,
+  icon: Icon(Icons.qr_code_scanner),
+  label: Text('Scan QR Code'),
+  style: ElevatedButton.styleFrom(
+    backgroundColor: Colors.orange,
+    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
+    textStyle: TextStyle(fontSize: 18),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10),
+    ),
+  ),
+),
+
+            SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                if (enteredCode != null && enteredCode!.isNotEmpty) {
-                  _checkQuizStatus(enteredCode!);
+                String code = _codeController.text.trim();
+                if (code.isNotEmpty) {
+                  _checkQuizStatus(code);
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(content: Text('Please enter a quiz code.')),
