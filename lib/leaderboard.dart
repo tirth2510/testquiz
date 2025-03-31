@@ -263,7 +263,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
           ),
         ),
         bottomTitles: AxisTitles(
-          sideTitles: SideTitles(
+          sideTitles: SideTitles(  
             showTitles: true,
             interval: ((maxX - minX) / 5).clamp(0.5, 2.0),
             getTitlesWidget: (value, _) =>
