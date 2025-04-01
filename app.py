@@ -55,21 +55,34 @@ def generate_explanation():
         question = data.get("question")
         correct_answer = data.get("correctAnswer")
 
-        if not question:
-            return jsonify({"error": "Missing question"}), 400
+        if not question or not correct_answer:
+            return jsonify({"error": "Missing question or correct answer"}), 400
 
-        # General purpose chat prompt if no answer given
-        if not correct_answer or correct_answer == "N/A":
-            prompt = f"Answer the following question in simple terms:\n{question}"
-        else:
-            prompt = f"Explain why the correct answer to the following question is '{correct_answer}':\n{question}\nProvide a clear explanation."
+        prompt = f"""
+        Explain why the correct answer to the following question is '{correct_answer}':
+        {question}
+        Provide a concise yet detailed explanation in simple terms.
+        """
 
+        print(f"🔹 Prompt Sent to AI: {prompt}")
+
+        # Create a model instance
+        model = genai.GenerativeModel("gemini-1.5-pro")
+
+        # Generate explanation using Gemini AI (correct method)
         response = model.generate_content(prompt)
-        explanation = response.text.strip() if hasattr(response, "text") else "AI couldn't respond."
+
+        if response and hasattr(response, "text"):
+            explanation = response.text.strip()
+        else:
+            explanation = "AI could not generate an explanation."
+
+        print(f"✅ Explanation Generated: {explanation}")
 
         return jsonify({"explanation": explanation}), 200
 
     except Exception as e:
+        print(f"❌ Error Generating Explanation: {e}")
         return jsonify({"error": str(e)}), 500
 
 def Question_mcqs_generator(input_text, num_questions):
@@ -155,6 +168,30 @@ def download_file(file_type, filename):
     if os.path.exists(file_path):
         return send_file(file_path, as_attachment=True)
     return "File not found", 404
+
+@app.route('/chatbot', methods=['POST'])
+def chatbot():
+    try:
+        data = request.get_json()
+        question = data.get("question")
+        correct_answer = data.get("correctAnswer")
+
+        if not question:
+            return jsonify({"error": "Missing question"}), 400
+
+        # General purpose chat prompt if no answer given
+        if not correct_answer or correct_answer == "N/A":
+            prompt = f"Answer the following question in simple terms:\n{question}"
+        else:
+            prompt = f"Explain why the correct answer to the following question is '{correct_answer}':\n{question}\nProvide a clear explanation."
+
+        response = model.generate_content(prompt)
+        explanation = response.text.strip() if hasattr(response, "text") else "AI couldn't respond."
+
+        return jsonify({"explanation": explanation}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
 
