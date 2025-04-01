@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mcqapp/chatbot_page.dart';
+import 'package:mcqapp/contactus.dart';
 import 'quiz_attempt.dart';
 import 'login.dart';
 import 'flashcards_menu.dart';
@@ -116,36 +117,52 @@ class _MCQCodeState extends State<MCQCode> {
         title: Text('Enter Quiz Code'),
         actions: [
           PopupMenuButton<int>(
-            onSelected: (value) {
-              if (value == 1) {
-                _navigateToFlashcardsMenu();
-              } else if (value == 2) {
-                _logout();
-              }
-            },
-            itemBuilder: (context) => [
-              PopupMenuItem<int>(
-                value: 1,
-                child: Row(
-                  children: [
-                    Icon(Icons.menu_book, color: Colors.black),
-                    SizedBox(width: 10),
-                    Text('Flashcards'),
-                  ],
-                ),
-              ),
-              PopupMenuItem<int>(
-                value: 2,
-                child: Row(
-                  children: [
-                    Icon(Icons.logout, color: Colors.black),
-                    SizedBox(width: 10),
-                    Text('Logout'),
-                  ],
-                ),
-              ),
-            ],
-          ),
+  onSelected: (value) {
+    if (value == 1) {
+      _navigateToFlashcardsMenu();
+    } else if (value == 2) {
+      _logout();
+    } else if (value == 3) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ContactUsPage()),
+      );
+    }
+  },
+  itemBuilder: (context) => [
+    PopupMenuItem<int>(
+      value: 1,
+      child: Row(
+        children: [
+          Icon(Icons.menu_book, color: Colors.black),
+          SizedBox(width: 10),
+          Text('Flashcards'),
+        ],
+      ),
+    ),
+    PopupMenuItem<int>(
+      value: 2,
+      child: Row(
+        children: [
+          Icon(Icons.logout, color: Colors.black),
+          SizedBox(width: 10),
+          Text('Logout'),
+        ],
+      ),
+    ),
+    PopupMenuItem<int>(
+      value: 3,
+      child: Row(
+        children: [
+          Icon(Icons.contact_page, color: Colors.black),
+          SizedBox(width: 10),
+          Text('Contact Us'),
+        ],
+      ),
+    ),
+  ],
+),
+
         ],
       ),
       body: Padding(
