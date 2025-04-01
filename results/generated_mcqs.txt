@@ -7,108 +7,76 @@ D) Egyptian
 Correct Answer: B
 
 ## MCQ 2
-[Easy] Question: In ancient times, how many "planets" were recognized (including the Sun and Moon)?
-A) Five
-B) Seven
-C) Nine
-D) Twelve
-Correct Answer: B
+[Easy] Question:  In antiquity, how many "planets" were recognized besides the Sun and Moon?
+A) Three
+B) Four
+C) Five
+D) Seven
+Correct Answer: C
 
 ## MCQ 3
-[Easy] Question: The shift from geocentrism to heliocentrism led to the recognition of which celestial body as a planet?
-A) Mars
-B) Jupiter
-C) Earth
-D) Venus
-Correct Answer: C
-
-## MCQ 4
-[Medium] Question:  Which technological advancement expanded the understanding of what constitutes a planet?
-A) The astrolabe
-B) The telescope
-C) The sextant
-D) The compass
+[Easy] Question: What model of the solar system placed the Earth at the center?
+A) Heliocentrism
+B) Geocentrism
+C) Egocentrism
+D) Polycentrism
 Correct Answer: B
 
+## MCQ 4
+[Medium] Question:  The discovery of which objects led to debate about the definition of a planet in the 2000s?
+A) Moons of Jupiter
+B) Uranus and Neptune
+C) Large Kuiper belt objects like Eris
+D) Exoplanets
+Correct Answer: C
+
+
 ## MCQ 5
-[Medium] Question: Ceres is categorized as which type of celestial body?
-A) Planet
-B) Moon
-C) Dwarf planet
-D) Asteroid
-Correct Answer: C
-
-## MCQ 6
-[Medium] Question: Pluto is considered the largest member of which collection of icy bodies?
-A) Asteroid belt
-B) Oort cloud
-C) Kuiper belt
-D) Scattered disc
-Correct Answer: C
-
-## MCQ 7
-[Medium] Question: Which organization officially defined the term "planet" in 2006?
+[Medium] Question: Which organization officially defines the term "planet"?
 A) NASA
 B) ESA
 C) IAU
-D) ROSCOSMOS
+D) Royal Astronomical Society
 Correct Answer: C
 
+
+## MCQ 6
+[Hard] Question: According to the IAU, which of these is NOT a planet?
+A) Mars
+B) Jupiter
+C) Ceres
+D) Neptune
+Correct Answer: C
+
+## MCQ 7
+[Easy] Question: What are planets outside our solar system called?
+A) Exoplanets
+B) Outer planets
+C) Dwarf planets
+D) Rogue planets
+Correct Answer: A
+
+
 ## MCQ 8
-[Hard] Question:  What spurred the debate about the definition of a planet in the early 21st century?
-A) The discovery of exoplanets
-B) The discovery of large objects in the Kuiper belt, like Eris
-C) The development of more powerful telescopes
-D) The reclassification of asteroids
-Correct Answer: B
+[Medium] Question: What is the name of the largest known member of the Kuiper belt?
+A) Eris
+B) Ceres
+C) Pluto
+D) Makemake
+Correct Answer: C
 
 
 ## MCQ 9
-[Easy] Question:  Exoplanets are planets found where?
-A) In our Solar System
-B) Outside our Solar System
-C) In the asteroid belt
-D) Orbiting other stars in our Solar System
+[Medium] Question: Which of the following is an example of a "hot Jupiter"?
+A) HD 20782 b
+B) 51 Pegasi b
+C) Earth
+D) Pluto
 Correct Answer: B
+
 
 ## MCQ 10
-[Easy] Question: What is a "hot Jupiter"?
-A) A small, rocky planet orbiting very close to its star
-B) A giant planet orbiting very close to its star
-C) A dwarf planet located in a hot region of space
-D) A failed star that emits a lot of heat
-Correct Answer: B
-
-
-## MCQ 11
-[Medium] Question:  What is the habitable zone of a star?
-A) The region where a planet can support intelligent life.
-B) The region where a planet can support liquid water on its surface.
-C) The region where a planet can have a stable atmosphere.
-D) The region where a planet is protected from asteroid impacts.
-Correct Answer: B
-
-
-## MCQ 12
-[Medium] Question: What is the main difference between the IAU definition of a planet and the broader definition used by some planetary scientists?
-A) The IAU definition includes exoplanets, while the broader definition does not.
-B) The broader definition includes dwarf planets and some large moons, while the IAU definition does not.
-C) The IAU definition includes asteroids, while the broader definition does not.
-D) The broader definition only includes planets outside our solar system.
-Correct Answer: B
-
-
-## MCQ 13
-[Hard] Question: What characteristic distinguishes planets from stars?
-A) Size
-B) Composition
-C) The presence of moons
-D) The ability to sustain nuclear fusion
-Correct Answer: D
-
-
-## MCQ 14
-[Easy] Question: The Greek word πλανήται (planḗtai) translates to:
+[Hard] Question: The term πλανήται (planḗtai) translates to:
 A) Stars
 B) Wanderers
 C) Gods
@@ -116,95 +84,131 @@ D) Lights
 Correct Answer: B
 
 
+## MCQ 11
+[Easy] Question:  Which of these is a terrestrial planet?
+A) Jupiter
+B) Saturn
+C) Mars
+D) Uranus
+Correct Answer: C
+
+
+## MCQ 12
+[Medium] Question: What is the asteroid belt?
+A) A ring of icy bodies beyond Neptune
+B) A region between Mars and Jupiter containing many small rocky bodies
+C) A cloud of comets surrounding the Solar System
+D) A collection of moons orbiting Jupiter
+Correct Answer: B
+
+
+## MCQ 13
+[Easy] Question:  Earth was recognized as a planet during the rise of which theory?
+A) Geocentrism
+B) Heliocentrism
+C) Orbital Mechanics
+D) Gravity
+Correct Answer: B
+
+## MCQ 14
+[Hard] Question: What characteristic distinguishes "brown dwarfs" from planets?
+A) Size
+B) Composition
+C) Orbital path
+D) The line between planet and star is debated and based on mass and fusion processes.
+Correct Answer: D
+
 ## MCQ 15
-[Easy] Question: Which of these was NOT considered a planet in antiquity?
-A) Sun
-B) Moon
-C) Earth
-D) Jupiter
-Correct Answer: C
-
-
-## MCQ 16
-[Medium] Question: According to the passage, planets have historically been associated with:
-A) Science
-B) Religion
-C) Mathematics
-D) Philosophy
-Correct Answer: B
-
-
-## MCQ 17
-[Medium] Question:  Which of these is NOT a type of planet mentioned in the text?
-A) Terrestrial planet
-B) Giant planet
-C) Gaseous planet
-D) Dwarf planet
-Correct Answer: C
-
-
-## MCQ 18
-[Hard] Question: The discovery of which type of celestial object further blurred the line between planet and star?
-A) Exoplanets
-B) Brown dwarfs
-C) Super-Earths
-D) Hot Jupiters
-Correct Answer: B
-
-
-## MCQ 19
-[Easy]  Which planet is known to support life?
+[Easy] Question: Which planet is known to support life?
 A) Mars
 B) Earth
 C) Venus
 D) Jupiter
 Correct Answer: B
 
-## MCQ 20
-[Medium] Which of the following is an example of a "hot Jupiter"?
-A) Pluto
-B) Ceres
-C) 51 Pegasi b
-D) Eris
+## MCQ 16
+[Medium] Question:  What does the "habitable zone" refer to?
+A) The region around a star where liquid water can potentially exist
+B) The area on a planet where life is most likely to be found
+C) The atmosphere of a planet that can sustain life
+D) The distance from a planet to its moons
+Correct Answer: A
+
+
+## MCQ 17
+[Easy] Question: What instrument significantly broadened the meaning of "planet"?
+A) Telescope
+B) Microscope
+C) Spectroscope
+D) Radio telescope
+Correct Answer: A
+
+## MCQ 18
+[Hard] Question:  Some planetary scientists argue for a broader definition of "planet" that includes:
+A) Only exoplanets
+B) Only terrestrial planets
+C) Dwarf planets and rounded satellites
+D) Only objects orbiting the Sun
 Correct Answer: C
 
-## MCQ 21
-[Medium]  HD 20782 b is mentioned as an example of an exoplanet with:
-A) A close orbit to its star
-B) An extremely eccentric orbit
-C) Multiple moons
-D) A ring system
+## MCQ 19
+[Medium] Question:  HD 20782 b is noted for its:
+A) Large size
+B) Close proximity to its star
+C) Extremely eccentric orbit
+D) Presence of water
+Correct Answer: C
+
+
+## MCQ 20
+[Easy] Question: Planets in antiquity were associated with:
+A) Scientific principles
+B) Gods and mythology
+C) Weather patterns
+D) Seasons
 Correct Answer: B
 
+
+## MCQ 21
+[Medium] Question:  Ceres is categorized as a:
+A) Planet
+B) Dwarf planet
+C) Exoplanet
+D) Moon
+Correct Answer: B
+
+
 ## MCQ 22
-[Hard] What is a characteristic often seen in exoplanets but not in our solar system's planets as frequently?
-A) Rocky surfaces
-B) Presence of moons
-C) Hot Jupiters and eccentric orbits
-D) Circular orbits
+[Hard] Question: The debate on the definition of a planet involves distinguishing between planets and:
+A) Moons
+B) Asteroids
+C) Stars, specifically brown dwarfs
+D) Comets
 Correct Answer: C
 
 
 ## MCQ 23
-[Easy]  Uranus and Neptune are classified as:
+[Easy] Question:  Uranus and Neptune are classified as:
 A) Terrestrial planets
-B) Ice giants
-C) Gas giants
+B) Gas giants
+C) Ice giants
 D) Dwarf planets
-Correct Answer: B
+Correct Answer: C
+
 
 ## MCQ 24
-[Medium] Where is the asteroid belt located?
-A) Between Mars and Jupiter
-B) Between Earth and Mars
-C) Beyond Neptune
-D) Within the Kuiper belt
-Correct Answer: A
+[Medium] Question:  What did the IAU do in 2006 regarding planets?
+A) Discovered a new planet
+B) Adopted a formal definition of a planet
+C) Changed the name of Pluto
+D) Launched a mission to Mars
+Correct Answer: B
+
 
 ## MCQ 25
-[Hard] According to the text, many planetary scientists continue to use a broader definition of "planet" that includes:
-A) Only the eight planets recognized by the IAU
-B) Dwarf planets and rounded satellites
-C) Only exoplanets
-D) Only objects within our solar system
-Correct Answer: B
+[Hard] Question: Which of these features is NOT typically associated with Solar System planets, but is found in some exoplanets?
+A) Having moons
+B) Orbiting a star
+C) Hot Jupiters orbiting close to their stars
+D) Being composed of gas
+Correct Answer: C

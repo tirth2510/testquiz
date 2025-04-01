@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:mcqapp/chatbot_page.dart';
 import 'quiz_attempt.dart';
 import 'login.dart';
 import 'flashcards_menu.dart';
@@ -215,6 +216,25 @@ class _MCQCodeState extends State<MCQCode> {
                 backgroundColor: Colors.orange,
               ),
             ),
+            ElevatedButton.icon(
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ChatbotPage()),
+    );
+  },
+  icon: Icon(Icons.chat),
+  label: Text('Chat with AI'),
+  style: ElevatedButton.styleFrom(
+    backgroundColor: Colors.blueAccent,
+    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
+    textStyle: TextStyle(fontSize: 18),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10),
+    ),
+  ),
+),
+
           ],
         ),
       ),
