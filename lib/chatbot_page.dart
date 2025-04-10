@@ -25,7 +25,7 @@ class _ChatbotPageState extends State<ChatbotPage> {
 
     _scrollToBottom();
 
-    final url = Uri.parse('http://192.168.29.108:5000/chatbot');
+    final url = Uri.parse('https://flaskgenerate.onrender.com/chatbot');
 
     final body = jsonEncode({
       "question": message,

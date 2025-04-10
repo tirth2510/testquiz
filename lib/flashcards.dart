@@ -33,7 +33,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> with SingleTickerPr
 
     for (var question in widget.incorrectQuestions) {
       final response = await http.post(
-        Uri.parse('http://192.168.29.108:5000/generate_explanation'), // Adjust host/port if needed
+        Uri.parse('https://flaskgenerate.onrender.com/generate_explanation'), // Adjust host/port if needed
         headers: {"Content-Type": "application/json"},
         body: jsonEncode({'question': question['question'], 'correctAnswer': question['correctAnswer']}),
       );

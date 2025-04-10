@@ -7,7 +7,7 @@ D) Egyptian
 Correct Answer: B
 
 ## MCQ 2
-[Easy] Question:  In antiquity, how many "planets" were recognized besides the Sun and Moon?
+[Easy] Question: In antiquity, how many "planets" were recognized besides the Sun and Moon?
 A) Three
 B) Four
 C) Five
@@ -15,111 +15,103 @@ D) Seven
 Correct Answer: C
 
 ## MCQ 3
-[Easy] Question: What model of the solar system placed the Earth at the center?
-A) Heliocentrism
-B) Geocentrism
-C) Egocentrism
-D) Polycentrism
-Correct Answer: B
-
-## MCQ 4
-[Medium] Question:  The discovery of which objects led to debate about the definition of a planet in the 2000s?
-A) Moons of Jupiter
-B) Uranus and Neptune
-C) Large Kuiper belt objects like Eris
-D) Exoplanets
-Correct Answer: C
-
-
-## MCQ 5
-[Medium] Question: Which organization officially defines the term "planet"?
-A) NASA
-B) ESA
-C) IAU
-D) Royal Astronomical Society
-Correct Answer: C
-
-
-## MCQ 6
-[Hard] Question: According to the IAU, which of these is NOT a planet?
+[Easy] Question:  Heliocentrism led to the recognition of which celestial body as a planet?
 A) Mars
 B) Jupiter
-C) Ceres
-D) Neptune
+C) Earth
+D) Venus
+Correct Answer: C
+
+## MCQ 4
+[Medium] Question:  The ice giants Uranus and Neptune became recognized as planets with the development of what technology?
+A) Astrolabe
+B) Telescope
+C) Spectroscope
+D) Radio telescope
+Correct Answer: B
+
+## MCQ 5
+[Medium] Question: Ceres is now classified as what type of celestial body?
+A) Planet
+B) Moon
+C) Dwarf Planet
+D) Asteroid
+Correct Answer: C
+
+## MCQ 6
+[Medium] Question: Pluto is the largest member of which collection of icy bodies?
+A) Asteroid belt
+B) Oort Cloud
+C) Kuiper belt
+D) Scattered disc
 Correct Answer: C
 
 ## MCQ 7
-[Easy] Question: What are planets outside our solar system called?
-A) Exoplanets
-B) Outer planets
-C) Dwarf planets
-D) Rogue planets
-Correct Answer: A
-
+[Hard] Question: Which celestial body's discovery spurred debate about the definition of a planet, ultimately leading to the 2006 IAU definition?
+A) Makemake
+B) Haumea
+C) Eris
+D) Sedna
+Correct Answer: C
 
 ## MCQ 8
-[Medium] Question: What is the name of the largest known member of the Kuiper belt?
-A) Eris
-B) Ceres
-C) Pluto
-D) Makemake
-Correct Answer: C
-
+[Easy] Question: According to the 2006 IAU definition, how many giant planets are there in our Solar System?
+A) Two
+B) Four
+C) Six
+D) Eight
+Correct Answer: B
 
 ## MCQ 9
-[Medium] Question: Which of the following is an example of a "hot Jupiter"?
-A) HD 20782 b
-B) 51 Pegasi b
-C) Earth
-D) Pluto
-Correct Answer: B
-
-
-## MCQ 10
-[Hard] Question: The term πλανήται (planḗtai) translates to:
-A) Stars
-B) Wanderers
-C) Gods
-D) Lights
-Correct Answer: B
-
-
-## MCQ 11
-[Easy] Question:  Which of these is a terrestrial planet?
-A) Jupiter
-B) Saturn
-C) Mars
-D) Uranus
+[Medium] Question: Some planetary scientists continue to use the term "planet" more broadly to include which other celestial bodies?
+A) Comets
+B) Asteroids
+C) Dwarf planets and rounded satellites
+D) Meteoroids
 Correct Answer: C
 
+## MCQ 10
+[Easy] Question:  Planets outside our solar system are called:
+A) Exoplanets
+B) Neoplanets
+C) Extroplanets
+D) Outer planets
+Correct Answer: A
+
+## MCQ 11
+[Medium] Question: "Hot Jupiters" are characterized by what feature?
+A) Extremely low temperatures
+B) Orbits far from their parent stars
+C) Orbits close to their parent stars
+D) Being made primarily of ice
+Correct Answer: C
 
 ## MCQ 12
-[Medium] Question: What is the asteroid belt?
-A) A ring of icy bodies beyond Neptune
-B) A region between Mars and Jupiter containing many small rocky bodies
-C) A cloud of comets surrounding the Solar System
-D) A collection of moons orbiting Jupiter
+[Hard] Question: HD 20782 b is mentioned in the text as an example of an exoplanet with what characteristic?
+A) Extremely large size
+B) Extremely eccentric orbit
+C) Being located in the habitable zone
+D) Having multiple moons
 Correct Answer: B
 
-
 ## MCQ 13
-[Easy] Question:  Earth was recognized as a planet during the rise of which theory?
-A) Geocentrism
-B) Heliocentrism
-C) Orbital Mechanics
-D) Gravity
+[Medium] Question:  What causes debate about the distinction between planets and stars?
+A) The discovery of asteroids
+B) The discovery of brown dwarfs and large planets
+C) The existence of moons
+D) The varying composition of planets
 Correct Answer: B
 
 ## MCQ 14
-[Hard] Question: What characteristic distinguishes "brown dwarfs" from planets?
-A) Size
-B) Composition
-C) Orbital path
-D) The line between planet and star is debated and based on mass and fusion processes.
-Correct Answer: D
+[Easy] Question: The habitable zone is defined as the region around a star where:
+A) Life is guaranteed to exist
+B) Liquid water can potentially exist on a planetary surface
+C) Gaseous planets form
+D) The temperature is always above freezing
+Correct Answer: B
 
 ## MCQ 15
-[Easy] Question: Which planet is known to support life?
+[Easy] Question: Which planet is the only one currently known to support life?
 A) Mars
 B) Earth
 C) Venus
@@ -127,88 +119,84 @@ D) Jupiter
 Correct Answer: B
 
 ## MCQ 16
-[Medium] Question:  What does the "habitable zone" refer to?
-A) The region around a star where liquid water can potentially exist
-B) The area on a planet where life is most likely to be found
-C) The atmosphere of a planet that can sustain life
-D) The distance from a planet to its moons
-Correct Answer: A
-
-
-## MCQ 17
-[Easy] Question: What instrument significantly broadened the meaning of "planet"?
-A) Telescope
-B) Microscope
-C) Spectroscope
-D) Radio telescope
-Correct Answer: A
-
-## MCQ 18
-[Hard] Question:  Some planetary scientists argue for a broader definition of "planet" that includes:
-A) Only exoplanets
-B) Only terrestrial planets
-C) Dwarf planets and rounded satellites
-D) Only objects orbiting the Sun
-Correct Answer: C
-
-## MCQ 19
-[Medium] Question:  HD 20782 b is noted for its:
-A) Large size
-B) Close proximity to its star
-C) Extremely eccentric orbit
-D) Presence of water
-Correct Answer: C
-
-
-## MCQ 20
-[Easy] Question: Planets in antiquity were associated with:
+[Medium] Question:  Ancient cultures often associated planets with:
 A) Scientific principles
-B) Gods and mythology
-C) Weather patterns
+B) Gods
+C) Natural disasters
 D) Seasons
 Correct Answer: B
 
 
-## MCQ 21
-[Medium] Question:  Ceres is categorized as a:
-A) Planet
-B) Dwarf planet
-C) Exoplanet
+## MCQ 17
+[Hard] Question:  The text implies that naming conventions for newly discovered Solar System bodies often reflect:
+A) Geological composition
+B) Physical properties
+C) Mythology and folklore
+D) The names of discoverers
+Correct Answer: C
+
+## MCQ 18
+[Easy] Question:  Geocentrism placed which celestial body at the center of the universe?
+A) Sun
+B) Earth
+C) Jupiter
 D) Moon
 Correct Answer: B
 
+## MCQ 19
+[Medium] Question:  The asteroid belt lies between which two planets?
+A) Earth and Mars
+B) Mars and Jupiter
+C) Jupiter and Saturn
+D) Saturn and Uranus
+Correct Answer: B
+
+
+## MCQ 20
+[Hard] Question:  51 Pegasi b is an example of what type of exoplanet?
+A) Super-Earth
+B) Mini-Neptune
+C) Hot Jupiter
+D) Brown Dwarf
+Correct Answer: C
+
+## MCQ 21
+[Easy] Question: The Greek word πλανήται (planḗtai) translates to:
+A) Stars
+B) Wanderers
+C) Gods
+D) Lights
+Correct Answer: B
 
 ## MCQ 22
-[Hard] Question: The debate on the definition of a planet involves distinguishing between planets and:
-A) Moons
-B) Asteroids
-C) Stars, specifically brown dwarfs
-D) Comets
+[Medium] Question: According to the 2006 IAU definition, Earth is classified as a:
+A) Dwarf planet
+B) Giant planet
+C) Terrestrial planet
+D) Gas giant
 Correct Answer: C
-
 
 ## MCQ 23
-[Easy] Question:  Uranus and Neptune are classified as:
-A) Terrestrial planets
-B) Gas giants
-C) Ice giants
-D) Dwarf planets
-Correct Answer: C
-
+[Hard] Question: The debate about the definition of a planet highlights the:
+A) Static nature of scientific definitions
+B) Evolving nature of scientific understanding
+C) Lack of international cooperation in astronomy
+D) Inaccuracy of modern telescopes
+Correct Answer: B
 
 ## MCQ 24
-[Medium] Question:  What did the IAU do in 2006 regarding planets?
-A) Discovered a new planet
-B) Adopted a formal definition of a planet
-C) Changed the name of Pluto
-D) Launched a mission to Mars
+[Easy] Question: The five points of light visible to the naked eye that ancient people considered planets were:
+A) Mercury, Venus, Mars, Uranus, Neptune
+B) Mercury, Venus, Mars, Jupiter, Saturn
+C) Earth, Mars, Jupiter, Saturn, Uranus
+D) Venus, Mars, Jupiter, Saturn, Neptune
 Correct Answer: B
 
 
 ## MCQ 25
-[Hard] Question: Which of these features is NOT typically associated with Solar System planets, but is found in some exoplanets?
-A) Having moons
-B) Orbiting a star
-C) Hot Jupiters orbiting close to their stars
-D) Being composed of gas
+[Medium] Question: What technology significantly broadened the meaning of "planet"?
+A) Photography
+B) Space travel
+C) Telescope
+D) Computers
 Correct Answer: C
