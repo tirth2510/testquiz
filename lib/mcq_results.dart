@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:qr_flutter/qr_flutter.dart'; // 👈 Add this line
+import 'package:qr_flutter/qr_flutter.dart';
+import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart' as pw;
+import 'package:printing/printing.dart';
 
 class MCQResults extends StatelessWidget {
   final String mcqs;
@@ -60,16 +63,12 @@ class MCQResults extends StatelessWidget {
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 20),
-
-                  // 👇 QR Code for the random code
                   QrImageView(
                     data: randomCode,
                     version: QrVersions.auto,
                     size: 200.0,
                   ),
                   SizedBox(height: 10),
-
-                  // 👇 Display the random code text
                   Text(
                     'Random Code: $randomCode',
                     style: TextStyle(fontSize: 18, color: Colors.grey[600]),
@@ -92,6 +91,20 @@ class MCQResults extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 backgroundColor: Colors.orange,
+              ),
+            ),
+            SizedBox(height: 15),
+            ElevatedButton(
+              onPressed: () {
+                _generateAndDownloadPDF(mcqList);
+              },
+              child: Text('Download PDF'),
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(vertical: 15),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                backgroundColor: Colors.blue,
               ),
             ),
           ],
@@ -150,5 +163,42 @@ class MCQResults extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _generateAndDownloadPDF(List<Map<String, String>> mcqList) async {
+    final pdfDoc = pw.Document();
+
+    pdfDoc.addPage(
+      pw.MultiPage(
+        build: (pw.Context context) => [
+          pw.Center(
+            child: pw.Text('MCQ Questions',
+                style: pw.TextStyle(fontSize: 24, fontWeight: pw.FontWeight.bold)),
+          ),
+          pw.SizedBox(height: 20),
+          ...mcqList.map((mcq) => pw.Container(
+                margin: const pw.EdgeInsets.only(bottom: 20),
+                child: pw.Column(
+                  crossAxisAlignment: pw.CrossAxisAlignment.start,
+                  children: [
+                    pw.Text("Question: ${mcq['question']}",
+                        style: pw.TextStyle(fontSize: 16, fontWeight: pw.FontWeight.bold)),
+                    pw.SizedBox(height: 5),
+                    pw.Text("Difficulty: ${mcq['difficulty']}",
+                        style: pw.TextStyle(fontSize: 14, color: PdfColors.orange)),
+                    pw.SizedBox(height: 5),
+                    pw.Text("Options:", style: pw.TextStyle(fontSize: 14, fontWeight: pw.FontWeight.bold)),
+                    ...mcq['options']!.split('\n').map((opt) => pw.Text(opt)),
+                    pw.SizedBox(height: 5),
+                    pw.Text("Correct Answer: ${mcq['correctAnswer']}",
+                        style: pw.TextStyle(color: PdfColors.green, fontWeight: pw.FontWeight.bold)),
+                  ],
+                ),
+              )),
+        ],
+      ),
+    );
+
+    await Printing.layoutPdf(onLayout: (PdfPageFormat format) async => pdfDoc.save());
   }
 }

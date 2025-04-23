@@ -1,202 +1,200 @@
 ## MCQ 1
-[Easy] Question: The word "planet" originates from which language?
-A) Latin
-B) Greek
-C) Roman
-D) Egyptian
+[Easy] What refrigerant is used in the air conditioning units described in this catalog?
+A) R22
+B) R410A
+C) R134a
+D) R404A
 Correct Answer: B
 
 ## MCQ 2
-[Easy] Question: In antiquity, how many "planets" were recognized besides the Sun and Moon?
-A) Three
-B) Four
-C) Five
-D) Seven
+[Easy] Which company manufactures these air conditioning units?
+A) Johnson & Johnson
+B) Hitachi
+C) Johnson Controls - Hitachi Air Conditioning
+D) Mitsubishi Electric
 Correct Answer: C
 
 ## MCQ 3
-[Easy] Question:  Heliocentrism led to the recognition of which celestial body as a planet?
-A) Mars
-B) Jupiter
-C) Earth
-D) Venus
-Correct Answer: C
+[Medium] What is the function of the hydrophilic aluminum fin?
+A) Reduce compressor vibration
+B) Enhance heat exchange performance
+C) Protect against fire hazards
+D) Control fan speed
+Correct Answer: B
 
 ## MCQ 4
-[Medium] Question:  The ice giants Uranus and Neptune became recognized as planets with the development of what technology?
-A) Astrolabe
-B) Telescope
-C) Spectroscope
-D) Radio telescope
+[Easy] What does ESP stand for in the context of this catalog?
+A) Extra Sensory Perception
+B) External Static Pressure
+C) Electronic Stability Program
+D) Energy Saving Program
 Correct Answer: B
 
 ## MCQ 5
-[Medium] Question: Ceres is now classified as what type of celestial body?
-A) Planet
-B) Moon
-C) Dwarf Planet
-D) Asteroid
-Correct Answer: C
-
-## MCQ 6
-[Medium] Question: Pluto is the largest member of which collection of icy bodies?
-A) Asteroid belt
-B) Oort Cloud
-C) Kuiper belt
-D) Scattered disc
-Correct Answer: C
-
-## MCQ 7
-[Hard] Question: Which celestial body's discovery spurred debate about the definition of a planet, ultimately leading to the 2006 IAU definition?
-A) Makemake
-B) Haumea
-C) Eris
-D) Sedna
-Correct Answer: C
-
-## MCQ 8
-[Easy] Question: According to the 2006 IAU definition, how many giant planets are there in our Solar System?
-A) Two
-B) Four
-C) Six
-D) Eight
+[Medium] What feature ensures the unit returns to its previous settings after a power outage?
+A) Temperature Compensation
+B) Auto Restart
+C) Quiet Operation
+D) Self Diagnosis
 Correct Answer: B
 
-## MCQ 9
-[Medium] Question: Some planetary scientists continue to use the term "planet" more broadly to include which other celestial bodies?
-A) Comets
-B) Asteroids
-C) Dwarf planets and rounded satellites
-D) Meteoroids
+## MCQ 6
+[Hard] What is the maximum difference in level allowed for the RPIH-6.5TNZ1NH ducted unit's refrigerant piping?
+A) 7.5m
+B) 15m
+C) 20m
+D) 30m
+Correct Answer: D
+
+## MCQ 7
+[Easy] What type of compressor is used in the 2.0HP to 6.5HP units?
+A) Reciprocating
+B) Scroll
+C) Twin Rotary
+D) Centrifugal
 Correct Answer: C
 
+
+## MCQ 8
+[Medium] What is the function of the blue coating on the hydrophilic aluminum fin?
+A) Enhance heat exchange
+B) Increase water wettability
+C) Protect against corrosion
+D) Reduce noise levels
+Correct Answer: C
+
+## MCQ 9
+[Hard] What is the maximum piping length for the RCI-2.0TNZ1NH cassette type unit?
+A) 15m
+B) 20m
+C) 30m
+D) 50m
+Correct Answer: B
+
 ## MCQ 10
-[Easy] Question:  Planets outside our solar system are called:
-A) Exoplanets
-B) Neoplanets
-C) Extroplanets
-D) Outer planets
-Correct Answer: A
+[Easy] What type of controller is used with the RPIL series (ducted type)?
+A) Remote controller
+B) Wired controller
+C) Wireless controller
+D) Smart controller
+Correct Answer: B
 
 ## MCQ 11
-[Medium] Question: "Hot Jupiters" are characterized by what feature?
-A) Extremely low temperatures
-B) Orbits far from their parent stars
-C) Orbits close to their parent stars
-D) Being made primarily of ice
+[Medium] Which series of indoor units allows for both floor and ceiling installation?
+A) RCI
+B) RPIL
+C) RPFC
+D) HCRA
 Correct Answer: C
 
 ## MCQ 12
-[Hard] Question: HD 20782 b is mentioned in the text as an example of an exoplanet with what characteristic?
-A) Extremely large size
-B) Extremely eccentric orbit
-C) Being located in the habitable zone
-D) Having multiple moons
+[Easy] The catalog mentions a "Quiet Operation" feature. What does this feature do?
+A) Automatically restarts the unit after a power outage
+B) Reduces fan speed and compressor frequency
+C) Compensates for temperature differences at high ceiling heights
+D) Adjusts the airflow direction
 Correct Answer: B
 
 ## MCQ 13
-[Medium] Question:  What causes debate about the distinction between planets and stars?
-A) The discovery of asteroids
-B) The discovery of brown dwarfs and large planets
-C) The existence of moons
-D) The varying composition of planets
+[Hard] What is the diameter of the drainage water pipe for the RCI-3.0TNZ1NH unit?
+A) IDΦ21
+B) IDΦ32
+C) ODΦ25
+D) ODΦ32
 Correct Answer: B
 
 ## MCQ 14
-[Easy] Question: The habitable zone is defined as the region around a star where:
-A) Life is guaranteed to exist
-B) Liquid water can potentially exist on a planetary surface
-C) Gaseous planets form
-D) The temperature is always above freezing
-Correct Answer: B
+[Medium] What are the two airflow options mentioned for the cassette type units?
+A) Horizontal and diagonal
+B) Vertical and circular
+C) Horizontal and vertical
+D) Diagonal and circular
+Correct Answer: C
 
 ## MCQ 15
-[Easy] Question: Which planet is the only one currently known to support life?
-A) Mars
-B) Earth
-C) Venus
-D) Jupiter
-Correct Answer: B
+[Easy] What is the advantage of the washable filter?
+A) Improves air quality
+B) Reduces noise levels
+C) Convenient service and maintenance
+D) Increases energy efficiency
+Correct Answer: C
 
 ## MCQ 16
-[Medium] Question:  Ancient cultures often associated planets with:
-A) Scientific principles
-B) Gods
-C) Natural disasters
-D) Seasons
+[Hard]  What is the refrigerant oil used in the RAS-2.0TNZGNH1 outdoor unit?
+A) VG74
+B) ATMOS-RB68EP
+C) α68HES-H
+D) None of the above
 Correct Answer: B
 
-
 ## MCQ 17
-[Hard] Question:  The text implies that naming conventions for newly discovered Solar System bodies often reflect:
-A) Geological composition
-B) Physical properties
-C) Mythology and folklore
-D) The names of discoverers
+[Medium] What type of fan is used in the Cassette Type units highlighted in the catalog?
+A) Centrifugal fan
+B) Axial fan
+C) Vortex fan
+D) Cross-flow fan
 Correct Answer: C
 
 ## MCQ 18
-[Easy] Question:  Geocentrism placed which celestial body at the center of the universe?
-A) Sun
-B) Earth
-C) Jupiter
-D) Moon
-Correct Answer: B
+[Easy] What is the function of the "Temperature Compensation" feature?
+A) Enhances temperature distribution at high ceiling heights
+B) Automatically restarts the unit after a power outage
+C) Reduces fan speed and compressor frequency
+D) Protects the compressor from overheating
+Correct Answer: A
 
 ## MCQ 19
-[Medium] Question:  The asteroid belt lies between which two planets?
-A) Earth and Mars
-B) Mars and Jupiter
-C) Jupiter and Saturn
-D) Saturn and Uranus
-Correct Answer: B
-
+[Hard] What is the maximum ambient temperature for cooling operation for most models mentioned?
+A) 30°C
+B) 35°C
+C) 43°C
+D) -15°C
+Correct Answer: C
 
 ## MCQ 20
-[Hard] Question:  51 Pegasi b is an example of what type of exoplanet?
-A) Super-Earth
-B) Mini-Neptune
-C) Hot Jupiter
-D) Brown Dwarf
-Correct Answer: C
+[Medium] What are the two air intake options for the ducted type units?
+A) Top and bottom
+B) Bottom and rear
+C) Front and rear
+D) Top and rear
+Correct Answer: B
 
 ## MCQ 21
-[Easy] Question: The Greek word πλανήται (planḗtai) translates to:
-A) Stars
-B) Wanderers
-C) Gods
-D) Lights
-Correct Answer: B
+[Easy]  The catalog states that the information contained within is merely informative. What does this imply?
+A) Hitachi guarantees the accuracy of the information.
+B) Hitachi is not responsible for damages arising from the use or interpretation of the information.
+C) The information is subject to change without notice.
+D) Both B and C
+Correct Answer: D
 
 ## MCQ 22
-[Medium] Question: According to the 2006 IAU definition, Earth is classified as a:
-A) Dwarf planet
-B) Giant planet
-C) Terrestrial planet
-D) Gas giant
-Correct Answer: C
+[Medium]  What benefit does the twin rotary compressor offer?
+A) Increased cooling capacity
+B) Reduced vibration and noise
+C) Wider ambient temperature range
+D) All of the above
+Correct Answer: B
 
 ## MCQ 23
-[Hard] Question: The debate about the definition of a planet highlights the:
-A) Static nature of scientific definitions
-B) Evolving nature of scientific understanding
-C) Lack of international cooperation in astronomy
-D) Inaccuracy of modern telescopes
-Correct Answer: B
+[Hard] What triggers the unit to turn off if the water pump malfunctions in the ducted unit?
+A) Low pressure switch
+B) High pressure switch
+C) Water level switch
+D) Discharge temperature sensor
+Correct Answer: C
 
 ## MCQ 24
-[Easy] Question: The five points of light visible to the naked eye that ancient people considered planets were:
-A) Mercury, Venus, Mars, Uranus, Neptune
-B) Mercury, Venus, Mars, Jupiter, Saturn
-C) Earth, Mars, Jupiter, Saturn, Uranus
-D) Venus, Mars, Jupiter, Saturn, Neptune
-Correct Answer: B
-
+[Easy] What is the purpose of the "Powerful" function on the remote controller?
+A) Activates Quiet Operation
+B) Enables Auto Restart
+C) Not specified in the text
+D) Increases cooling capacity temporarily
+Correct Answer: C
 
 ## MCQ 25
-[Medium] Question: What technology significantly broadened the meaning of "planet"?
-A) Photography
-B) Space travel
-C) Telescope
-D) Computers
-Correct Answer: C
+[Medium] What does the "Self Diagnosis" feature do?
+A) Automatically fixes any detected faults
+B) Displays failure codes for troubleshooting
+C) Prevents refrigerant leaks
+D) Adjusts fan speed based on actual load
+Correct Answer: B
