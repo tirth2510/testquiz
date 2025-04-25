@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:cloud_firestore/cloud_firestore.dart'; // Import Firestore
+import 'package:cloud_firestore/cloud_firestore.dart'; 
 import 'package:mcqapp/flashcards.dart';
 import 'mcq_code.dart';
 
@@ -24,29 +24,49 @@ class _QuizAttemptState extends State<QuizAttempt> {
   int? _selectedOption;
   int _score = 0;
   int _totalAnswered = 0;
-  List<int> _timePerQuestion = []; // Track time for each question
+  List<int> _timePerQuestion = [];
   DateTime? _questionStartTime;
+
+  int totalQuestionsToAsk = 10; // <-- default fallback (will override after fetching)
 
   @override
   void initState() {
     super.initState();
-    _fetchQuizData();
+    _fetchQuizSettingsAndData(); // <-- New combined function
   }
 
-  Future<void> _fetchQuizData() async {
-    final url = 'http://192.168.29.108:5001/fetch_quiz/${widget.userEmail}/${widget.quizId}';
-    final response = await http.get(Uri.parse(url));
+  // Fetch both totalQuestionsToAsk and quiz data
+  Future<void> _fetchQuizSettingsAndData() async {
+    try {
+      // Fetch totalQuestionsToAsk first from Firestore
+      var quizDoc = await FirebaseFirestore.instance.collection('quiz').doc(widget.quizId).get();
 
-    if (response.statusCode == 200) {
-      final data = json.decode(response.body);
-      setState(() {
-        _allQuestions = data['mcqs'];
-        _questions = _allQuestions.where((q) => q['difficulty'] == 'Easy').take(5).toList();
-        _askedQuestions.addAll(_questions.map((q) => _allQuestions.indexOf(q)));
-        _isLoading = false;
-        _initializeTimerForCurrentQuestion();
-      });
-    } else {
+      if (quizDoc.exists && quizDoc.data()!.containsKey('totalQuestionsToAsk')) {
+        totalQuestionsToAsk = quizDoc['totalQuestionsToAsk'];
+      } else {
+        totalQuestionsToAsk = 10; // fallback if not found
+      }
+
+      // Now fetch questions
+      final url = 'http://192.168.29.108:5001/fetch_quiz/${widget.userEmail}/${widget.quizId}';
+      final response = await http.get(Uri.parse(url));
+
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        setState(() {
+          _allQuestions = data['mcqs'];
+          _questions = _allQuestions.where((q) => q['difficulty'] == 'Easy').take(5).toList();
+          _askedQuestions.addAll(_questions.map((q) => _allQuestions.indexOf(q)));
+          _isLoading = false;
+          _initializeTimerForCurrentQuestion();
+        });
+      } else {
+        setState(() {
+          _isLoading = false;
+        });
+      }
+    } catch (e) {
+      print('Error fetching quiz settings and data: $e');
       setState(() {
         _isLoading = false;
       });
@@ -89,7 +109,7 @@ class _QuizAttemptState extends State<QuizAttempt> {
     double scoreRatio = _score / _totalAnswered;
     String nextDifficulty;
 
-    if (_totalAnswered >= 5 && _totalAnswered < 10) {
+    if (_totalAnswered >= 5 && _questions.length < totalQuestionsToAsk) {
       if (scoreRatio <= 0.33) {
         nextDifficulty = 'Easy';
       } else if (scoreRatio <= 0.66) {
@@ -98,10 +118,14 @@ class _QuizAttemptState extends State<QuizAttempt> {
         nextDifficulty = 'Hard';
       }
 
-      List<dynamic> nextQuestions = _allQuestions.where((q) => q['difficulty'] == nextDifficulty && !_askedQuestions.contains(_allQuestions.indexOf(q))).toList();
+      List<dynamic> nextQuestions = _allQuestions
+          .where((q) => q['difficulty'] == nextDifficulty && !_askedQuestions.contains(_allQuestions.indexOf(q)))
+          .toList();
 
       if (nextQuestions.isEmpty) {
-        nextQuestions = _allQuestions.where((q) => !_askedQuestions.contains(_allQuestions.indexOf(q))).toList();
+        nextQuestions = _allQuestions
+            .where((q) => !_askedQuestions.contains(_allQuestions.indexOf(q)))
+            .toList();
       }
 
       if (nextQuestions.isNotEmpty) {
@@ -163,48 +187,15 @@ class _QuizAttemptState extends State<QuizAttempt> {
     );
   }
 
-  void _showExitConfirmationDialog() {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text("Exit Quiz"),
-        content: Text("Are you sure you want to exit? Your quiz will be submitted."),
-        actions: [
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.orange,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            ),
-            onPressed: () => Navigator.of(context).pop(),
-            child: Text("Cancel"),
-          ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.orange,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            ),
-            onPressed: () {
-              Navigator.of(context).pop();
-              _showScorePopup();
-            },
-            child: Text("Exit & Submit"),
-          ),
-        ],
-      ),
-    );
-  }
-
   Future<void> _saveResultsToFirestore() async {
     int totalTimeTaken = _timePerQuestion.reduce((a, b) => a + b);
 
-    // Structure the data with score, time per question, and total time taken
     final quizData = {
       'score': _score,
       'timePerQuestion': _timePerQuestion,
       'totalTimeTaken': totalTimeTaken,
     };
 
-    // Reference to the document in Firestore
     final leaderboardRef = FirebaseFirestore.instance
         .collection('leaderboard')
         .doc(widget.quizId)
@@ -212,35 +203,33 @@ class _QuizAttemptState extends State<QuizAttempt> {
         .doc(widget.userEmail);
 
     await leaderboardRef.set(quizData);
-    print("Quiz results saved to Firestore: ${quizData}");
+    print("Quiz results saved to Firestore: $quizData");
   }
 
   void _showScorePopup() async {
-  await _saveResultsToFirestore(); // Save results before showing the popup
+    await _saveResultsToFirestore();
 
-  int totalTimeTaken = _timePerQuestion.reduce((a, b) => a + b);
+    List<Map<String, dynamic>> incorrectQuestions = [];
+    for (int i = 0; i < _questions.length; i++) {
+      String correctAnswer = _questions[i]['correctAnswer'];
+      String selectedAnswer = _questions[i]['options'][_selectedOption!][0];
 
-  List<Map<String, dynamic>> incorrectQuestions = [];
-  for (int i = 0; i < _questions.length; i++) {
-    String correctAnswer = _questions[i]['correctAnswer'];
-    String selectedAnswer = _questions[i]['options'][_selectedOption!][0];
-
-    if (selectedAnswer != correctAnswer) {
-      incorrectQuestions.add({
-        'question': _questions[i]['question'],
-        'options': _questions[i]['options'],
-        'correctAnswer': correctAnswer,
-        'selectedAnswer': selectedAnswer,
-      });
+      if (selectedAnswer != correctAnswer) {
+        incorrectQuestions.add({
+          'question': _questions[i]['question'],
+          'options': _questions[i]['options'],
+          'correctAnswer': correctAnswer,
+          'selectedAnswer': selectedAnswer,
+        });
+      }
     }
-  }
 
-  Navigator.of(context).pushReplacement(
-    MaterialPageRoute(
-      builder: (context) => FlashcardsScreen(incorrectQuestions: incorrectQuestions),
-    ),
-  );
-}
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => FlashcardsScreen(incorrectQuestions: incorrectQuestions),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -265,7 +254,7 @@ class _QuizAttemptState extends State<QuizAttempt> {
         title: Text('Quiz Attempt'),
         leading: IconButton(
           icon: Icon(Icons.close),
-          onPressed: _showExitConfirmationDialog,
+          onPressed: _showFinalScoreDialog,
         ),
       ),
       body: Padding(
@@ -278,13 +267,13 @@ class _QuizAttemptState extends State<QuizAttempt> {
               children: [
                 Expanded(
                   child: LinearProgressIndicator(
-                    value: (_currentQuestionIndex + 1) / 10,
+                    value: (_currentQuestionIndex + 1) / totalQuestionsToAsk,
                     backgroundColor: Colors.grey[300],
                     color: Colors.orange,
                   ),
                 ),
                 SizedBox(width: 10),
-                Text('${_currentQuestionIndex + 1}/10'),
+                Text('${_currentQuestionIndex + 1}/$totalQuestionsToAsk'),
               ],
             ),
             SizedBox(height: 20),
@@ -378,14 +367,14 @@ class _QuizAttemptState extends State<QuizAttempt> {
                     child: Text('Previous'),
                   ),
                 ElevatedButton(
-                  onPressed: _currentQuestionIndex == 9
+                  onPressed: _currentQuestionIndex == totalQuestionsToAsk - 1
                       ? _showFinalScoreDialog
                       : _nextQuestion,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.orange,
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   ),
-                  child: Text(_currentQuestionIndex == 9 ? 'Submit' : 'Next'),
+                  child: Text(_currentQuestionIndex == totalQuestionsToAsk - 1 ? 'Submit' : 'Next'),
                 ),
               ],
             ),

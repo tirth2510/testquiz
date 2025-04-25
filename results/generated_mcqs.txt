@@ -1,200 +1,215 @@
 ## MCQ 1
-[Easy] What refrigerant is used in the air conditioning units described in this catalog?
+[Easy] Question: What type of refrigerant is used in these air conditioning units?
 A) R22
 B) R410A
 C) R134a
-D) R404A
+D) R407C
 Correct Answer: B
 
 ## MCQ 2
-[Easy] Which company manufactures these air conditioning units?
-A) Johnson & Johnson
-B) Hitachi
+[Easy] Question: Which company manufactures these air conditioning units?
+A) Mitsubishi
+B) Daikin
 C) Johnson Controls - Hitachi Air Conditioning
-D) Mitsubishi Electric
+D) LG
 Correct Answer: C
 
 ## MCQ 3
-[Medium] What is the function of the hydrophilic aluminum fin?
-A) Reduce compressor vibration
-B) Enhance heat exchange performance
-C) Protect against fire hazards
-D) Control fan speed
+[Easy] Question: What is the primary function of these units as described in the initial specifications?
+A) Heating
+B) Cooling
+C) Both Heating and Cooling
+D) Dehumidifying
 Correct Answer: B
 
 ## MCQ 4
-[Easy] What does ESP stand for in the context of this catalog?
-A) Extra Sensory Perception
+[Medium] Question: What does ESP stand for in the context of these air conditioning units?
+A) Energy Saving Performance
 B) External Static Pressure
-C) Electronic Stability Program
-D) Energy Saving Program
+C) Enhanced Service Protocol
+D) Electronic Stability Program
 Correct Answer: B
 
 ## MCQ 5
-[Medium] What feature ensures the unit returns to its previous settings after a power outage?
-A) Temperature Compensation
-B) Auto Restart
-C) Quiet Operation
-D) Self Diagnosis
-Correct Answer: B
+[Medium] Question: What feature helps to improve temperature distribution in high-ceilinged rooms?
+A) Auto Restart
+B) Quiet Operation
+C) Temperature Compensation
+D) Multi-Speed Fan
+Correct Answer: C
+
 
 ## MCQ 6
-[Hard] What is the maximum difference in level allowed for the RPIH-6.5TNZ1NH ducted unit's refrigerant piping?
+[Medium] Question: What is the advantage of the hydrophilic aluminum fin?
+A) Reduces noise levels
+B) Enhances heat exchange performance
+C) Prevents compressor vibration
+D) Protects against fire hazards
+Correct Answer: B
+
+
+## MCQ 7
+[Medium] Question: What type of compressor is used in the 2.0~6.5HP models?
+A) Single Rotary
+B) Twin Rotary
+C) Reciprocating
+D) Scroll
+Correct Answer: B
+
+
+## MCQ 8
+[Hard] Question: What is the maximum difference in level allowed for refrigerant piping for the RCI-3.0TNZ1NH indoor unit?
 A) 7.5m
 B) 15m
 C) 20m
 D) 30m
-Correct Answer: D
+Correct Answer: B
 
-## MCQ 7
-[Easy] What type of compressor is used in the 2.0HP to 6.5HP units?
-A) Reciprocating
-B) Scroll
-C) Twin Rotary
-D) Centrifugal
-Correct Answer: C
-
-
-## MCQ 8
-[Medium] What is the function of the blue coating on the hydrophilic aluminum fin?
-A) Enhance heat exchange
-B) Increase water wettability
-C) Protect against corrosion
-D) Reduce noise levels
-Correct Answer: C
 
 ## MCQ 9
-[Hard] What is the maximum piping length for the RCI-2.0TNZ1NH cassette type unit?
+[Hard] Question: What is the charged volume of R410A refrigerant for the RAS-4.0TNZGMH1 outdoor unit?
+A) 1.58 kg
+B) 2.60 kg
+C) 2.40 kg
+D) 3.10 kg
+Correct Answer: B
+
+## MCQ 10
+[Easy] Question: What type of airflow do the cassette type units offer?
+A) 2-Way
+B) 3-Way
+C) 4-Way
+D) Circular
+Correct Answer: C
+
+
+## MCQ 11
+[Easy] Question: What is a key feature of the washable filter?
+A) Improves air quality
+B) Reduces noise levels
+C) Allows for convenient service and maintenance
+D) Increases energy efficiency
+Correct Answer: C
+
+## MCQ 12
+[Medium] Question: What is the function of the "Powerful" button on the remote control?
+A) Activates quiet mode
+B) Sets the sleep timer
+C) Not specified in the text
+D) Increases cooling/heating output temporarily
+Correct Answer: C  (The function isn't explicitly described.)
+
+
+## MCQ 13
+[Medium] Question: What is the advantage of the built-in drain pan in the ducted type units?
+A) Reduces dust adhesion and prevents water leakage
+B) Allows for longer piping runs
+C) Enables flexible air return
+D) Improves temperature distribution
+Correct Answer: A
+
+
+## MCQ 14
+[Hard] Question: What is the diameter of the drainage water pipe for the RPIH-6.0TNZ1NH indoor unit?
+A) IDΦ21 mm
+B) IDΦ32 mm
+C) ODΦ25 mm
+D) ODΦ32 mm
+Correct Answer: D
+
+
+## MCQ 15
+[Hard] Question: What is the maximum pipe length for the RPIL-2.0TNZ1NH indoor unit?
 A) 15m
 B) 20m
 C) 30m
 D) 50m
 Correct Answer: B
 
-## MCQ 10
-[Easy] What type of controller is used with the RPIL series (ducted type)?
+## MCQ 16
+[Easy] Question: Where can the floor ceiling type units be installed?
+A) Only on the floor
+B) Only on the ceiling
+C) On the floor or ceiling
+D) On the wall
+Correct Answer: C
+
+
+## MCQ 17
+[Easy] Question: What is the advantage of the dual drain pipe in the floor ceiling type units?
+A) Easier installation
+B) Improved cooling performance
+C) Reduced noise levels
+D) Increased energy efficiency
+Correct Answer: A
+
+## MCQ 18
+[Medium] Question: What is the purpose of the fresh air inlet in the floor ceiling type units?
+A) To improve indoor ventilation and air quality
+B) To increase cooling capacity
+C) To reduce noise levels
+D) To enhance temperature distribution
+Correct Answer: A
+
+
+## MCQ 19
+[Medium] Question: What is the operating temperature range for the indoor units?
+A) 10~35°C
+B) 16~30°C
+C) 18~32°C
+D) 20~35°C
+Correct Answer: B
+
+
+## MCQ 20
+[Hard] Question: What type of controller is used for the RPIL series indoor units?
 A) Remote controller
 B) Wired controller
 C) Wireless controller
 D) Smart controller
 Correct Answer: B
 
-## MCQ 11
-[Medium] Which series of indoor units allows for both floor and ceiling installation?
-A) RCI
-B) RPIL
-C) RPFC
-D) HCRA
-Correct Answer: C
-
-## MCQ 12
-[Easy] The catalog mentions a "Quiet Operation" feature. What does this feature do?
-A) Automatically restarts the unit after a power outage
-B) Reduces fan speed and compressor frequency
-C) Compensates for temperature differences at high ceiling heights
-D) Adjusts the airflow direction
-Correct Answer: B
-
-## MCQ 13
-[Hard] What is the diameter of the drainage water pipe for the RCI-3.0TNZ1NH unit?
-A) IDΦ21
-B) IDΦ32
-C) ODΦ25
-D) ODΦ32
-Correct Answer: B
-
-## MCQ 14
-[Medium] What are the two airflow options mentioned for the cassette type units?
-A) Horizontal and diagonal
-B) Vertical and circular
-C) Horizontal and vertical
-D) Diagonal and circular
-Correct Answer: C
-
-## MCQ 15
-[Easy] What is the advantage of the washable filter?
-A) Improves air quality
-B) Reduces noise levels
-C) Convenient service and maintenance
-D) Increases energy efficiency
-Correct Answer: C
-
-## MCQ 16
-[Hard]  What is the refrigerant oil used in the RAS-2.0TNZGNH1 outdoor unit?
-A) VG74
-B) ATMOS-RB68EP
-C) α68HES-H
-D) None of the above
-Correct Answer: B
-
-## MCQ 17
-[Medium] What type of fan is used in the Cassette Type units highlighted in the catalog?
-A) Centrifugal fan
-B) Axial fan
-C) Vortex fan
-D) Cross-flow fan
-Correct Answer: C
-
-## MCQ 18
-[Easy] What is the function of the "Temperature Compensation" feature?
-A) Enhances temperature distribution at high ceiling heights
-B) Automatically restarts the unit after a power outage
-C) Reduces fan speed and compressor frequency
-D) Protects the compressor from overheating
-Correct Answer: A
-
-## MCQ 19
-[Hard] What is the maximum ambient temperature for cooling operation for most models mentioned?
-A) 30°C
-B) 35°C
-C) 43°C
-D) -15°C
-Correct Answer: C
-
-## MCQ 20
-[Medium] What are the two air intake options for the ducted type units?
-A) Top and bottom
-B) Bottom and rear
-C) Front and rear
-D) Top and rear
-Correct Answer: B
 
 ## MCQ 21
-[Easy]  The catalog states that the information contained within is merely informative. What does this imply?
-A) Hitachi guarantees the accuracy of the information.
-B) Hitachi is not responsible for damages arising from the use or interpretation of the information.
-C) The information is subject to change without notice.
-D) Both B and C
-Correct Answer: D
-
-## MCQ 22
-[Medium]  What benefit does the twin rotary compressor offer?
-A) Increased cooling capacity
-B) Reduced vibration and noise
-C) Wider ambient temperature range
-D) All of the above
+[Hard] Question: What does the flickering "Auto fan speed" indicator on the wired controller signify?
+A) The unit is in cooling mode.
+B) The unit is in auto mode.
+C) There is a system error.
+D) The timer is active.
 Correct Answer: B
 
-## MCQ 23
-[Hard] What triggers the unit to turn off if the water pump malfunctions in the ducted unit?
-A) Low pressure switch
-B) High pressure switch
-C) Water level switch
-D) Discharge temperature sensor
+
+## MCQ 22 [Easy]
+Question: What type of fan is used in the Cassette type unit with optional fresh air inlet?
+A) Centrifugal Fan
+B) Axial Fan
+C) Vortex Fan
+D) Cross-flow Fan
 Correct Answer: C
 
-## MCQ 24
-[Easy] What is the purpose of the "Powerful" function on the remote controller?
-A) Activates Quiet Operation
-B) Enables Auto Restart
-C) Not specified in the text
-D) Increases cooling capacity temporarily
+
+## MCQ 23 [Medium]
+Question: According to the document, what are the two designs available for ducted type units related to airflow?
+A) Straight blow & External ducted
+B) Top discharge & Bottom discharge
+C) Front return & Rear return
+D) Single duct & Dual duct
+Correct Answer: A
+
+
+## MCQ 24 [Hard]
+Question: What material is the duct structure of the ducted type unit made of?
+A) Stainless Steel
+B) Aluminum
+C) Galvanized Steel
+D) PVC
 Correct Answer: C
 
-## MCQ 25
-[Medium] What does the "Self Diagnosis" feature do?
-A) Automatically fixes any detected faults
-B) Displays failure codes for troubleshooting
-C) Prevents refrigerant leaks
-D) Adjusts fan speed based on actual load
-Correct Answer: B
+
+## MCQ 25 [Easy]
+Question: What is the website for Johnson Controls - Hitachi Air Conditioning?
+A) www.hitachi.com
+B) www.johnsoncontrols.com
+C) www.jci-hitachi.com
+D) www.hitachi-johnsoncontrols.com
+Correct Answer: C

@@ -17,26 +17,43 @@ class _QuizzesPageState extends State<QuizzesPage> {
     _currentUser = FirebaseAuth.instance.currentUser;
   }
 
-  // Function to toggle the status
+  // Toggle quiz status (enabled/disabled)
   Future<void> _toggleStatus(String documentId, bool currentStatus) async {
     try {
       String userEmail = _currentUser?.email ?? '';
-      
-      // Update the status in the 'timepass' subcollection
+
       var timepassDocRef = FirebaseFirestore.instance
           .collection('users')
           .doc(userEmail)
           .collection('timepass')
           .doc(documentId);
 
-      await timepassDocRef.update({'status': currentStatus ? 'disabled' : 'enabled'});
-
-      // Update the status in the main 'quiz' collection
       var quizDocRef = FirebaseFirestore.instance.collection('quiz').doc(documentId);
 
+      await timepassDocRef.update({'status': currentStatus ? 'disabled' : 'enabled'});
       await quizDocRef.update({'status': currentStatus ? 'disabled' : 'enabled'});
     } catch (e) {
       print('Error updating status: $e');
+    }
+  }
+
+  // Update totalQuestionsToAsk
+  Future<void> _updateTotalQuestions(String documentId, int selectedTotal) async {
+    try {
+      String userEmail = _currentUser?.email ?? '';
+
+      var timepassDocRef = FirebaseFirestore.instance
+          .collection('users')
+          .doc(userEmail)
+          .collection('timepass')
+          .doc(documentId);
+
+      var quizDocRef = FirebaseFirestore.instance.collection('quiz').doc(documentId);
+
+      await timepassDocRef.update({'totalQuestionsToAsk': selectedTotal});
+      await quizDocRef.update({'totalQuestionsToAsk': selectedTotal});
+    } catch (e) {
+      print('Error updating total questions: $e');
     }
   }
 
@@ -71,6 +88,9 @@ class _QuizzesPageState extends State<QuizzesPage> {
                     var quizDoc = quizDocs[index];
                     var quizId = quizDoc.id;
                     var currentStatus = quizDoc['status'] == 'enabled';
+                    var currentTotalQuestions = quizDoc.data().toString().contains('totalQuestionsToAsk')
+                        ? quizDoc['totalQuestionsToAsk']
+                        : 10; // default 10 if not found
 
                     return Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
@@ -84,9 +104,35 @@ class _QuizzesPageState extends State<QuizzesPage> {
                             'Quiz ID: $quizId',
                             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                           ),
-                          subtitle: Text(
-                            currentStatus ? 'Status: Enabled' : 'Status: Disabled',
-                            style: TextStyle(color: currentStatus ? Colors.green : Colors.red),
+                          subtitle: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                currentStatus ? 'Status: Enabled' : 'Status: Disabled',
+                                style: TextStyle(color: currentStatus ? Colors.green : Colors.red),
+                              ),
+                              SizedBox(height: 8),
+                              Row(
+                                children: [
+                                  Text('Total Questions: ', style: TextStyle(fontSize: 16)),
+                                  SizedBox(width: 10),
+                                  DropdownButton<int>(
+                                    value: currentTotalQuestions,
+                                    items: [10, 15, 20, 25].map((value) {
+                                      return DropdownMenuItem<int>(
+                                        value: value,
+                                        child: Text('$value'),
+                                      );
+                                    }).toList(),
+                                    onChanged: (newValue) {
+                                      if (newValue != null) {
+                                        _updateTotalQuestions(quizId, newValue);
+                                      }
+                                    },
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
                           onTap: () {
                             Navigator.push(
