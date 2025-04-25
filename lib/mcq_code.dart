@@ -6,7 +6,7 @@ import 'package:mcqapp/contactus.dart';
 import 'quiz_attempt.dart';
 import 'login.dart';
 import 'flashcards_menu.dart';
-import 'qr_scanner.dart'; // Import your QR Scanner Page
+import 'qr_scanner.dart';
 
 class MCQCode extends StatefulWidget {
   final String? initialCode;
@@ -115,144 +115,147 @@ class _MCQCodeState extends State<MCQCode> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Enter Quiz Code'),
+        backgroundColor: Colors.deepPurple,
         actions: [
           PopupMenuButton<int>(
-  onSelected: (value) {
-    if (value == 1) {
-      _navigateToFlashcardsMenu();
-    } else if (value == 2) {
-      _logout();
-    } else if (value == 3) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => ContactUsPage()),
-      );
-    }
-  },
-  itemBuilder: (context) => [
-    PopupMenuItem<int>(
-      value: 1,
-      child: Row(
-        children: [
-          Icon(Icons.menu_book, color: Colors.black),
-          SizedBox(width: 10),
-          Text('Flashcards'),
-        ],
-      ),
-    ),
-    PopupMenuItem<int>(
-      value: 2,
-      child: Row(
-        children: [
-          Icon(Icons.logout, color: Colors.black),
-          SizedBox(width: 10),
-          Text('Logout'),
-        ],
-      ),
-    ),
-    PopupMenuItem<int>(
-      value: 3,
-      child: Row(
-        children: [
-          Icon(Icons.contact_page, color: Colors.black),
-          SizedBox(width: 10),
-          Text('Contact Us'),
-        ],
-      ),
-    ),
-  ],
-),
-
+            onSelected: (value) {
+              if (value == 1) {
+                _navigateToFlashcardsMenu();
+              } else if (value == 2) {
+                _logout();
+              } else if (value == 3) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ContactUsPage()),
+                );
+              }
+            },
+            itemBuilder: (context) => [
+              PopupMenuItem<int>(
+                value: 1,
+                child: Row(
+                  children: [
+                    Icon(Icons.menu_book, color: Colors.black),
+                    SizedBox(width: 10),
+                    Text('Flashcards'),
+                  ],
+                ),
+              ),
+              PopupMenuItem<int>(
+                value: 2,
+                child: Row(
+                  children: [
+                    Icon(Icons.logout, color: Colors.black),
+                    SizedBox(width: 10),
+                    Text('Logout'),
+                  ],
+                ),
+              ),
+              PopupMenuItem<int>(
+                value: 3,
+                child: Row(
+                  children: [
+                    Icon(Icons.contact_page, color: Colors.black),
+                    SizedBox(width: 10),
+                    Text('Contact Us'),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(height: 20),
-            Text(
-              'Enter Quiz Code',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 10),
-            Text(
-              'Enter the quiz code to access the MCQs:',
-              style: TextStyle(fontSize: 16, color: Colors.grey[700]),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 30),
-            TextField(
-              controller: _codeController,
-              decoration: InputDecoration(
-                hintText: 'Enter quiz code',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                filled: true,
-                fillColor: Colors.grey[100],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 40),
+              Text(
+                'Enter Quiz Code',
+                style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold, color: Colors.deepPurple),
+                textAlign: TextAlign.center,
               ),
-              style: TextStyle(fontSize: 18),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 20),
-            ElevatedButton.icon(
-  onPressed: _navigateToQRScanner,
-  icon: Icon(Icons.qr_code_scanner),
-  label: Text('Scan QR Code'),
-  style: ElevatedButton.styleFrom(
-    backgroundColor: Colors.orange,
-    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
-    textStyle: TextStyle(fontSize: 18),
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(10),
-    ),
-  ),
-),
-
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                String code = _codeController.text.trim();
-                if (code.isNotEmpty) {
-                  _checkQuizStatus(code);
-                } else {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Please enter a quiz code.')),
+              SizedBox(height: 10),
+              Text(
+                'Type or scan your quiz code to begin:',
+                style: TextStyle(fontSize: 16, color: Colors.black54),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 30),
+              TextField(
+                controller: _codeController,
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 18),
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.vpn_key),
+                  hintText: 'Enter your quiz code',
+                  filled: true,
+                  fillColor: Colors.grey[100],
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+              ),
+              SizedBox(height: 25),
+              ElevatedButton.icon(
+                onPressed: _navigateToQRScanner,
+                icon: Icon(Icons.qr_code_scanner),
+                label: Text('Scan QR Code'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.orange,
+                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 40),
+                  textStyle: TextStyle(fontSize: 18),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton.icon(
+                onPressed: () {
+                  String code = _codeController.text.trim();
+                  if (code.isNotEmpty) {
+                    _checkQuizStatus(code);
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('Please enter a quiz code.')),
+                    );
+                  }
+                },
+                icon: Icon(Icons.play_arrow),
+                label: Text('Start Quiz'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.deepPurple,
+                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 40),
+                  textStyle: TextStyle(fontSize: 18, color: Colors.white),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              OutlinedButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ChatbotPage()),
                   );
-                }
-              },
-              child: Text('Enter'),
-              style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
-                textStyle: TextStyle(fontSize: 18),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
+                },
+                icon: Icon(Icons.chat_bubble_outline, color: Colors.blue),
+                label: Text('Chat with AI Assistant', style: TextStyle(color: Colors.blue)),
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(color: Colors.blue),
+                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+                  textStyle: TextStyle(fontSize: 18),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                 ),
-                backgroundColor: Colors.orange,
               ),
-            ),
-            ElevatedButton.icon(
-  onPressed: () {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => ChatbotPage()),
-    );
-  },
-  icon: Icon(Icons.chat),
-  label: Text('Chat with AI'),
-  style: ElevatedButton.styleFrom(
-    backgroundColor: Colors.blueAccent,
-    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
-    textStyle: TextStyle(fontSize: 18),
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(10),
-    ),
-  ),
-),
-
-          ],
+            ],
+          ),
         ),
       ),
     );
