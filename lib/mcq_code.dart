@@ -115,7 +115,7 @@ class _MCQCodeState extends State<MCQCode> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Enter Quiz Code'),
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Colors.orange,
         actions: [
           PopupMenuButton<int>(
             onSelected: (value) {
@@ -227,7 +227,7 @@ class _MCQCodeState extends State<MCQCode> {
                 icon: Icon(Icons.play_arrow),
                 label: Text('Start Quiz'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.deepPurple,
+                  backgroundColor: Colors.orange,
                   padding: EdgeInsets.symmetric(vertical: 15, horizontal: 40),
                   textStyle: TextStyle(fontSize: 18, color: Colors.white),
                   shape: RoundedRectangleBorder(

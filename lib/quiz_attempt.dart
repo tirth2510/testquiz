@@ -48,7 +48,7 @@ class _QuizAttemptState extends State<QuizAttempt> {
       }
 
       // Now fetch questions
-      final url = 'http://192.168.29.108:5001/fetch_quiz/${widget.userEmail}/${widget.quizId}';
+      final url = 'https://flaskdisplay.onrender.com/fetch_quiz/${widget.userEmail}/${widget.quizId}';
       final response = await http.get(Uri.parse(url));
 
       if (response.statusCode == 200) {
